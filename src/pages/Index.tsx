@@ -46,7 +46,7 @@ const Index = () => {
         {/* Hero Section */}
         <div className="text-center space-y-8 reveal-section">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white">
-            Bienvenue dans l'ère Mana ! <Rocket className="inline-block ml-2 mb-1" />
+            Bienvenue dans l'univers Mana ! <Rocket className="inline-block ml-2 mb-1" />
           </h1>
           <p className="text-xl md:text-2xl text-white font-light max-w-2xl mx-auto">
             La page mana.fr est en construction, pour patienter voici le nouvel univers Mana dans lequel gravitent nos expertises :
