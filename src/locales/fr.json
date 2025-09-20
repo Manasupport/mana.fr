@@ -1,0 +1,828 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos de Mana",
+    "resources": "Ressources",
+    "join": "Nous rejoindre",
+    "activities": "Nos activités",
+    "contact": "Contact"
+  },
+  "footer": {
+    "activities": "Nos activités",
+    "resources": "Ressources",
+    "company": "Entreprise",
+    "about": "À propos",
+    "join": "Nous rejoindre",
+    "contact": "Contact",
+    "terms": "Conditions générales",
+    "privacy": "Politique de confidentialité",
+    "allRightsReserved": "Tous droits réservés"
+  },
+  "home": {
+    "heroTitle": "Révélez le potentiel de votre organisation",
+    "heroSubtitle": "Conseil stratégique, formation et accompagnement pour transformer vos défis en opportunités.",
+    "ourActivities": "Nos activités",
+    "discoverMana": "Découvrir Mana",
+    "ecosystemTitle": "Mana fait converger recherche, terrain et design de solutions pour accélérer l’innovation.",
+    "ecosystemSubtitle": "L’écosystème qui relie réflexion, action et impact durable.",
+    "entities": {
+      "manamind": {
+        "tagline": "Build Skills, Drive Innovation",
+        "description": "Manamind est une application edTech conçue pour créer et animer des parcours d'apprentissage sur mesure, centrée sur le développement des compétences."
+      },
+      "manacademy": {
+        "tagline": "Innovation to Raise Knowledge",
+        "description": "Manacademy est le centre de formation et d’innovation pédagogique dédié aux apprentissages à impact. Ses programmes d’avant-garde préparent les leaders des transitions de demain."
+      },
+      "manadvise": {
+        "tagline": "Innovation at Crossroads",
+        "description": "Manadvise active des synergies entre l’écosystème académique et le monde de l’entreprise. Nous coordonnons des projets de conseil et de recherche pour relever les défis de l’innovation à impact."
+      }
+    },
+    "impactTitle": "L’impact en chiffres",
+    "impactSubtitle": "Notre croissance témoigne de la confiance de nos partenaires",
+    "stats": {
+      "partners": "Réseau d’experts",
+      "projects": "Projets d’open innovation",
+      "organizations": "Organisations accompagnées",
+      "learnersPerYear": "Apprenants / an"
+    },
+    "partnersTitle": "Ils nous font confiance",
+    "numbersTitle": "Mana en chiffres",
+    "studentsFormed": "Étudiants formés",
+    "companiesSupported": "Entreprises accompagnées",
+    "hoursConsulting": "Heures de conseil",
+    "satisfactionRate": "Taux de satisfaction",
+    "testimonialsTitle": "Ce qu'ils disent de nous",
+    "finalCtaTitle": "Prêt à créer de l'impact ?",
+    "finalCtaSubtitle": "Explorons comment Mana peut transformer vos défis d’innovation en opportunités durables.",
+    "buttons": {
+      "manamind": "Découvrir Manamind",
+      "manacademy": "Explorer Manacademy",
+      "manadvise": "Consulter Manadvise"
+    },
+    "ctaTitle": "Prêt à transformer votre organisation ?",
+    "ctaSubtitle": "Découvrez comment Mana peut vous accompagner dans votre développement.",
+    "ctaButton": "Demander une démo"
+  },
+  "resourcesAcademic": {
+  "breadcrumb": {
+    "back": "Retour aux ressources"
+  },
+  "header": {
+    "title": "Fiches outils & Contenus académiques",
+    "subtitle": "Vous trouverez ici des templates, fiches outils et contenus académiques utiles selon votre parcours."
+  },
+  "cards": {
+    "browse": "Voir les ressources",
+    "resourcesLabel_one": "{{count}} ressource",
+    "resourcesLabel_other": "{{count}} ressources"
+  },
+  "categories": [
+    {
+      "id": "project-management",
+      "title": "Gestion de projet",
+      "description": "Outils et cadres essentiels pour mener vos projets à bien",
+      "icon": "target",
+      "color": "manamind",
+      "bgColor": "manamind/10",
+      "borderColor": "manamind",
+      "resourceCount": 14
+    },
+    {
+      "id": "international-strategy",
+      "title": "Stratégie internationale",
+      "description": "Cadres stratégiques pour le développement à l’international",
+      "icon": "globe",
+      "color": "manadvise",
+      "bgColor": "manadvise/10",
+      "borderColor": "manadvise",
+      "resourceCount": 6
+    },
+    {
+      "id": "thesis",
+      "title": "Mémoire / Thèse",
+      "description": "Ressources pour la recherche académique et la rédaction de mémoire",
+      "icon": "fileText",
+      "color": "manacademy",
+      "bgColor": "manacademy/10",
+      "borderColor": "manacademy",
+      "resourceCount": 1
+    },
+    {
+      "id": "design-thinking",
+      "title": "Design Thinking",
+      "description": "Méthodologies de résolution créative et d’innovation",
+      "icon": "lightbulb",
+      "color": "mana-accent",
+      "bgColor": "mana-accent/10",
+      "borderColor": "mana-accent",
+      "resourceCount": 14
+    }
+  ],
+  "featured": {
+    "title": "Managuide de l’Innovation",
+    "description": "Un guide complet pour accélérer votre trajectoire d’innovation — en accès libre.",
+    "cta": "Télécharger le Managuide"
+  }
+},
+  "about": {
+    "pageTitle": "À propos de Mana",
+    "heroTitle": "L'expertise au service de votre transformation",
+    "heroSubtitle": "Mana accompagne les organisations dans leur évolution stratégique grâce à une approche innovante et personnalisée.",
+    "identityTitle": "Notre identité",
+    "identityContent": "Le nom « Mana » vient du concept polynésien de force spirituelle et de pouvoir créateur. Il représente cette énergie transformatrice que nous apportons à chaque projet, cette capacité à révéler le potentiel caché des organisations et des individus.",
+    "associatesTitle": "Manassociés",
+    "teamTitle": "Manateam",
+    "alumniTitle": "Manalumnis",
+    "ctaTitle": "Découvrez nos domaines d'expertise",
+    "ctaButton": "Voir nos activités"
+  },
+  "resourcesAcademic": {
+  "breadcrumb": {
+    "back": "Retour aux ressources"
+  },
+  "header": {
+    "title": "Fiches outils et contenus académiques",
+    "subtitle": "Vous trouverez ici des templates, fiches outils et contenus académiques utiles selon votre parcours."
+  },
+  "cards": {
+    "browse": "Parcourir les ressources",
+    "resourcesLabel_one": "{{count}} ressource",
+    "resourcesLabel_other": "{{count}} ressources"
+  },
+  "categories": [
+    {
+      "id": "project-management",
+      "title": "Gestion de projet",
+      "description": "Outils et cadres essentiels pour réussir vos projets",
+      "icon": "target",
+      "color": "manamind",
+      "resourceCount": 14
+    },
+    {
+      "id": "international-strategy",
+      "title": "Stratégie internationale",
+      "description": "Cadres stratégiques pour le développement à l’international",
+      "icon": "globe",
+      "color": "manadvise",
+      "resourceCount": 6
+    },
+    {
+      "id": "thesis",
+      "title": "Mémoire / Thèse",
+      "description": "Ressources pour la recherche académique et la rédaction",
+      "icon": "fileText",
+      "color": "manacademy",
+      "resourceCount": 1
+    },
+    {
+      "id": "design-thinking",
+      "title": "Design Thinking",
+      "description": "Méthodes d’innovation et résolution créative de problèmes",
+      "icon": "lightbulb",
+      "color": "mana-accent",
+      "resourceCount": 14
+    }
+  ],
+  "featured": {
+    "title": "Managuide de l’Innovation",
+    "description": "Un guide complet pour booster vos démarches d’innovation — disponible gratuitement.",
+    "cta": "Télécharger le Managuide"
+  }
+},
+  "join": {
+    "pageTitle": "Nous rejoindre",
+    "heroTitle": "Rejoignez l'aventure Mana",
+    "heroSubtitle": "Participez à la transformation des organisations et développez votre expertise dans un environnement stimulant.",
+    "whyJoinTitle": "Pourquoi nous rejoindre ?",
+    "applicationTitle": "Candidature spontanée",
+    "applicationSubtitle": "Vous ne trouvez pas l'offre qui vous correspond ? Envoyez-nous votre candidature spontanée.",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "cv": "CV",
+      "submit": "Envoyer ma candidature",
+      "sending": "Envoi en cours...",
+      "required": "Ce champ est requis",
+      "invalidEmail": "Email invalide"
+    },
+    "testimonialsTitle": "Témoignages de l'équipe",
+    "ctaTitle": "Prêt à nous rejoindre ?",
+    "ctaSubtitle": "N'hésitez pas à nous envoyer votre candidature, nous étudions toutes les profils talentueux.",
+    "ctaButton": "Postuler maintenant"
+  },
+  "publications": {
+    "pageTitle": "Articles & Publications",
+    "heroTitle": "Articles & Publications",
+    "heroSubtitle": "Analyses, points de vue et recherches pour éclairer vos décisions stratégiques.",
+    "filters": {
+      "all": "Tous",
+      "thematic": "Thématique",
+      "type": "Type de contenu",
+      "duration": "Durée de lecture",
+      "innovation": "Innovation",
+      "strategy": "Stratégie",
+      "csr": "RSE",
+      "dataAi": "Data & IA",
+      "others": "Autres",
+      "article": "Article",
+      "study": "Étude",
+      "insight": "Insight",
+      "research": "Note de recherche",
+      "quick": "Rapide (<5min)",
+      "medium": "Approfondi (5-10min)",
+      "long": "Long (>10min)"
+    },
+    "readTime": "min de lecture",
+    "author": "Par",
+    "loadMore": "Charger plus",
+    "noResults": "Aucun article trouvé avec ces filtres."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page introuvable",
+    "backHome": "Retour à l'accueil"
+  },
+  "manamind": {
+    "heroTitle": "Manamind",
+    "heroSubtitle": "La plateforme qui révolutionne l'accompagnement des étudiants dans leur parcours académique et professionnel.",
+    "demoButton": "Demander une démo",
+    "learnMore": "En savoir plus",
+    "pillarsTitle": "Trois piliers pour votre réussite",
+    "pillar1Title": "Pour les étudiants",
+    "pillar1Content": "Un accompagnement personnalisé pour construire votre projet professionnel et développer vos compétences.",
+    "pillar2Title": "Pour les écoles",
+    "pillar2Content": "Des outils innovants pour optimiser l'accompagnement de vos étudiants et mesurer leur progression.",
+    "pillar3Title": "Pour les entreprises",
+    "pillar3Content": "Identifiez et recrutez les talents de demain grâce à notre évaluation des soft skills.",
+    "partnersTitle": "Ils nous font confiance",
+    "testimonialsTitle": "Témoignages",
+    "ctaTitle": "Prêt à transformer l'accompagnement étudiant ?",
+    "ctaSubtitle": "Découvrez comment Manamind peut révolutionner votre approche de l'orientation et du développement des compétences.",
+    "ctaButton": "Demander une démonstration"
+  },
+  "manacademy": {
+    "heroTitle": "Manacademy",
+    "heroSubtitle": "Des formations sur-mesure pour développer les compétences stratégiques de vos équipes.",
+    "aboutTitle": "Qui sommes-nous ?",
+    "aboutContent": "Manacademy propose des formations innovantes en stratégie, innovation et leadership pour transformer vos équipes en véritables acteurs du changement.",
+    "trainingsTitle": "Nos formations",
+    "ctaTitle": "Prêt à former vos équipes ?",
+    "ctaSubtitle": "Contactez-nous pour construire ensemble un programme de formation adapté à vos besoins.",
+    "scheduleButton": "Planifier un entretien",
+    "contactButton": "Nous contacter"
+  },
+  "manadvise": {
+  "hero": {
+    "tagline": "Innovation at Crossroads",
+    "title": "Manadvise :",
+    "highlight": " catalyseur d’innovation au croisement du conseil et de la recherche",
+    "subtitle": "Manadvise active des synergies entre l'écosystème académique et le monde de l'entreprise. À la croisée des regards, nous coordonnons des projets de conseil et de recherche (agréé CIR & C2I) pour relever les défis de l'innovation à impact.",
+    "ctaProject": "Parlons de votre projet",
+    "ctaApproach": "Découvrir notre approche"
+  },
+
+  "approach": {
+    "title": "Nos domaines d’expertises",
+    "subtitle": "Stratégie, transformation et durabilité : nos leviers pour accélérer vos projets."
+  },
+
+  "domains": {
+    "items": [
+      {
+        "title": "Stratégie & Innovation",
+        "description": "Anticiper, inventer et accélérer la croissance par la stratégie et l’innovation.",
+        "skillsTitle": "Compétences & méthodes",
+        "skills": [
+          "Design to Delivery",
+          "Business case & scénarios d’acquisition",
+          "Expérience grands groupes (Danone, Chanel, Rexel, TotalEnergies, Sodiaal, BNP Paribas, Konica Minolta, …)"
+        ]
+      },
+      {
+        "title": "Transformation & Performance",
+        "description": "Piloter des programmes de transformation et accompagner le changement en libérant le potentiel des équipes et en intégrant l’IA comme levier organisationnel et décisionnel.",
+        "skillsTitle": "Compétences & méthodes",
+        "skills": [
+          "Certification Prosci Change Practitioner",
+          "Excellence opérationnelle, Lean Six Sigma Black Belt",
+          "Management agile, gestion de programmes multi-sites"
+        ]
+      },
+      {
+        "title": "Intelligence collective & Open Innovation",
+        "description": "Créer des écosystèmes hybrides et animer des démarches collaboratives où l’IA enrichit la créativité collective et accélère l’impact des solutions.",
+        "skillsTitle": "Compétences & méthodes",
+        "skills": [
+          "Facilitation de co-design, open innovation challenges / Design Thinking",
+          "Animation d’équipes pluridisciplinaires (chercheurs, étudiants, managers)",
+          "POC d’usage opérationnel de l’IA"
+        ]
+      },
+      {
+        "title": "RSE, Durabilité & Transition",
+        "description": "Intégrer la responsabilité sociale et environnementale dans les stratégies d’entreprise pour construire des modèles circulaires, résilients et alignés avec un impact durable.",
+        "skillsTitle": "Compétences & méthodes",
+        "skills": [
+          "Certification GRI v4 AFNOR",
+          "Éco-conception, économie circulaire, transition énergétique",
+          "Reporting extra-financier, initiatives bas carbone"
+        ]
+      }
+    ]
+  },
+
+  "advisorsTitle": "Le réseau des Manadvisors",
+  "advisorsSubtitle": "Un écosystème d’expertises accessibles à la carte.",
+
+  "network": {
+  "showMore": "Voir plus",
+  "showLess": "Voir moins",
+  "items": [
+    { "name": "Samy N", "role": "Innovation Program Manager" },
+    { "name": "Romaric B", "role": "Recherche & Innovation" },
+    { "name": "Nadia F", "role": "Conformité & RGPD" },
+    { "name": "Salhia D", "role": "Innovation Project Manager" },
+    { "name": "Ilan S", "role": "Consulting Innovation" },
+    { "name": "Paul P", "role": "Stratégie & Research" },
+    { "name": "Marie L", "role": "Senior Consultant" },
+    { "name": "Zeyna T", "role": "Innovation Consultant" },
+    { "name": "David C", "role": "Communication & Marque" },
+    { "name": "Pierre-Yves A", "role": "Finance & Strategy" }
+  ]
+},
+  "casesTitle": "Exemples de missions",
+  "result": "Résultat",
+  "cases": [
+    {
+      "tag": "Industrie • Transition énergétique",
+      "title": "Feuille de route innovation bas-carbone",
+      "result": "−27% d’empreinte carbone sur 3 ans sur le périmètre pilote, 6 chantiers d’innovation priorisés et financés.",
+      "details": "Co-conception d’une trajectoire 2030, critères d’arbitrage, protocole de mesure d’impact, montage CIR."
+    },
+    {
+      "tag": "Services financiers • Data & IA",
+      "title": "Due diligence IA éthique & conformité",
+      "result": "Cadre de gouvernance IA déployé, time-to-market réduit de 30% pour les cas d’usage prioritaires.",
+      "details": "Cartographie des risques, guidelines éthiques, patterns d’architecture, kit d’industrialisation MLOps."
+    },
+    {
+      "tag": "Retail • Expérience client",
+      "title": "Parcours client omnicanal augmenté",
+      "result": "+12 pts de NPS en 6 mois et +8% de conversion en ligne après expérimentation multi-magasins.",
+      "details": "Design des parcours, protocole d’A/B test, cadrage des indicateurs, gouvernance produit."
+    },
+    {
+      "tag": "Santé • Organisation & qualité",
+      "title": "Cellule d’innovation frugale",
+      "result": "15 solutions low-tech/numériques déployées, ROI moyen < 9 mois, diffusion inter-établissements.",
+      "details": "Bootcamps, transferts méthodo, accords-cadres achats, dispositif de suivi d’impact."
+    }
+  ],
+
+  "testimonialsTitle": "Quelques témoignages clients",
+  "testimonialsSubtitle": "Retours de dirigeants et d’équipes après mission.",
+  "testimonials": [
+    {
+      "quote": "Ils ont traduit nos questions stratégiques en décisions opérationnelles mesurables, sans perdre la rigueur de la recherche.",
+      "role": "Directeur Innovation, secteur énergie"
+    },
+    {
+      "quote": "Approche très concrète : on a livré vite, testé proprement, et arbitré avec des critères clairs. Pas de bla-bla.",
+      "role": "COO, scale-up fintech"
+    },
+    {
+      "quote": "La cross-pollinisation recherche/terrain a changé la trajectoire du programme. On a enfin un cadre robuste et actionnable.",
+      "role": "Head of Transformation, retail"
+    }
+  ],
+
+  "finalCta": {
+    "title": "Parlons de votre projet",
+    "subtitle": "Transformons vos défis en opportunités d’innovation. Un premier échange pour cadrer vite & bien.",
+    "button": "Prendre RDV"
+  }
+},
+  "manacademyPage": {
+  "hero": {
+    "badge": "Innovation to Raise Knowledge",
+    "titlePrefix": "Manacademy :",
+    "highlight": "se former aux transitions",
+    "subtitle": "Un organisme de formation reconnu pour la qualité de ses formateurs, des formats proposés et des thématiques avant-gardistes.",
+    "cta": "Planifier un échange",
+    "stats": {
+      "participants": { "value": "+400", "label": "participants / an depuis 2019" },
+      "satisfaction": { "value": "96%", "label": "de satisfaction en 2024" }
+    }
+  },
+  "about": {
+    "badge": "Qui sommes-nous ?",
+    "text": "Manacademy est l’Organisme de Formation (n°11922589292) de Mana. Il s’appuie sur l’expérience de ses co-fondateurs et d’un réseau d’experts pour garantir des formations de grande qualité. Nous combinons théorie et pratique pour accompagner toutes les organisations sur les grandes transitions : innovation, stratégie, RSE et développement durable."
+  },
+  "trainings": {
+    "title": "Nos formations",
+    "subtitle": "Trois axes stratégiques pour accompagner vos transitions",
+    "expand": "Explorer",
+    "collapse": "Réduire",
+    "clientUseCases": "Cas d’usage clients"
+  },
+  "formations": [
+    {
+      "title": "Innover pour s'adapter",
+      "formats": "Formats : séminaire, atelier, parcours hybride (présentiel ou distanciel)",
+      "icon": "GraduationCap",
+      "color": "from-blue-500 to-cyan-500",
+      "modules": [
+        {
+          "name": "Agilité & innovation en contexte industriel",
+          "description": "Comprendre et adopter les méthodes agiles (Scrum, Kanban, Design Sprint…) et leurs implications dans les environnements techniques, industriels ou projets complexes."
+        },
+        {
+          "name": "Culture & stratégie d'innovation",
+          "description": "Décrypter les différents types d'innovation (produit, service, usage, business model), adopter une posture d'intrapreneur, diffuser l'innovation dans l'entreprise."
+        },
+        {
+          "name": "Intelligence artificielle & cas d'usage",
+          "description": "Acculturation à l'IA, prise en main d'outils IA/LLM, ateliers d'idéation sur les cas d'usage métiers, sensibilisation à l'empreinte environnementale de l'IA."
+        },
+        {
+          "name": "Méthodes mixtes quali-quanti",
+          "description": "S'initier aux approches de recherche et d'analyse combinant données qualitatives (entretiens, observations) et quantitatives (questionnaires, analyse statistique) dans un cadre d'innovation."
+        }
+      ],
+      "cases": [
+        "Leader mondial de l'énergie – Séminaire agile (80 pers, ½ journée)",
+        "Banque française – Formations posture & stratégie innovation (15 pers, 3×½ journées)",
+        "Université de Montpellier – Méthodes quali-quanti (6 pers, 3×½ journées)"
+      ]
+    },
+    {
+      "title": "Créer de la valeur avec la RSE",
+      "formats": "Formats : séminaire, cas pratiques, accompagnement terrain",
+      "icon": "Target",
+      "color": "from-green-500 to-emerald-500",
+      "modules": [
+        {
+          "name": "Stratégie de transformation durable & RSE opérationnelle",
+          "description": "Sensibilisation aux fondamentaux de la RSE, réflexion sur l'impact du secteur d'activité, définition de plans d'action concrets pour les équipes opérationnelles."
+        },
+        {
+          "name": "Éco-conception, bilan carbone, CSRD",
+          "description": "Comprendre les référentiels actuels, apprendre à évaluer l'impact environnemental de vos produits, services et organisations. Introduction aux obligations de reporting (CSRD)."
+        },
+        {
+          "name": "Économie circulaire & éco-innovation",
+          "description": "Découvrir les modèles économiques durables, explorer les principes d'écoconception, réinterroger son business model à l'aune des limites planétaires."
+        },
+        {
+          "name": "Numérique responsable & impact digital",
+          "description": "Mesurer l'empreinte environnementale du numérique, mettre en place une stratégie numérique durable."
+        }
+      ],
+      "cases": [
+        "Tour opérateur – \"Voyage durable\" (30 pers, 4×½ journées)",
+        "Cabinet conseil – Bilan carbone, CSRD, économie circulaire (15 pers, 4×½ journées)",
+        "Grands comptes – Formations RSE multisectorielles (pharma, luxe, etc.)"
+      ]
+    },
+    {
+      "title": "Anticiper par la stratégie",
+      "formats": "Formats : workshop, formation flash, parcours complet",
+      "icon": "TrendingUp",
+      "color": "from-purple-500 to-indigo-500",
+      "modules": [
+        {
+          "name": "Vision, mission, raison d'être & valeurs",
+          "description": "Clarifier les fondamentaux identitaires de votre organisation pour renforcer l'engagement et la cohérence stratégique."
+        },
+        {
+          "name": "Diagnostic stratégique",
+          "description": "Maîtriser les outils d'analyse stratégique : SWOT, PESTEL, 5 forces de Porter, matrice BCG… pour orienter la prise de décision."
+        },
+        {
+          "name": "Stratégies de croissance",
+          "description": "Explorer les voies de développement (diversification, internationalisation, croissance externe ou interne, partenariats…)."
+        },
+        {
+          "name": "Positionnement stratégique & business model",
+          "description": "Travailler sur la proposition de valeur, le benchmark, les stratégies Océan Bleu et les outils de design de business models (Business Model Canvas, Value Proposition Design)."
+        }
+      ],
+      "cases": [
+        "Grands groupes – De la raison d'être à la stratégie opérationnelle"
+      ]
+    }
+  ],
+  "finalCta": {
+    "title": "Je veux mon Mana sur-mesure",
+    "subtitle": "Échangeons sur vos besoins pour co-construire un programme d'apprentissage qui transformera durablement vos équipes.",
+    "button": "Planifier un échange"
+  },
+  "form": {
+    "nameLabel": "Nom / Prénom",
+    "namePlaceholder": "Votre nom complet",
+    "orgLabel": "Organisation",
+    "orgPlaceholder": "Votre structure",
+    "emailLabel": "Email",
+    "emailPlaceholder": "votre.email@exemple.com",
+    "needTypeLabel": "Type de besoin",
+    "needTypePlaceholder": "Sélectionnez votre besoin",
+    "options": {
+      "innovation": "Formation Innovation",
+      "rse": "Formation RSE",
+      "strategie": "Formation Stratégie",
+      "surMesure": "Programme sur-mesure",
+      "autre": "Autre"
+    },
+    "messageLabel": "Message",
+    "messagePlaceholder": "Décrivez-nous votre projet, vos enjeux, vos objectifs...",
+    "submit": "Envoyer ma demande"
+  }
+},
+  "manamindPage": {
+  "hero": {
+    "badge": "Build Skills, Drive Innovation",
+    "titlePrefix": "L'expérience d'apprentissage innovante qui",
+    "highlight": "booste l'engagement",
+    "subtitle": "Application pour créer, animer et suivre des parcours pédagogiques sur mesure, centrés sur les compétences. Déjà utilisée par les plus grandes écoles, universités et organismes de formation.",
+    "buttons": {
+      "discover": "Découvrir Manamind",
+      "login": "Se connecter"
+    }
+  },
+  "pillars": {
+    "title": "Trois piliers pour transformer l'apprentissage",
+    "subtitle": "Une approche complète qui adresse tous les besoins de l'écosystème éducatif",
+    "pillar1": {
+      "title": "Pilotage pour les encadrants",
+      "text": "Outils de suivi en temps réel, analytics avancées et tableaux de bord personnalisés pour piloter efficacement vos programmes."
+    },
+    "pillar2": {
+      "title": "Expérience pour les apprenants",
+      "text": "Interface engageante, parcours personnalisés et gamification pour maintenir la motivation et l'engagement tout au long du processus."
+    },
+    "pillar3": {
+      "title": "Auditabilité pour les institutions",
+      "text": "Reporting complet, certification des acquis et conformité réglementaire pour répondre aux exigences institutionnelles."
+    }
+  },
+  "testimonialsTitle": "Ce que disent nos utilisateurs",
+  "testimonialsSubtitle": "Des retours concrets sur l’impact de Manamind :",
+  "testimonialsPrev": "Précédent",
+  "testimonialsNext": "Suivant",
+  "testimonialsHint": "Astuce : survolez pour mettre en pause la lecture automatique.",
+  "testimonials": [
+    { "content": "The Manamind platform helped our team to coordinate and I was impressed with the ease of use and usefulness of Manamind. The platform allowed us to track our progress and see the deadlines quickly, which was valuable for the effective planning of our project", "author": "Etudiant - MIB Dauphine - PSL Spring 2025", "role": "Etudiant" },
+    { "content": "While formulating our strategy, we utilized various charts, models, and methodologies, which aided in enhancing our project management, analytical, problem-solving, and creativity skills", "author": "Etudiant - MIB Dauphine - PSL Spring 2025", "role": "Etudiant" },
+    { "content": "Manamind, à travers une interface intuitive et efficace, m'a permis d'avoir une visibilité claire sur l'avancement des projets, améliorant ainsi la communication et la collaboration entre l'équipe et les étudiants. C'est un outil précieux qui a amélioré le suivi, la proactivité et le partage des informations. La facilité d'utilisation et la clarté de la plateforme sont un atout supplémentaire qui rend l'expérience plus tangible en tant que client.", "author": "Kévin A", "role": "International Supply Chain Manager" },
+    { "content": "J'aime le fait d'avoir un chemin étape par étape et suivre son avancement. De voir ce qui m'attend les prochaines semaines, de me mettre en condition.", "author": "Paul", "role": "Étudiant" },
+    { "content": "C'est déjà assez visuel : quand on arrive dessus, on voit ce qu'on a fait et ce qui reste à faire. C'est l'essentiel.", "author": "Nihel", "role": "Étudiante" },
+    { "content": "Voir les deadlines permet de mieux s'organiser et d'avancer partie par partie.", "author": "Nihel", "role": "Étudiante" },
+    { "content": "Centralisation de tous les livrables, tout est déposé sur la plateforme + module d'évaluation via le dashboard : pratique. Avant c'était des mails individualisés, maintenant tout est centralisé. Facile de modifier le contenu et les dates des livrables. Manamind est très flexible, ce qui est utile face aux ajustements fréquents dans l'année.", "author": "Yves M", "role": "Professeur Universitaire" }
+  ],
+  "finalCta": {
+    "title": "Prêt à transformer votre pédagogie ?",
+    "subtitle": "Rejoignez les centaines d’institutions qui utilisent déjà Manamind pour créer des expériences d’apprentissage exceptionnelles.",
+    "buttons": {
+      "discover": "Découvrir Manamind",
+      "demo": "Demander une démo"
+    }
+  }
+},
+  "joinPage": {
+  "hero": {
+    "badge": "Rejoins une équipe qui innove pour de vrai",
+    "title": "Tu as le Mana ?",
+    "subtitle": "Rejoins la Manateam dès maintenant"
+  },
+  "why": {
+    "title": "Pourquoi rejoindre Mana ?",
+    "subtitle": "Énergie, exigence, bienveillance — et des projets qui comptent.",
+    "cards": [
+      {
+        "icon": "zap",
+        "title": "L'énergie du collectif",
+        "text": "Ici, l'intelligence est toujours partagée. Les idées circulent, les expertises se croisent, ça fuse.",
+        "color": "from-pink-400 to-red-500"
+      },
+      {
+        "icon": "target",
+        "title": "Des projets concrets",
+        "text": "On agit, on livre, on apprend. Pas de bullshit, mais de vrais défis.",
+        "color": "from-green-400 to-emerald-500"
+      },
+      {
+        "icon": "heart",
+        "title": "La confiance d'abord",
+        "text": "Autonomie, sincérité, rigueur : chacun est responsable, sans micro-management.",
+        "color": "from-orange-400 to-pink-500"
+      },
+      {
+        "icon": "trending",
+        "title": "L'envie de progresser",
+        "text": "On teste, on ajuste, on monte en compétence — ensemble.",
+        "color": "from-blue-400 to-indigo-500"
+      }
+    ]
+  },
+  "form": {
+    "title": "Rejoins-nous",
+    "lead1": "Pas d'offre formatée ici.",
+    "lead2": "Mais si tu penses que tu as le Mana, on a forcément un truc à construire ensemble.",
+    "firstNameLabel": "Prénom",
+    "firstNamePlaceholder": "Ton prénom",
+    "lastNameLabel": "Nom",
+    "lastNamePlaceholder": "Ton nom",
+    "emailLabel": "Adresse mail",
+    "emailPlaceholder": "ton.email@exemple.com",
+    "messageLabel": "Message libre",
+    "messagePlaceholder": "Parle-nous de toi, de tes envies, de ce qui te motive...",
+    "cvLabel": "Upload CV",
+    "submit": "Envoyer ma candidature",
+    "sending": "Envoi en cours...",
+    "toasts": {
+      "missingCvTitle": "Merci d'ajouter un CV (PDF/DOC).",
+      "missingCvDesc": "Le fichier CV est requis pour envoyer ta candidature.",
+      "successTitle": "Candidature envoyée !",
+      "successDesc": "Merci — nous vous recontacterons rapidement.",
+      "errorTitle": "Envoi impossible",
+      "errorDesc": "Vérifiez votre connexion et réessayez."
+    }
+  },
+  "testimonials": {
+    "title": "Manapeople",
+    "subtitle": "Ils ont vécu l'expérience Mana",
+    "prevAria": "Témoignage précédent",
+    "nextAria": "Témoignage suivant",
+    "dotAria": "Aller au témoignage",
+    "items": [
+      {
+        "name": "Yanis Otmani Es Sakali",
+        "role": "Growth Manager & Business Developer",
+        "content": "Chez Mana, on vous fait confiance dès le départ. L'autonomie est réelle, on peut proposer, explorer, construire. On évolue dans un cadre structuré, avec de la rigueur dans les méthodes, mais toujours dans une atmosphère bienveillante.",
+        "photo": "/yanis.png"
+      },
+      {
+        "name": "Salhia Darmon",
+        "role": "Cheffe de projet innovation",
+        "content": "Chez Mana, on a la place d'être soi-même, de penser différemment, d'oser. L'exigence est là, mais elle est partagée.",
+        "photo": "/salhia.jpeg"
+      },
+      {
+        "name": "Alexandre Richard",
+        "role": "Manalumni",
+        "content": "Mon passage chez Mana m'a marqué : humainement, intellectuellement. J'en garde une vraie méthode… et de belles rencontres.",
+        "photo": "/alexandre.jpeg"
+      }
+    ]
+  },
+  "finalHook": {
+    "line1": "Mana, ce n'est pas juste un endroit où bosser.",
+    "line2": "C'est une façon d'être, de faire, de penser.",
+    "line3": "Tu veux en parler avec nous ? Commence par écrire.",
+    "button": "Candidature spontanée"
+  }
+},
+"resourcesPage": {
+  "hero": {
+    "badge": "Ressources & Insights",
+    "titlePrefix": "Le",
+    "titleHighlight": "Centre de Ressources",
+    "titleSuffix": "Mana",
+    "subtitle1": "Votre hub pour maîtriser l'innovation et l'excellence projet 🚀",
+    "subtitle2": "Outils, contenus académiques et publications exclusives pour vous accompagner.",
+    "badges": [
+      "Pensé pour la clarté",
+      "Ressources actionnables",
+      "Toujours à jour"
+    ]
+  },
+  "cards": {
+    "academic": {
+      "title": "Fiches outils & Contenus académiques",
+      "description": "Templates, fiches pratiques et supports d'apprentissage complets",
+      "button": "Parcourir les ressources"
+    },
+    "publications": {
+      "title": "Articles & Publications",
+      "description": "Analyses, études et points de vue pour aller plus loin",
+      "button": "Voir les publications"
+    },
+    "manamind": {
+      "title": "Ressources pour Manamind",
+      "description": "Accédez à la bibliothèque dédiée de Manamind : guides, méthodes et contenus exclusifs.",
+      "button": "Visiter"
+    }
+  },
+  "legal": {
+    "terms": "Pour consulter nos Conditions Générales, cliquez ici",
+    "privacy": "Pour en savoir plus sur notre politique de confidentialité, cliquez ici"
+  },
+  "dialog": {
+    "title": "Aperçu du document"
+  }
+},
+  "aboutPage": {
+  "hero": {
+    "badge": "Notre raison d’être",
+    "titlePrefix": "Animer les expertises pour",
+    "titleHighlight": "transformer l’action en impact.",
+    "subtitle": "Mana fait converger recherche, terrain et design de solutions pour accélérer l’innovation.",
+    "triad": "Trois approches, un même objectif : l’impact.",
+    "chips": [
+      "Innovation & stratégie",
+      "RSE & transitions",
+      "Pédagogie & compétences"
+    ]
+  },
+  "manasTitle": "Nos 3 Mana",
+  "manasSubtitle": "Un écosystème unique qui réunit conseil stratégique, plateforme pédagogique et organisme de formation pour passer de l’idée à l’impact.",
+  "manas": [
+    {
+      "id": "manadvise",
+      "title": "Manadvise",
+      "subtitle": "Conseil stratégique à l’intersection de la recherche et du terrain.",
+      "features": [
+        "Feuilles de route, décisions et mise à l’échelle.",
+        "Gouvernance, éthique & conformité (incl. IA).",
+        "Expérimentations rapides & mesure d’impact."
+      ]
+    },
+    {
+      "id": "manamind",
+      "title": "Manamind",
+      "subtitle": "Plateforme pour créer, animer et auditer des parcours d’apprentissage.",
+      "features": [
+        "Expérience apprenant engageante & gamification.",
+        "Pilotage encadrants & analytics temps réel.",
+        "Traçabilité & auditabilité des acquis."
+      ]
+    },
+    {
+      "id": "manacademy",
+      "title": "Manacademy",
+      "subtitle": "Organisme de formation (OF) sur l’innovation, la stratégie et la RSE.",
+      "features": [
+        "Un Organisme de Formation certifié, expert des grandes transitions : innovation, stratégie et RSE.",
+        "Des formats modulables : séminaires, ateliers, parcours hybrides, adaptés à vos enjeux concrets.",
+        "Un réseau d’experts praticiens qui allient rigueur académique et retours terrains opérationnels."
+      ]
+    }
+  ],
+  "identity": {
+    "title": "Notre identité",
+    "text": "“Mana” désigne l’énergie qui relie les individus et démultiplie le potentiel du collectif. C’est notre manière d’agir : allier rigueur scientifique, puissance du terrain et exigence de résultat."
+  },
+  "principles": {
+    "title": "Principes d’action",
+    "items": [
+      { "title": "Rigueur & clarté", "text": "Un cadre explicite, des décisions tracées, des mesures d’impact." },
+      { "title": "Co-construction", "text": "Des solutions bâties avec vos équipes, pas à côté." },
+      { "title": "Pragmatisme", "text": "Tester vite, apprendre, passer à l’échelle." },
+      { "title": "Responsabilité", "text": "Utilité sociale, sobriété et conformité au cœur." }
+    ]
+  },
+  "associates": {
+    "title": "Manassociés",
+    "subtitle": "Deux profils complémentaires, ancrés dans la recherche et l’action.",
+    "labels": {
+      "milestones": "Repères",
+      "education": "Formation",
+      "sectors": "Secteurs"
+    },
+    "footer": "Un binôme senior, renforcé par un réseau d’experts et de praticiens."
+  },
+  "team": {
+    "title": "Manateam",
+    "subtitle": "Une équipe compacte, pluridisciplinaire, exigeante et bienveillante.",
+    "items": []
+  },
+  "alumni": {
+    "title": "Manalumnis",
+    "items": []
+  },
+  "cta": {
+    "title": "Envie d’en savoir plus sur notre approche ?",
+    "subtitle": "Découvrons ensemble comment nos trois activités se renforcent pour créer de la valeur.",
+    "button": "Nos activités"
+  }
+},
+  "contact": {
+    "modalTitle": "Contactez-nous",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "company": "Entreprise",
+      "message": "Message",
+      "submit": "Envoyer",
+      "sending": "Envoi...",
+      "required": "Ce champ est requis",
+      "invalidEmail": "Email invalide"
+    },
+    "success": "Message envoyé avec succès !",
+    "error": "Erreur lors de l'envoi du message"
+  }
+}

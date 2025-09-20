@@ -1,129 +1,230 @@
-
-import React, { useEffect } from 'react';
-import ParticleBackground from '@/components/ParticleBackground';
-import LogoAnimation from '@/components/LogoAnimation';
-import { Rocket, PenTool, Cpu, GraduationCap, Mail, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import EntityCard from "@/components/EntityCard";
+import AnimatedStats from "@/components/AnimatedNumbers";
+import { Button } from "@/components/ui/button";
+import { Brain, GraduationCap, Lightbulb } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useEffect, useRef } from "react";
 
 const Index = () => {
-  // Function to create staggered animation for the content sections
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: 65, label: t("home.stats.partners"), suffix: "+" },
+    { value: 120, label: t("home.stats.projects"), suffix: "+" },
+    { value: 50, label: t("home.stats.organizations"), suffix: "+" },
+    { value: 700, label: t("home.stats.learnersPerYear"), suffix: "+" },
+  ];
+
+  const scrollToExpertises = () => {
+    const el = document.getElementById("expertises-section");
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Animation du HERO (logo → tagline → CTA)
+  const heroRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
-    const revealSections = document.querySelectorAll('.reveal-section');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    revealSections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      revealSections.forEach((section) => {
-        observer.unobserve(section);
+    const hero = heroRef.current;
+    if (!hero) return;
+    const show = () => {
+      hero.querySelectorAll(".reveal, .cta-appear").forEach((el) => {
+        el.classList.add("is-visible");
       });
     };
+    const t = setTimeout(show, 150);
+    return () => clearTimeout(t);
   }, []);
 
   return (
-    <div className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden text-white">
-      {/* Particle Background */}
-      <ParticleBackground />
+    <div className="min-h-screen bg-background">
+      <Navigation />
 
-      {/* Main Content */}
-      <main className="w-full max-w-4xl mx-auto px-6 py-12 relative z-10 space-y-16">
-        {/* Logo Section */}
-        <LogoAnimation className="mx-auto mb-16" />
+      {/* HERO */}
+      <section
+        ref={heroRef}
+        className="relative min-h-[92vh] w-full bg-white pt-[72px] pb-28 overflow-visible"
+      >
+        <div className="mx-auto h-full w-full flex flex-col items-center justify-start mt-6">
+          {/* 1) LOGO PRINCIPAL */}
+          <div
+            className="
+              reveal reveal--1
+              w-[min(1200px,92vw)]
+              h-[min(56vh,60vw)]
+              flex items-center justify-center
+            "
+          >
+            <img
+              src="/svg.png"
+              alt="Mana — Meaningful Innovation"
+              className="select-none pointer-events-none object-contain w-full h-full img-breath"
+              draggable={false}
+            />
+          </div>
 
-        {/* Hero Section */}
-        <div className="text-center space-y-8 reveal-section">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white">
-            Bienvenue dans l'univers Mana ! <Rocket className="inline-block ml-2 mb-1" />
-          </h1>
-          <p className="text-xl md:text-2xl text-white font-light max-w-2xl mx-auto">
-            La page mana.fr est en construction, pour patienter voici le nouvel univers Mana dans lequel gravitent nos expertises :
-          </p>
+          {/* 2) SOUS-LOGO (svg2) */}
+          <div
+            className="
+              reveal reveal--2
+              w-[min(700px,72vw)]
+              mt-2
+              flex items-center justify-center
+            "
+          >
+            <img
+              src="/svg2.png"
+              alt="Mana tagline"
+              className="select-none pointer-events-none object-contain w-full h-auto"
+              draggable={false}
+            />
+          </div>
+
+          {/* 3) CTA */}
+          <button
+            onClick={scrollToExpertises}
+            className="
+              cta-appear
+              mt-6 md:mt-7 lg:mt-8
+              px-6 py-3 bg-[#0C3D5E] text-white font-semibold rounded-md
+              hover:bg-[#0a324e] transition duration-300 shadow-md
+            "
+          >
+            {t("home.discoverMana")}
+          </button>
         </div>
 
-        {/* Services Section */}
-        <div className="grid md:grid-cols-3 gap-8 reveal-stagger">
-          {/* Manadvise */}
-          <div className="glass-card p-6 relative group hover:scale-105 transition-transform duration-300 border-2 border-white/30">
-            <img src="/dviseblc.png" alt="Manadvise Logo" className="h-12 mx-auto mb-4" />
-            <PenTool className="h-8 w-8 text-[#00a5b4] mb-4 mx-auto" />
-            <h3 className="text-xl font-semibold mb-2 text-white">Manadvise</h3>
-            <p className="text-white">
-              Conseil & recherche de pointe pour relever les défis de l'innovation.
-            </p>
-          </div>
+        {/* Animations inline (mêmes timings/effets que l'ancien index) */}
+        <style>{`
+          .reveal {
+            overflow: hidden;
+            will-change: clip-path;
+          }
 
-          {/* Manamind */}
-          <div className="glass-card p-6 relative group hover:scale-105 transition-transform duration-300 border-2 border-white/30">
-            <img src="/mindblc.png" alt="Manamind Logo" className="h-12 mx-auto mb-4" />
-            <Cpu className="h-8 w-8 text-[#71c088] mb-4 mx-auto" />
-            <h3 className="text-xl font-semibold mb-2 text-white">Manamind</h3>
-            <p className="text-white">
-              Une app nouvelle génération qui booste l'engagement et les compétences.
-            </p>
-            <div className="mt-4">
-              <a href="https://www.manamind.fr" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  className="bg-mana-green hover:bg-mana-light-green text-white font-bold button-hover transition-all duration-300 w-full"
-                >
-                  Essayer maintenant
-                </Button>
-              </a>
-            </div>
-          </div>
+          @keyframes wipe {
+            from {
+              clip-path: inset(0 100% 0 0 round 8px);
+            }
+            to {
+              clip-path: inset(0 0% 0 0 round 8px);
+            }
+          }
 
-          {/* Manacademy */}
-          <div className="glass-card p-6 relative group hover:scale-105 transition-transform duration-300 border-2 border-white/30">
-            <img src="/cademyblc.png" alt="Manacademy Logo" className="h-12 mx-auto mb-4" />
-            <GraduationCap className="h-8 w-8 text-[#dfaf2c] mb-4 mx-auto" />
-            <h3 className="text-xl font-semibold mb-2 text-white">Manacademy</h3>
-            <p className="text-white">
-              Un hub de formation et d'innovation pédagogique pour des apprentissages à fort impact.
-            </p>
-          </div>
-        </div>
+          .reveal--1.is-visible {
+            animation: wipe 3.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+          }
+          .reveal--2.is-visible {
+            animation: wipe 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) both 0.5s;
+          }
 
-        {/* Contact Section */}
-        <div className="text-center space-y-6 reveal-section">
-          <div className="glass-card p-6 max-w-md mx-auto border-2 border-white/30">
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-              Contact
+          @keyframes breath {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-2px) scaleX(1.006) scaleY(0.996); }
+            100% { transform: translateY(0) scale(1); }
+          }
+          .img-breath { animation: breath 6s ease-in-out 5s infinite; }
+
+          @keyframes ctaIn {
+            from { opacity: 0; transform: translateY(12px); filter: blur(4px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+          }
+          .cta-appear.is-visible { animation: ctaIn 1s ease-out both 0.5s; }
+
+          @media (prefers-reduced-motion: reduce) {
+            .reveal--1.is-visible,
+            .reveal--2.is-visible,
+            .img-breath,
+            .cta-appear.is-visible {
+              animation: none !important;
+            }
+          }
+        `}</style>
+      </section>
+
+      {/* Three Entities */}
+      <section id="expertises-section" className="py-20 bg-gradient-to-b from-white to-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0C3D5E] mb-6">
+              {t("home.ecosystemTitle")}
             </h2>
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Mail className="text-mana-green" size={20} />
-              <a href="mailto:contact@mana.fr" className="text-white hover:text-mana-green transition-colors">
-                contact@mana.fr
-              </a>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <Phone className="text-mana-green" size={20} />
-              <a href="tel:+33614031728" className="text-white hover:text-mana-green transition-colors">
-                06 14 03 17 28
-              </a>
-            </div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {t("home.ecosystemSubtitle")}
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            <EntityCard
+              name="Manadvise"
+              tagline={t("home.entities.manadvise.tagline")}
+              description={t("home.entities.manadvise.description")}
+              color="manadvise"
+              link="/manadvise"
+              icon={<Lightbulb className="h-6 w-6" />}
+            />
+            <EntityCard
+              name="Manamind"
+              tagline={t("home.entities.manamind.tagline")}
+              description={t("home.entities.manamind.description")}
+              color="manamind"
+              link="/manamind"
+              icon={<Brain className="h-6 w-6" />}
+            />
+            <EntityCard
+              name="Manacademy"
+              tagline={t("home.entities.manacademy.tagline")}
+              description={t("home.entities.manacademy.description")}
+              color="manacademy"
+              link="/manacademy"
+              icon={<GraduationCap className="h-6 w-6" />}
+            />
           </div>
         </div>
+      </section>
 
-        {/* Footer */}
-        <footer className="text-center pt-16 reveal-section">
-          <img src="/manablc.png" alt="Mana Logo" className="h-12 mx-auto mb-4" />
-          <p className="text-white text-sm font-medium tracking-wider">
-            Mana for Meaningful Innovation
-          </p>
-        </footer>
-      </main>
+      {/* Stats Section */}
+      <section className="py-20 bg-[#0c3d5e] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("home.impactTitle")}</h2>
+            <p className="text-xl text-white/90">{t("home.impactSubtitle")}</p>
+          </div>
+          <AnimatedStats stats={stats} />
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-to-br from-mana-accent/20 to-white">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E] mb-6">
+            {t("home.finalCtaTitle")}
+          </h2>
+          <p className="text-xl text-muted-foreground mb-12">{t("home.finalCtaSubtitle")}</p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Button variant="manamind" size="lg" asChild className="w-full">
+              <a href="/manamind">
+                {t("home.buttons.manamind")}
+                <Brain className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+            <Button variant="manacademy" size="lg" asChild className="w-full">
+              <a href="/manacademy">
+                {t("home.buttons.manacademy")}
+                <GraduationCap className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+            <Button variant="manadvise" size="lg" asChild className="w-full">
+              <a href="/manadvise">
+                {t("home.buttons.manadvise")}
+                <Lightbulb className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
