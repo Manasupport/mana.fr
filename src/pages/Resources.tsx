@@ -28,8 +28,8 @@ const Resources = () => {
     <div className="min-h-screen bg-background text-[#0c3d5e]">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-32 pb-24">
+  {/* Hero Section */}
+  <section className="relative overflow-hidden pt-24 pb-12">
         {/* halos */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-40 -left-32 w-[42rem] h-[42rem] rounded-full bg-gradient-to-br from-manamind to-manamind-dark opacity-30 blur-3xl" />
@@ -73,8 +73,8 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Main Cards */}
-      <section className="py-20">
+  {/* Main Cards */}
+  <section className="py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10">
             {/* Toolsheets & Academic Content */}
@@ -83,7 +83,7 @@ const Resources = () => {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-manacademy to-manacademy-dark flex items-center justify-center shadow-md">
                   <BookOpen className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl">
+                <CardTitle className="text-2xl text-[#0c3d5e]">
                   {t("resourcesPage.cards.academic.title", "Toolsheets and Academic Content")}
                 </CardTitle>
                 <CardDescription className="text-base text-[#0c3d5e]/80">
@@ -110,7 +110,7 @@ const Resources = () => {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-manamind to-manamind-dark flex items-center justify-center shadow-md">
                   <FileText className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl">
+                <CardTitle className="text-2xl text-[#0c3d5e]">
                   {t("resourcesPage.cards.publications.title", "Articles & Publications")}
                 </CardTitle>
                 <CardDescription className="text-base text-[#0c3d5e]/80">
@@ -133,12 +133,16 @@ const Resources = () => {
 
             {/* --- NOUVELLE BOX PLEIN-LARGEUR : RESSOURCES MANAMIND --- */}
             <Card className="md:col-span-2 group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-              <CardHeader className="relative z-10 text-center pb-6">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-manamind to-manamind-dark flex items-center justify-center shadow-md">
+              <CardHeader className="relative z-10 text-center pb-4">
+                <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-gradient-to-br from-manamind to-manamind-dark flex items-center justify-center shadow-md">
                   <Sparkles className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl">
-                  {t("resourcesPage.cards.manamind.title", "Resources for Manamind")}
+                <CardTitle className="text-2xl text-[#0c3d5e]">
+                  <span className="inline-flex items-center gap-2 justify-center">
+                    {/* Keep the prefix text, then show logo instead of the word "Manamind" */}
+                    <span>{t("resourcesPage.cards.manamind.titlePrefix", "Resources for")}</span>
+                    <img src="/Manamindsanslogo.png" alt="Manamind" className="h-[4.5rem] w-auto object-contain" style={{ transform: 'translateX(-2mm)' }} />
+                  </span>
                 </CardTitle>
                 <CardDescription className="text-base text-[#0c3d5e]/80">
                   {t("resourcesPage.cards.manamind.description", "Access Manamind’s dedicated library: guides, methods, and exclusive content.")}
