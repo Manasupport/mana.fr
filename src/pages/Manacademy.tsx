@@ -105,9 +105,9 @@ const axisOverrides: Record<
 const formationDescriptionOverrides: Record<string, string> = {
   // Innovation
   "Agilité & innovation en contexte industriel":
-    "Comprendre et adopter les méthodes agiles (Scrum, Kanban, Design Sprint…) et leurs implications dans les environnements techniques, industriels ou projets complexes.",
+    "Cette formation décrypte les clés d'un mindset agile et vous aide à concevoir votre modèle de conduite de projet adapté à votre métier.",
   "Culture & stratégie d'innovation":
-    "Décrypter les différents types d'innovation (produit, service, usage, business model), adopter une posture d'intrapreneur, diffuser l'innovation dans l'entreprise.",
+    "Cette formation décrypte les clés d'un mindset d'innovation et vous aide à adopter une posture d'intrapreneur pour transformer vos idées en impact durable.",
   "Innovation digitale & Intelligence artificielle":
     "Acculturation aux usages de l’IA et de l’innovation digitale, exploration d’outils IA/LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental des technologies.",
   "Business model design":
