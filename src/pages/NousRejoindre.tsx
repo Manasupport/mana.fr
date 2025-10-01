@@ -17,6 +17,9 @@ import {
   ChevronLeft,
   ChevronRight,
   Sparkles,
+  Handshake,
+  Users,
+  Award,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -164,15 +167,15 @@ const NousRejoindre = () => {
   const iconFor = (name: string) => {
     switch (name) {
       case "zap":
-        return <Zap className="h-8 w-8 text-white" />;
+        return <Handshake className="h-8 w-8 text-white" />;
       case "target":
-        return <Target className="h-8 w-8 text-white" />;
+        return <Users className="h-8 w-8 text-white" />;
       case "heart":
         return <Heart className="h-8 w-8 text-white" />;
       case "trending":
-        return <TrendingUp className="h-8 w-8 text-white" />;
+        return <Award className="h-8 w-8 text-white" />;
       default:
-        return <Zap className="h-8 w-8 text-white" />;
+        return <Handshake className="h-8 w-8 text-white" />;
     }
   };
 
@@ -180,42 +183,50 @@ const NousRejoindre = () => {
     <div className="min-h-screen bg-background text-[#0c3d5e]">
       <Navigation />
       
-      {/* HERO */}
-      <section className="pt-24 pb-24 px-4 relative overflow-hidden">
+  {/* HERO */}
+  <section className="pt-24 pb-12 px-4 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-32 -left-24 w-[40rem] h-[40rem] rounded-full blur-3xl opacity-30 bg-gradient-to-br from-primary to-secondary" />
-          <div className="absolute -bottom-24 -right-24 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-20 bg-gradient-to-br from-manamind to-manamind-dark" />
+          <div className="absolute -top-28 -left-20 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-28 bg-gradient-to-br from-[#ffedd5] to-[#fff7ed]" />
+          <div className="absolute -bottom-20 -right-20 w-[32rem] h-[32rem] rounded-full blur-3xl opacity-18 bg-gradient-to-br from-manamind to-manamind-dark" />
         </div>
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div
-            className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`transition-all duration-900 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="mx-auto mb-8 inline-flex items-center gap-3 rounded-full px-5 py-2 bg-white/80 backdrop-blur-md border border-white/60 shadow-sm">
+            <div className="mx-auto mb-6 inline-flex items-center gap-3 rounded-full px-4 py-1.5 bg-white/85 backdrop-blur-sm border border-white/60 shadow-sm">
               <Sparkles className="h-5 w-5 text-manamind" />
-              <span className="text-base font-medium">
+              <span className="text-sm font-medium">
                 {t("joinPage.hero.badge", "Rejoins une équipe qui innove pour de vrai")}
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            {/* Title with solid site color for better contrast over this background */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight text-[#0c3d5e]">
               {t("joinPage.hero.title", "Tu as le Mana ?")}
             </h1>
-            <p className="text-2xl text-manamind-dark mb-10">
+
+            <p className="text-xl md:text-2xl text-[#0c3d5e]/90 mb-6 max-w-3xl mx-auto">
               {t("joinPage.hero.subtitle", "Rejoins la Manateam dès maintenant")}
             </p>
 
-            <div className="flex justify-center">
-              <div className="h-1.5 w-28 rounded-full bg-gradient-to-r from-primary via-manamind to-secondary" />
+            <div className="flex items-center justify-center">
+              <Button
+                onClick={scrollToForm}
+                size="lg"
+                className="px-8 py-3 bg-[#083147] hover:bg-[#0c3d5e] text-white shadow-lg transition-colors"
+              >
+                {t("joinPage.cta.apply", "Postuler")}
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pourquoi rejoindre Mana */}
-      <section className="py-20 px-4">
+  {/* Pourquoi rejoindre Mana */}
+  <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
@@ -227,24 +238,41 @@ const NousRejoindre = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {whyCards.map((card, i) => (
-              <Card
-                key={i}
-                className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white"
-              >
-                <CardContent className="p-8 text-center">
-                  <div
-                    className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md bg-gradient-to-br ${card.color}`}
-                  >
-                    {iconFor(card.icon)}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-                  <p className="text-sm leading-relaxed text-[#0c3d5e]">
-                    {card.text}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            {whyCards.map((card, i) => {
+              // choose palette gradients to fit the site look
+              const gradients = [
+                "from-manamind to-manamind-dark",
+                "from-manadvise to-manadvise-dark",
+                "from-manacademy to-manacademy-dark",
+                "from-primary to-secondary",
+              ];
+
+              // If the card corresponds to "L'envie de progresser" (icon 'trending' or title match),
+              // force the orange hero gradient used in Articles/Publications.
+              let gradient = gradients[i % gradients.length];
+              if (card.icon === "trending" || (card.title && card.title.toLowerCase().includes("envie"))) {
+                gradient = "from-orange-400 to-pink-500";
+              }
+
+              return (
+                <Card
+                  key={i}
+                  className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white"
+                >
+                  <CardContent className="p-8 text-center">
+                    <div
+                      className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md bg-gradient-to-br ${gradient}`}
+                    >
+                      {iconFor(card.icon)}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+                    <p className="text-sm leading-relaxed text-[#0c3d5e]">
+                      {card.text}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -253,22 +281,33 @@ const NousRejoindre = () => {
       <section
         ref={formRef}
         id="candidature"
-        className="py-20 px-4 bg-gradient-to-br from-primary/10 via-white to-secondary/10"
+        className="py-12 px-4 bg-gradient-to-br from-primary/10 via-white to-secondary/10 scroll-mt-28"
       >
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">
-              {t("joinPage.form.title", "Rejoins-nous")}
-            </h2>
-            <p className="text-xl mb-2">{t("joinPage.form.lead1", "Pas d'offre formatée ici.")}</p>
-            <p className="text-xl font-semibold">
-              {t("joinPage.form.lead2", "Mais si tu penses que tu as le Mana, on a forcément un truc à construire ensemble.")}
-            </p>
+            <h2 className="text-4xl font-bold mb-4">{t("joinPage.form.title", "Rejoins-nous")}</h2>
+
+            <div className="mx-auto mb-4 max-w-2xl">
+              <div className="inline-flex items-center gap-3 mx-auto mb-3">
+                <span className="px-3 py-1 rounded-full text-sm font-medium bg-manamind/10 text-manamind">
+                  {t("joinPage.form.lead1", "Pas d'offre formatée ici.")}
+                </span>
+              </div>
+
+              <p className="text-lg md:text-xl font-semibold text-[#0c3d5e] mb-4">
+                {t(
+                  "joinPage.form.lead2",
+                  "Mais si tu penses que tu as le Mana, on a forcément un truc à construire ensemble."
+                )}
+              </p>
+
+              <div className="h-1 w-28 rounded-full mx-auto bg-gradient-to-r from-manamind to-secondary opacity-80" />
+            </div>
           </div>
 
           <Card className="bg-white/90 backdrop-blur-xl border border-primary/10 shadow-xl">
-            <CardContent className="p-10">
-              <form onSubmit={handleSubmit} className="space-y-8">
+            <CardContent className="p-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="firstName">
@@ -280,7 +319,7 @@ const NousRejoindre = () => {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
-                      className="mt-2 h-12 text-base focus-visible:ring-primary"
+                      className="mt-2 h-10 text-sm focus-visible:ring-primary"
                       placeholder={t("joinPage.form.firstNamePlaceholder", "Votre prénom") as string}
                     />
                   </div>
@@ -294,7 +333,7 @@ const NousRejoindre = () => {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
-                      className="mt-2 h-12 text-base focus-visible:ring-secondary"
+                      className="mt-2 h-10 text-sm focus-visible:ring-secondary"
                       placeholder={t("joinPage.form.lastNamePlaceholder", "Votre nom") as string}
                     />
                   </div>
@@ -311,7 +350,7 @@ const NousRejoindre = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="mt-2 h-12 text-base focus-visible:ring-manamind"
+                    className="mt-2 h-10 text-sm focus-visible:ring-manamind"
                     placeholder={t("joinPage.form.emailPlaceholder", "votre.email@exemple.com") as string}
                   />
                 </div>
@@ -326,7 +365,7 @@ const NousRejoindre = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    className="mt-2 min-h-[150px] text-base focus-visible:ring-primary"
+                    className="mt-2 min-h-[120px] text-sm focus-visible:ring-primary"
                     placeholder={t("joinPage.form.messagePlaceholder", "Parle-nous de toi, de tes envies, de ce qui te motive...") as string}
                   />
                 </div>
@@ -345,9 +384,9 @@ const NousRejoindre = () => {
 
                 <Button
                   type="submit"
-                  className="w-full h-14 text-lg font-medium text-white bg-gradient-to-r from-[#0c3d5e] via-manamind to-secondary hover:opacity-90"
+                  className="w-full h-12 text-base font-medium text-white bg-gradient-to-r from-[#0c3d5e] via-manamind to-secondary hover:opacity-90"
                 >
-                  <Send className="h-5 w-5 mr-3" />
+                  <Send className="h-4 w-4 mr-2" />
                   {t("joinPage.form.submit", "Envoyer ma candidature")}
                 </Button>
               </form>
@@ -357,7 +396,7 @@ const NousRejoindre = () => {
       </section>
 
       {/* Manapeople — Témoignages (NOUVEAU STYLE) */}
-      <section className="py-20 px-4">
+      <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-4xl font-bold text-[#0c3d5e] mb-3">
@@ -370,7 +409,7 @@ const NousRejoindre = () => {
 
           <div className="relative">
             {/* Carte verre dépoli */}
-            <div className="rounded-3xl bg-white/80 backdrop-blur border border-[#0c3d5e]/10 shadow-xl px-6 py-10 md:px-12 md:py-12">
+            <div className="rounded-3xl bg-white/90 backdrop-blur border border-[#0c3d5e]/10 shadow-2xl px-6 py-8 md:px-10 md:py-10">
               {/* Flèches flottantes */}
               <button
                 onClick={goToPrevious}
@@ -394,17 +433,17 @@ const NousRejoindre = () => {
                   className="text-center animate-[fadeIn_.4s_ease]"
                 >
                   {/* Avatar rond + halo */}
-                  <div className="relative mx-auto mb-6 h-24 w-24 rounded-full ring-4 ring-white shadow">
+                  <div className="relative mx-auto mb-4 h-20 w-20 rounded-full ring-4 ring-white shadow-lg overflow-hidden">
                     <img
                       src={testimonials[currentTestimonial].photo}
                       alt={testimonials[currentTestimonial].name}
                       className="h-full w-full rounded-full object-cover"
                     />
-                    <span className="absolute -bottom-2 -right-2 h-6 w-6 rounded-full bg-gradient-to-br from-[#71c088] to-[#00a5b4] ring-2 ring-white" />
+                    <span className="absolute -bottom-2 -right-2 h-5 w-5 rounded-full bg-gradient-to-br from-[#71c088] to-[#00a5b4] ring-2 ring-white" />
                   </div>
 
                   {/* Citation */}
-                  <blockquote className="mx-auto max-w-4xl text-xl md:text-[22px] leading-relaxed text-[#0c3d5e] font-medium">
+                  <blockquote className="mx-auto max-w-4xl text-lg md:text-xl leading-relaxed text-[#0c3d5e] font-semibold italic">
                     “{testimonials[currentTestimonial].content}”
                   </blockquote>
 
@@ -419,14 +458,14 @@ const NousRejoindre = () => {
                   </div>
 
                   {/* Barre de progression + bullets */}
-                  <div className="mt-8 flex flex-col items-center gap-4">
+                    <div className="mt-6 flex flex-col items-center gap-3">
                     {/* Progress bar (se relance à chaque key change) */}
-                    <div className="h-1 w-56 md:w-72 rounded-full bg-[#0c3d5e]/15 overflow-hidden">
+                    <div className="h-1 w-48 md:w-64 rounded-full bg-[#0c3d5e]/12 overflow-hidden">
                       <div className="h-full bg-[#0c3d5e] animate-progress" />
                     </div>
 
                     {/* Bullets modernes */}
-                    <div className="flex items-center justify-center gap-2">
+                    <div className="flex items-center justify-center gap-3">
                       {testimonials.map((_, index) => (
                         <button
                           key={index}
