@@ -392,7 +392,9 @@ const Publications = () => {
                         </div>
 
                         <CardTitle className="text-2xl md:text-3xl leading-tight mb-4 group-hover:text-blue-600 transition-colors">
-                          {featuredArticles[0].title}
+                          <span className="transition-colors group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#0c3d5e] group-hover:via-[#dfaf2c] group-hover:to-[#0c3d5e]">
+                            {featuredArticles[0].title}
+                          </span>
                         </CardTitle>
                         
                         <CardDescription className="text-lg leading-relaxed text-gray-600 mb-6">
@@ -444,7 +446,9 @@ const Publications = () => {
                           </div>
 
                           <h3 className="text-lg font-bold leading-tight mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                            {article.title}
+                            <span className="transition-colors group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#0c3d5e] group-hover:via-[#dfaf2c] group-hover:to-[#0c3d5e]">
+                              {article.title}
+                            </span>
                           </h3>
                           
                           <p className="text-sm text-gray-600 line-clamp-2 mb-4">
@@ -520,7 +524,9 @@ const Publications = () => {
                       </div>
 
                       <CardTitle className="text-lg leading-tight mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                        {article.title}
+                        <span className="transition-colors group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#0c3d5e] group-hover:via-[#dfaf2c] group-hover:to-[#0c3d5e]">
+                          {article.title}
+                        </span>
                       </CardTitle>
                       
                       <CardDescription className="text-sm text-gray-600 line-clamp-3 mb-6">
