@@ -3,8 +3,13 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import PartnerCarousel from "@/components/PartnerCarousel";
 import { Brain, Users, BarChart3, ExternalLink, ArrowRight } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+
+/** Tokens de marque */
+const manaDark = "#0C3D5E";
+const manaMind = "#71c088"; // couleur Manamind
+const manaMindDark = "#3f7f68";
 
 type Testimonial = {
   content: string;
@@ -15,7 +20,7 @@ type Testimonial = {
 const Manamind = () => {
   const { t } = useTranslation();
 
-  // Témoignages récupérés via i18n
+  // Témoignages via i18n
   const testimonials = t("manamindPage.testimonials", {
     returnObjects: true,
     defaultValue: [],
@@ -27,17 +32,16 @@ const Manamind = () => {
     return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   };
 
-  // Carousel state
+  // Carousel
   const [idx, setIdx] = useState(0);
   const [isPaused, setPaused] = useState(false);
   const autoplayRef = useRef<number | null>(null);
   const INTERVAL = 9000;
-
   const goNext = () => setIdx((i) => (i + 1) % testimonials.length);
   const goPrev = () => setIdx((i) => (i - 1 + testimonials.length) % testimonials.length);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || testimonials.length === 0) return;
     autoplayRef.current && window.clearInterval(autoplayRef.current);
     autoplayRef.current = window.setInterval(goNext, INTERVAL) as unknown as number;
     return () => {
@@ -47,19 +51,56 @@ const Manamind = () => {
   }, [isPaused, idx, testimonials.length]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Halos & grain globaux */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
+        <div
+          className="absolute -top-52 -left-40 h-[42rem] w-[42rem] rounded-full blur-3xl opacity-60"
+          style={{ background: `radial-gradient(circle, ${manaMind}22 0%, ${manaMind}08 50%, transparent 100%)` }}
+        />
+        <div
+          className="absolute -bottom-64 -right-40 h-[42rem] w-[42rem] rounded-full blur-3xl opacity-40"
+          style={{ background: `radial-gradient(circle, ${manaDark}15 0%, ${manaDark}05 50%, transparent 100%)` }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3Ccircle cx='19' cy='19' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
+      </div>
+
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-manamind-light via-white to-manamind-light/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="fade-in-up">
-              <div className="inline-flex items-center space-x-2 bg-manamind/10 text-manamind-dark px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <Brain className="h-4 w-4" />
-                <span>{t("manamindPage.hero.badge", "Build Skills, Drive Innovation")}</span>
-              </div>
+     {/* HERO — taille visuel fixée + pas de rognage du titre */}
+    <section
+      className="relative pt-32 pb-20"
+      // on enlève overflow-hidden pour éviter tout clipping vertical du titre
+      // style visuel inchangé
+    >
+      <div
+        className="absolute inset-0 bg-gradient-to-br opacity-95 -z-10"
+        style={{
+          background: `linear-gradient(135deg, ${manaDark}08 0%, white 25%, ${manaMind}12 75%, white 100%)`,
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Colonne gauche */}
+          <div className="space-y-8">
+            <div
+              className="inline-flex items-center space-x-3 px-6 py-3 rounded-full border backdrop-blur-sm transition-all duration-300 hover:scale-105"
+              style={{ backgroundColor: `${manaMind}14`, borderColor: `${manaMind}33`, boxShadow: `0 4px 20px ${manaMind}25` }}
+            >
+              <div className="h-2 w-2 rounded-full animate-pulse" style={{ backgroundColor: manaMind }} />
+              <Brain className="h-5 w-5" style={{ color: manaMind }} />
+              <span className="text-sm font-semibold tracking-wide" style={{ color: manaDark }}>
+                {t("manamindPage.hero.badge", "Build Skills, Drive Innovation")}
+              </span>
+            </div>
 
+            {/* Fix rognage : on évite leading-tight qui coupe les descendantes avec bg-clip-text */}
+            <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold text-[#0C3D5E] mb-6 leading-tight">
                 {t("manamindPage.hero.titlePrefix", "L'expérience d'apprentissage innovante qui")}
                 <span className="text-manamind">
@@ -67,106 +108,174 @@ const Manamind = () => {
                   {t("manamindPage.hero.highlight", "booste l'engagement")}
                 </span>
               </h1>
-
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                {t("manamindPage.hero.subtitle", "Application pour créer, animer et suivre des parcours pédagogiques sur mesure.")}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="manamind" size="lg" asChild>
-                  <a href="https://www.manamind.fr" target="_blank" rel="noopener noreferrer">
-                    {t("manamindPage.hero.buttons.discover", "Découvrir Manamind")}
-                    <ExternalLink className="ml-2 h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <a href="https://app.manamind.fr" target="_blank" rel="noopener noreferrer">
-                    {t("manamindPage.hero.buttons.login", "Se connecter")}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </Button>
-              </div>
             </div>
 
-            <div className="fade-in-up stagger-2 relative">
-              <div className="relative bg-white rounded-2xl shadow-2xl p-8 floating-animation">
+            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+              {t(
+                "manamindPage.hero.subtitle",
+                "Application pour créer, animer et suivre des parcours pédagogiques sur mesure."
+              )}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                variant="manamind"
+                size="lg"
+                asChild
+                className="group px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                style={{ boxShadow: `0 8px 25px ${manaMind}35` }}
+              >
+                <a href="https://www.manamind.fr" target="_blank" rel="noopener noreferrer">
+                  {t("manamindPage.hero.buttons.discover", "Découvrir Manamind")}
+                  <ExternalLink className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                asChild
+                className="px-8 py-6 text-lg font-medium rounded-2xl border-2 transition-all duration-300 hover:scale-105"
+                style={{ borderColor: `${manaDark}25`, color: manaDark }}
+              >
+                <a href="https://app.manamind.fr" target="_blank" rel="noopener noreferrer">
+                  {t("manamindPage.hero.buttons.login", "Se connecter")}
+                  <ArrowRight className="ml-3 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Colonne droite — visuel GRAND, comme sur ton screen 1 */}
+          <div className="relative lg:justify-end flex">
+            <div className="relative">
+              {/* bulles décoratives */}
+              <div
+                className="absolute -top-10 -right-10 h-40 w-40 rounded-full opacity-25"
+                style={{ backgroundColor: manaMind }}
+              />
+              <div
+                className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full opacity-20"
+                style={{ backgroundColor: manaDark }}
+              />
+
+              {/* Carte maquette : largeur accrue + ratio + shadow */}
+              <div
+                className="
+                  relative bg-white rounded-3xl shadow-2xl
+                  p-8
+                  transition-transform duration-500
+                "
+                style={{
+                  // 👇 dimensions proches du rendu “grand” du 1er screen
+                  width: "680px",          // force la largeur visuelle
+                  maxWidth: "42vw",        // garde la responsivité sur grands écrans
+                  minWidth: "520px",       // évite qu'elle ne devienne petite
+                  aspectRatio: "16 / 9",   // ratio stable
+                  boxShadow: "0 40px 80px rgba(12,61,94,0.20)",
+                }}
+              >
+                {/* “UI phantom” */}
                 <div className="space-y-4">
-                  <div className="h-4 bg-manamind/20 rounded w-3/4"></div>
-                  <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                  <div className="h-4 rounded w-3/4" style={{ backgroundColor: `${manaMind}20` }} />
+                  <div className="h-4 bg-gray-200 rounded w-1/2" />
                   <div className="grid grid-cols-3 gap-4 my-6">
-                    <div className="h-20 bg-manamind/10 rounded-lg flex items-center justify-center">
-                      <Brain className="h-8 w-8 text-manamind" />
+                    <div className="h-24 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${manaMind}12` }}>
+                      <Brain className="h-9 w-9" style={{ color: manaMind }} />
                     </div>
-                    <div className="h-20 bg-manamind/10 rounded-lg flex items-center justify-center">
-                      <Users className="h-8 w-8 text-manamind" />
+                    <div className="h-24 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${manaMind}12` }}>
+                      <Users className="h-9 w-9" style={{ color: manaMind }} />
                     </div>
-                    <div className="h-20 bg-manamind/10 rounded-lg flex items-center justify-center">
-                      <BarChart3 className="h-8 w-8 text-manamind" />
+                    <div className="h-24 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${manaMind}12` }}>
+                      <BarChart3 className="h-9 w-9" style={{ color: manaMind }} />
                     </div>
                   </div>
-                  <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+                  <div className="h-4 bg-gray-200 rounded w-2/3" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Trois piliers */}
-      <section className="py-16 bg-gradient-to-r from-manamind to-manamind-dark text-white">
+      </div>
+    </section>
+      {/* Trois piliers — cartes premium */}
+      <section className="py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: manaDark }}>
               {t("manamindPage.pillars.title", "Trois piliers pour transformer l'apprentissage")}
             </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              {t("manamindPage.pillars.subtitle", "Une approche complète qui adresse tous les besoins de l'écosystème éducatif")}
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {t(
+                "manamindPage.pillars.subtitle",
+                "Une approche complète qui adresse tous les besoins de l'écosystème éducatif"
+              )}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center fade-in-up stagger-1">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">{t("manamindPage.pillars.pillar1.title", "Pilotage pour les encadrants")}</h3>
-              <p className="text-white/90">{t("manamindPage.pillars.pillar1.text", "Outils de suivi en temps réel...")}</p>
-            </div>
-
-            <div className="text-center fade-in-up stagger-2">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Brain className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">{t("manamindPage.pillars.pillar2.title", "Expérience pour les apprenants")}</h3>
-              <p className="text-white/90">{t("manamindPage.pillars.pillar2.text", "Interface engageante, parcours personnalisés...")}</p>
-            </div>
-
-            <div className="text-center fade-in-up stagger-3">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <BarChart3 className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">{t("manamindPage.pillars.pillar3.title", "Auditabilité pour les institutions")}</h3>
-              <p className="text-white/90">{t("manamindPage.pillars.pillar3.text", "Reporting complet, certification des acquis...")}</p>
-            </div>
+            {[
+              {
+                icon: Users,
+                titleKey: "manamindPage.pillars.pillar1.title",
+                textKey: "manamindPage.pillars.pillar1.text",
+                titleFallback: "Pilotage pour les encadrants",
+                textFallback: "Outils de suivi en temps réel...",
+              },
+              {
+                icon: Brain,
+                titleKey: "manamindPage.pillars.pillar2.title",
+                textKey: "manamindPage.pillars.pillar2.text",
+                titleFallback: "Expérience pour les apprenants",
+                textFallback: "Interface engageante, parcours personnalisés...",
+              },
+              {
+                icon: BarChart3,
+                titleKey: "manamindPage.pillars.pillar3.title",
+                textKey: "manamindPage.pillars.pillar3.text",
+                titleFallback: "Auditabilité pour les institutions",
+                textFallback: "Reporting complet, certification des acquis...",
+              },
+            ].map((p, i) => {
+              const Icon = p.icon;
+              return (
+                <div
+                  key={i}
+                  className="group relative p-8 rounded-3xl border transition-all duration-500 hover:shadow-xl hover:-translate-y-2 bg-white"
+                  style={{ borderColor: `${manaMind}22` }}
+                >
+                  <div className="absolute top-0 left-8 h-1 w-16 rounded-full" style={{ backgroundColor: manaMind }} />
+                  <div
+                    className="h-16 w-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: `${manaMind}15`, border: `1px solid ${manaMind}33` }}
+                  >
+                    <Icon className="h-8 w-8" style={{ color: manaMind }} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3" style={{ color: manaDark }}>
+                    {t(p.titleKey, p.titleFallback)}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">{t(p.textKey, p.textFallback)}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Ils nous font confiance */}
-      <section className="py-12 bg-[#0C3D5E]">
+      {/* Ils nous font confiance — bandeau sombre */}
+      <section className="py-12" style={{ backgroundColor: manaDark }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <PartnerCarousel />
         </div>
       </section>
 
-      {/* Témoignages */}
-      <section className="py-16">
+      {/* Témoignages — carte premium + bullets contrôles */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E] mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: manaDark }}>
               {t("manamindPage.testimonialsTitle", "Ce que disent nos utilisateurs")}
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-gray-600">
               {t("manamindPage.testimonialsSubtitle", "Des retours concrets sur l’impact de Manamind :")}
             </p>
           </div>
@@ -177,19 +286,29 @@ const Manamind = () => {
             onMouseLeave={() => setPaused(false)}
           >
             {testimonials.length > 0 && (
-              <div className="rounded-2xl border bg-white/90 backdrop-blur p-8 shadow-lg transition-all duration-500">
+              <div
+                className="rounded-2xl border bg-white/90 backdrop-blur p-8 shadow-lg transition-all duration-500"
+                style={{ borderColor: `${manaMind}18` }}
+              >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-manamind/15 text-[#0C3D5E] font-bold flex items-center justify-center shrink-0">
+                  <div
+                    className="w-12 h-12 rounded-full font-bold flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: `${manaMind}15`, color: manaDark }}
+                  >
                     {getInitials(testimonials[idx].author)}
                   </div>
                   <div className="flex-1">
-                    <p className="text-lg text-[#0C3D5E] italic leading-relaxed">
+                    <p className="text-lg italic leading-relaxed" style={{ color: manaDark }}>
                       “{testimonials[idx].content}”
                     </p>
                     <div className="mt-4">
-                      <div className="text-sm font-semibold text-[#0C3D5E]">{testimonials[idx].author}</div>
+                      <div className="text-sm font-semibold" style={{ color: manaDark }}>
+                        {testimonials[idx].author}
+                      </div>
                       {testimonials[idx].role && (
-                        <div className="text-xs text-[#0C3D5E]/70">{testimonials[idx].role}</div>
+                        <div className="text-xs" style={{ color: `${manaDark}B3` }}>
+                          {testimonials[idx].role}
+                        </div>
                       )}
                     </div>
                   </div>
@@ -197,7 +316,6 @@ const Manamind = () => {
               </div>
             )}
 
-            {/* Controls */}
             <div className="mt-6 flex items-center justify-between">
               <div className="flex gap-2">
                 {testimonials.map((_, i) => (
@@ -206,8 +324,11 @@ const Manamind = () => {
                     aria-label={`Témoignage ${i + 1}`}
                     onClick={() => setIdx(i)}
                     className={`h-2 rounded-full transition-all ${
-                      i === idx ? "w-6 bg-manamind" : "w-2 bg-manamind/30 hover:bg-manamind/60"
+                      i === idx ? "w-6" : "w-2"
                     }`}
+                    style={{
+                      backgroundColor: i === idx ? manaMind : `${manaMind}66`,
+                    }}
                   />
                 ))}
               </div>
@@ -215,7 +336,8 @@ const Manamind = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-manamind/40 text-[#0C3D5E] hover:bg-manamind/10"
+                  className="hover:scale-105"
+                  style={{ borderColor: `${manaMind}50`, color: manaDark }}
                   onClick={goPrev}
                 >
                   {t("manamindPage.testimonialsPrev", "Précédent")}
@@ -223,38 +345,51 @@ const Manamind = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-manamind/40 text-[#0C3D5E] hover:bg-manamind/10"
+                  className="hover:scale-105"
+                  style={{ borderColor: `${manaMind}50`, color: manaDark }}
                   onClick={goNext}
                 >
                   {t("manamindPage.testimonialsNext", "Suivant")}
                 </Button>
               </div>
             </div>
-            <div className="mt-2 text-center text-xs text-[#0C3D5E]/60">
+            <div className="mt-2 text-center text-xs" style={{ color: `${manaDark}99` }}>
               {t("manamindPage.testimonialsHint", "Astuce : survolez pour mettre en pause la lecture automatique.")}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-manamind-light to-white">
+      {/* CTA final — cohérence Manacademy */}
+      <section className="py-24 bg-gradient-to-br from-[#f6fffb] to-white relative">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: manaDark }}>
             {t("manamindPage.finalCta.title", "Prêt à transformer votre pédagogie ?")}
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-xl text-gray-600 mb-10">
             {t("manamindPage.finalCta.subtitle", "Rejoignez les institutions qui utilisent déjà Manamind...")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="manamind" size="xl" asChild>
+            <Button
+              variant="manamind"
+              size="xl"
+              asChild
+              className="group px-10 py-6 text-xl font-semibold rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl"
+              style={{ boxShadow: `0 12px 30px ${manaMind}35` }}
+            >
               <a href="https://www.manamind.fr" target="_blank" rel="noopener noreferrer">
                 {t("manamindPage.finalCta.buttons.discover", "Découvrir Manamind")}
-                <ExternalLink className="ml-2 h-5 w-5" />
+                <ExternalLink className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button variant="outline" size="xl" asChild>
+            <Button
+              variant="outline"
+              size="xl"
+              asChild
+              className="px-10 py-6 text-xl font-medium rounded-2xl border-2 transition-all duration-300 hover:scale-105"
+              style={{ borderColor: `${manaDark}25`, color: manaDark }}
+            >
               <a href="https://calendar.app.google/gcDBoWYsL3MKQX9r5" target="_blank" rel="noopener noreferrer">
                 {t("manamindPage.finalCta.buttons.demo", "Demander une démo")}
                 <ArrowRight className="ml-2 h-5 w-5" />
