@@ -54,6 +54,7 @@ const Index = () => {
               h-[min(56vh,60vw)]
               flex items-center justify-center
             "
+            style={{ transform: 'scale(0.65)', transformOrigin: 'center top' }} // réduire davantage et recentrer
           >
             <img
               src="/svg.png"
@@ -202,6 +203,12 @@ const Index = () => {
           <p className="text-xl text-muted-foreground mb-12">{t("home.finalCtaSubtitle")}</p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Button variant="manadvise" size="lg" asChild className="w-full">
+              <a href="/manadvise">
+                {t("home.buttons.manadvise")}
+                <Lightbulb className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
             <Button variant="manamind" size="lg" asChild className="w-full">
               <a href="/manamind">
                 {t("home.buttons.manamind")}
@@ -212,12 +219,6 @@ const Index = () => {
               <a href="/manacademy">
                 {t("home.buttons.manacademy")}
                 <GraduationCap className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="manadvise" size="lg" asChild className="w-full">
-              <a href="/manadvise">
-                {t("home.buttons.manadvise")}
-                <Lightbulb className="ml-2 h-5 w-5" />
               </a>
             </Button>
           </div>
