@@ -152,7 +152,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const to = process.env.CONTACT_EMAIL || 'contact@mana.fr';
 
     const result = await resend.emails.send({
-      from: 'onboarding@resend.dev', // passe à "support_manamind@manadvise.fr" quand ton domaine est Verified
+      from: 'contact@mana.fr', // passe à "support_manamind@manadvise.fr" quand ton domaine est Verified
       to,
       subject,
       html: htmlContent,
