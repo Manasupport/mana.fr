@@ -28,39 +28,54 @@ const ContactModal = ({ children }: ContactModalProps) => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Construire le lien mailto
-    const subject = encodeURIComponent("Nouveau contact depuis le site MANA");
-    const body = encodeURIComponent(
-      `Prénom: ${formData.firstName}\n` +
-      `Nom: ${formData.lastName}\n` +
-      `Fonction: ${formData.position}\n` +
-      `Email: ${formData.email}\n\n` +
-      `Message:\n${formData.message}`
-    );
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'contact-modal',
+          formData: {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            position: formData.position,
+            email: formData.email,
+            message: formData.message
+          }
+        }),
+      });
 
-    const mailtoLink = `mailto:contact@mana.fr?subject=${subject}&body=${body}`;
+      if (response.ok) {
+        // Fermer la modal et afficher un message de succès
+        setIsOpen(false);
+        toast({
+          title: "Message envoyé",
+          description: "Votre message a été envoyé avec succès. Nous vous recontacterons rapidement.",
+        });
 
-    // Ouvrir le client email
-    window.location.href = mailtoLink;
-
-    // Fermer la modal et afficher un message de succès
-    setIsOpen(false);
-    toast({
-      title: "Email préparé",
-      description: "Votre client email va s'ouvrir pour envoyer le message.",
-    });
-
-    // Réinitialiser le formulaire
-    setFormData({
-      firstName: "",
-      lastName: "",
-      position: "",
-      email: "",
-      message: ""
-    });
+        // Réinitialiser le formulaire
+        setFormData({
+          firstName: "",
+          lastName: "",
+          position: "",
+          email: "",
+          message: ""
+        });
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {

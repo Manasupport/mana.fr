@@ -38,6 +38,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { toast } from "sonner";
 import {
   formationAxes as axesData,
   formations as formationsData,
@@ -137,7 +138,66 @@ const manaGold = "#dfaf2c";
 
 const Manacademy = () => {
   const { t } = useTranslation();
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
   const [openAxis, setOpenAxis] = useState<string | null>(null);
+  
+  // États pour le formulaire
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    position: "",
+    phone: "",
+    needType: "",
+    message: "",
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'manacademy',
+          formData
+        }),
+      });
+
+      if (response.ok) {
+        toast.success("Demande envoyée", {
+          description: "Votre demande a été envoyée avec succès. Nous vous recontacterons rapidement.",
+        });
+
+        // Réinitialiser le formulaire
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          company: "",
+          position: "",
+          phone: "",
+          needType: "",
+          message: "",
+        });
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast.error("Erreur", {
+        description: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
+      });
+    }
+  };
 
   const axes = axesData.map((ax) => {
     const ov = axisOverrides[ax.id];
@@ -483,38 +543,93 @@ const Manacademy = () => {
           </div>
 
           {/* Formulaire — sans blur */}
-          <div className="bg-white border border-gray-100 rounded-3xl shadow-xl p-8 sm:p-10 mx-auto max-w-2xl">
+          <form onSubmit={handleSubmit} className="bg-white border border-gray-100 rounded-3xl shadow-xl p-8 sm:p-10 mx-auto max-w-2xl">
             <div className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium" style={{ color: manaDark }}>
+                  <label className="block text-sm font-medium mb-2" style={{ color: manaDark }}>
                     <User className="inline h-4 w-4 mr-1" style={{ color: manaGold }} />
-                    {t("manacademyPage.form.nameLabel", "Nom / Prénom")}
+                    {t("manacademyPage.form.firstNameLabel", "Prénom")} *
                   </label>
-                  <Input placeholder={t("manacademyPage.form.namePlaceholder", "Votre nom complet")} />
+                  <Input 
+                    placeholder={t("manacademyPage.form.firstNamePlaceholder", "Votre prénom")} 
+                    value={formData.firstName}
+                    onChange={(e) => handleInputChange("firstName", e.target.value)}
+                    required
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium" style={{ color: manaDark }}>
-                    <Building2 className="inline h-4 w-4 mr-1" style={{ color: manaGold }} />
-                    {t("manacademyPage.form.organizationLabel", "Organisation")}
+                  <label className="block text-sm font-medium mb-2" style={{ color: manaDark }}>
+                    <User className="inline h-4 w-4 mr-1" style={{ color: manaGold }} />
+                    {t("manacademyPage.form.lastNameLabel", "Nom")} *
                   </label>
-                  <Input placeholder={t("manacademyPage.form.organizationPlaceholder", "Votre entreprise")} />
+                  <Input 
+                    placeholder={t("manacademyPage.form.lastNamePlaceholder", "Votre nom")} 
+                    value={formData.lastName}
+                    onChange={(e) => handleInputChange("lastName", e.target.value)}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium mb-2" style={{ color: manaDark }}>
+                    <Building2 className="inline h-4 w-4 mr-1" style={{ color: manaGold }} />
+                    {t("manacademyPage.form.organizationLabel", "Organisation")} *
+                  </label>
+                  <Input 
+                    placeholder={t("manacademyPage.form.organizationPlaceholder", "Votre entreprise")} 
+                    value={formData.company}
+                    onChange={(e) => handleInputChange("company", e.target.value)}
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2" style={{ color: manaDark }}>
+                    <User className="inline h-4 w-4 mr-1" style={{ color: manaGold }} />
+                    {t("manacademyPage.form.positionLabel", "Fonction")}
+                  </label>
+                  <Input 
+                    placeholder={t("manacademyPage.form.positionPlaceholder", "Votre fonction")} 
+                    value={formData.position}
+                    onChange={(e) => handleInputChange("position", e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium mb-2" style={{ color: manaDark }}>
+                    <Mail className="inline h-4 w-4 mr-1" style={{ color: manaGold }} />
+                    {t("manacademyPage.form.emailLabel", "E-mail")} *
+                  </label>
+                  <Input 
+                    type="email" 
+                    placeholder={t("manacademyPage.form.emailPlaceholder", "votre@email.com")} 
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2" style={{ color: manaDark }}>
+                    {t("manacademyPage.form.phoneLabel", "Téléphone")}
+                  </label>
+                  <Input 
+                    type="tel" 
+                    placeholder={t("manacademyPage.form.phonePlaceholder", "06 12 34 56 78")} 
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
+                  />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium" style={{ color: manaDark }}>
-                  <Mail className="inline h-4 w-4 mr-1" style={{ color: manaGold }} />
-                  {t("manacademyPage.form.emailLabel", "E-mail")}
-                </label>
-                <Input type="email" placeholder={t("manacademyPage.form.emailPlaceholder", "votre@email.com")} />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium" style={{ color: manaDark }}>
+                <label className="block text-sm font-medium mb-2" style={{ color: manaDark }}>
                   {t("manacademyPage.form.needTypeLabel", "Type de besoin")}
                 </label>
-                <Select>
+                <Select onValueChange={(value) => handleInputChange("needType", value)} value={formData.needType}>
                   <SelectTrigger>
                     <SelectValue
                       placeholder={t("manacademyPage.form.needTypePlaceholder", "Sélectionnez votre besoin")}
@@ -538,9 +653,9 @@ const Manacademy = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium" style={{ color: manaDark }}>
+                <label className="block text-sm font-medium mb-2" style={{ color: manaDark }}>
                   <MessageSquare className="inline h-4 w-4 mr-1" style={{ color: manaGold }} />
-                  {t("manacademyPage.form.messageLabel", "Message")}
+                  {t("manacademyPage.form.messageLabel", "Message")} *
                 </label>
                 <Textarea
                   placeholder={t(
@@ -548,6 +663,9 @@ const Manacademy = () => {
                     "Décrivez votre projet, vos objectifs, votre contexte..."
                   )}
                   rows={4}
+                  value={formData.message}
+                  onChange={(e) => handleInputChange("message", e.target.value)}
+                  required
                 />
               </div>
 
@@ -555,7 +673,7 @@ const Manacademy = () => {
                 {t("manacademyPage.form.submitButton", "Envoyer ma demande")}
               </Button>
             </div>
-          </div>
+          </form>
         </div>
       </section>
 

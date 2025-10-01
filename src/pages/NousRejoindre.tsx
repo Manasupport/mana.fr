@@ -75,39 +75,65 @@ const NousRejoindre = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Construire le lien mailto
-    const subject = encodeURIComponent("Nouvelle candidature depuis le site MANA");
-    const body = encodeURIComponent(
-      `Prénom: ${formData.firstName}\n` +
-      `Nom: ${formData.lastName}\n` +
-      `Email: ${formData.email}\n\n` +
-      `Message:\n${formData.message}\n\n` +
-      `Note: CV joint dans l'email (${formData.cv?.name || 'non fourni'})`
-    );
+    try {
+      let cvBase64 = null;
+      let cvName = null;
+      
+      // Convertir le fichier en base64 si présent
+      if (formData.cv) {
+        cvName = formData.cv.name;
+        const reader = new FileReader();
+        cvBase64 = await new Promise((resolve) => {
+          reader.onload = () => resolve(reader.result);
+          reader.readAsDataURL(formData.cv!);
+        });
+      }
 
-    const mailtoLink = `mailto:contact@mana.fr?subject=${subject}&body=${body}`;
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'nous-rejoindre',
+          formData: {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            message: formData.message,
+            cvFileName: cvName,
+            cvBase64: cvBase64
+          }
+        }),
+      });
 
-    // Ouvrir le client email
-    window.location.href = mailtoLink;
+      if (response.ok) {
+        toast(t("joinPage.form.toasts.successTitle", "Candidature envoyée"), {
+          description: t("joinPage.form.toasts.successDesc", "Votre candidature a été envoyée avec succès. Nous vous recontacterons rapidement."),
+        });
 
-    // Afficher un message d'information
-    toast(t("joinPage.form.toasts.successTitle", "Email préparé"), {
-      description: t("joinPage.form.toasts.successDesc", "Votre client email va s'ouvrir. N'oubliez pas de joindre votre CV manuellement."),
-    });
-
-    // Réinitialiser le formulaire
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      message: "",
-      cv: null,
-    });
-    const fileInput = document.getElementById("cv") as HTMLInputElement | null;
-    if (fileInput) fileInput.value = "";
+        // Réinitialiser le formulaire
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          message: "",
+          cv: null,
+        });
+        const fileInput = document.getElementById("cv") as HTMLInputElement | null;
+        if (fileInput) fileInput.value = "";
+      } else {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast.error("Erreur", {
+        description: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
+      });
+    }
   };
 
   const goToPrevious = () => {
