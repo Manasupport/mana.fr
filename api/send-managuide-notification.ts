@@ -35,7 +35,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Préparer le contenu de l'email
     const emailData = {
       from: 'MANA <noreply@mana.fr>',
-      to: ['support@manadvise.fr'], // Remplacez par votre email de notification
+      to: ['contact@mana.fr'], // Remplacez par votre email de notification
       subject: `🎯 Nouveau téléchargement Managuide - ${firstName} ${lastName}`,
       html: `
         <div style="font-family: 'Inter', 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 16px; overflow: hidden;">
