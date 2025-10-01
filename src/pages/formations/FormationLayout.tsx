@@ -4,20 +4,19 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, CheckCircle2, MessageSquare } from "lucide-react";
+import { ArrowLeft, Calendar, CheckCircle2, MessageSquare, Sparkles, Star, Zap } from "lucide-react";
 
 /**
- * FormationLayout — Manacademy
- * Refonte esthétique :
- * - Hero immersif (halo + bruit fin), titres centrés
- * - Cartes “glass” avec bords en dégradé doré, hover subtil
- * - Séparateurs élégants (ligne + marqueor)
- * - CTA primaire + CTA flottant (désactivable)
- * - Micro-animations CSS sans dépendance (prefers-reduced-motion respecté)
- * - 100% rétrocompatible : même API de props
+ * FormationLayout — Manacademy Premium
+ * Design ultra-professionnel avec :
+ * - Hero sophistiqué avec halos décoratifs multiples et gradients complexes
+ * - Cards premium avec backdrop-blur avancé et micro-animations
+ * - CTA unique optimisé pour éviter les répétitions
+ * - Effets visuels de haute qualité et transitions fluides
+ * - Direction artistique UX/UI de niveau professionnel
  */
 
-// Tokens DA Manacademy
+// Tokens DA Manacademy Premium
 const manaDark = "#0C3D5E";
 const manaGold = "#dfaf2c";
 const manaGoldBorder = `${manaGold}33`;
@@ -133,83 +132,128 @@ export default function FormationLayout(props: CourseTemplateProps) {
         </div>
       </section>
 
-      {/* HERO */}
-      <section className="relative py-16 overflow-hidden">
-        {/* Halo + bruit fin */}
+      {/* HERO PREMIUM */}
+      <section className="relative py-24 overflow-hidden" style={{ 
+        background: `linear-gradient(135deg, 
+          rgba(252, 248, 240, 0.95), 
+          rgba(248, 245, 235, 0.98), 
+          rgba(250, 247, 240, 0.96)
+        )`
+      }}>
+        {/* Halos décoratifs multiples avec couleurs enrichies */}
         <div className="absolute inset-0 -z-10">
+          {/* Halo principal avec gradient multicolore enrichi */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(1200px 500px at 50% 0%, rgba(223,175,44,0.15), transparent 60%)",
+                "radial-gradient(1400px 600px at 50% 0%, rgba(223,175,44,0.35), rgba(113,192,136,0.12), rgba(252,248,240,0.8) 70%)",
             }}
           />
+          {/* Halos secondaires colorés avec intensité augmentée */}
           <div
-            className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
+            className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl"
+            style={{ backgroundColor: manaGold }}
+          />
+          <div
+            className="absolute top-3/4 right-1/4 w-80 h-80 rounded-full opacity-12 blur-3xl"
+            style={{ backgroundColor: manaDark }}
+          />
+          {/* Nouveau halo vert subtil renforcé */}
+          <div
+            className="absolute top-1/2 right-1/6 w-64 h-64 rounded-full opacity-8 blur-3xl"
+            style={{ backgroundColor: '#71c088' }}
+          />
+          {/* Texture subtile pour plus de profondeur */}
+          <div
+            className="absolute inset-0 opacity-[0.02] mix-blend-overlay"
             style={{ backgroundImage: noiseDataUrl }}
           />
         </div>
 
         <div className="max-w-6xl mx-auto px-4 text-center">
           {badge && (
-            <div className="mb-5 flex justify-center">
-              <div className="glow px-3 py-1.5 rounded-full border text-sm font-medium bg-white/80 backdrop-blur-sm"
-                   style={{ borderColor: manaGoldBorder, color: manaDark }}>
-                <Badge variant="secondary" className="align-middle bg-transparent border-0 p-0 text-inherit">
+            <div className="mb-8 flex justify-center">
+              <div 
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-sm border transition-all duration-300 hover:scale-105"
+                style={{ 
+                  background: `linear-gradient(135deg, ${manaGold}18, rgba(113,192,136,0.08))`,
+                  borderColor: `${manaGold}35`,
+                  boxShadow: `0 8px 32px ${manaGold}25, 0 4px 16px rgba(113,192,136,0.1)`
+                }}
+              >
+                <Sparkles className="h-5 w-5" style={{ color: manaGold }} />
+                <span className="text-sm font-semibold tracking-wide" style={{ color: manaDark }}>
                   {badge}
-                </Badge>
+                </span>
               </div>
             </div>
           )}
 
           <h1
-            className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 tracking-tight hero-fade"
+            className="text-5xl md:text-6xl font-bold leading-tight mb-8 tracking-tight hero-fade"
             style={{ color: manaDark }}
           >
             {title}
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto hero-fade-delayed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed hero-fade-delayed mb-12">
             {summary}
           </p>
 
-          {/* meta */}
+          {/* Meta info premium */}
           {meta.length > 0 && (
-            <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm hero-fade-delayed">
+            <div className="mb-12 flex flex-wrap justify-center gap-4 text-sm hero-fade-delayed">
               {meta.map((m, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center rounded-full border px-3 py-1 bg-white/70 backdrop-blur-sm"
-                  style={{ borderColor: manaGoldBorder }}
+                  className="inline-flex items-center rounded-2xl border px-4 py-2 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                  style={{ 
+                    borderColor: `${manaGold}30`, 
+                    background: `linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(223,175,44,0.05))`,
+                    boxShadow: `0 4px 16px rgba(223, 175, 44, 0.15), 0 2px 8px rgba(113,192,136,0.08)`
+                  }}
                 >
-                  <m.icon className="h-4 w-4 mr-2" style={{ color: manaGold }} />
-                  {m.text}
+                  <m.icon className="h-5 w-5 mr-3" style={{ color: manaGold }} />
+                  <span style={{ color: manaDark, fontWeight: '500' }}>{m.text}</span>
                 </span>
               ))}
             </div>
           )}
 
-          <div className="mt-8 hero-fade-delayed">
-            <PrimaryCta href={finalCtaHref} label={props.ctaButton ?? ctaButton} />
+          {/* CTA Principal Premium */}
+          <div className="hero-fade-delayed">
+            <PremiumCta href={finalCtaHref} label={props.ctaButton ?? ctaButton} />
           </div>
         </div>
       </section>
 
       <SectionDivider />
 
-      {/* POURQUOI */}
-      <section className="py-14 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="section-title">{whyTitle}</h2>
-          <div className="grid md:grid-cols-[1fr,320px] gap-8 mt-6">
-            <p className="text-muted-foreground leading-relaxed text-balance">{whyText}</p>
+      {/* POURQUOI - Section Premium */}
+      <section className="py-20 bg-gradient-to-br from-white to-gray-50/50 relative">
+        {/* Halos décoratifs subtils */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full opacity-5 blur-3xl"
+            style={{ backgroundColor: manaGold }}
+          />
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <h2 className="section-title mb-12">{whyTitle}</h2>
+          <div className="grid lg:grid-cols-[1fr,400px] gap-12 items-start">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border" style={{ borderColor: `${manaGold}20` }}>
+              <p className="text-lg text-muted-foreground leading-relaxed">{whyText}</p>
+            </div>
 
             {pills.length > 0 && (
-              <div className="grid gap-3">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold mb-6" style={{ color: manaDark }}>Points clés</h3>
                 {pills.map((b, i) => (
                   <GlassRow key={i}>
-                    <b.icon className="h-5 w-5" style={{ color: manaGold }} />
-                    <span className="text-sm" style={{ color: manaDark }}>
+                    <b.icon className="h-6 w-6 flex-shrink-0" style={{ color: manaGold }} />
+                    <span className="text-sm font-medium" style={{ color: manaDark }}>
                       {b.label}
                     </span>
                   </GlassRow>
@@ -306,44 +350,44 @@ export default function FormationLayout(props: CourseTemplateProps) {
         </>
       )}
 
-      {/* CTA FINAL */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0 -z-10"
-          style={{
-            background:
-              "radial-gradient(900px 340px at 50% 0%, rgba(223,175,44,0.14), transparent 60%)",
-          }}
-        />
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-center" style={{ color: manaDark }}>
-            {ctaTitle}
+      {/* SECTION CONTACT PREMIUM - Remplace CTA final redondant */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+        {/* Halos lumineux sophistiqués */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full opacity-20 blur-3xl"
+            style={{ backgroundColor: manaGold }}
+          />
+          <div 
+            className="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full opacity-15 blur-3xl"
+            style={{ backgroundColor: '#4f46e5' }}
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <div 
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-8 backdrop-blur-sm"
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}
+          >
+            <Zap className="h-5 w-5" style={{ color: manaGold }} />
+            <span className="text-sm font-semibold tracking-wide text-white">
+              Formation sur-mesure
+            </span>
+          </div>
+
+          <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+            {ctaTitle || "Créons votre formation idéale"}
           </h3>
+          
           {props.ctaText !== "" && ctaText && (
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
               {ctaText}
             </p>
           )}
-          <PrimaryCta href={finalCtaHref} label={props.ctaButton ?? "Discuter"} size="lg" />
+          
+          <PremiumCta href={finalCtaHref} label={props.ctaButton ?? "Discuter"} size="lg" />
         </div>
       </section>
-
-      {/* CTA flottant (boost conv.) */}
-      {showFloatingCta && (
-        <div className="fixed bottom-4 left-0 right-0 z-40 px-4 md:px-0">
-          <div className="mx-auto max-w-3xl">
-            <div
-              className="rounded-2xl border backdrop-blur-md bg-white/85 shadow-xl flex items-center justify-between gap-3 px-4 py-3 floating-enter"
-              style={{ borderColor: manaGoldBorder }}
-            >
-              <div className="text-sm md:text-base font-medium truncate" style={{ color: manaDark }}>
-                {title}
-              </div>
-              <PrimaryCta href={finalCtaHref} label={props.ctaButton ?? "Discuter"} />
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>
@@ -354,13 +398,35 @@ export default function FormationLayout(props: CourseTemplateProps) {
 
 function SectionDivider() {
   return (
-    <div className="relative h-12">
+    <div className="relative h-16 flex items-center justify-center">
+      {/* Ligne principale avec gradient */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="h-px w-full max-w-6xl mx-auto" style={{ background: `linear-gradient(90deg, transparent, ${manaGoldBorder}, transparent)` }} />
+        <div 
+          className="h-px w-full max-w-6xl mx-auto" 
+          style={{ 
+            background: `linear-gradient(90deg, transparent, ${manaGold}60, ${manaGold}, ${manaGold}60, transparent)` 
+          }} 
+        />
       </div>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="h-2 w-2 rounded-full" style={{ backgroundColor: manaGold }} />
+      
+      {/* Ornement central premium */}
+      <div className="relative z-10 flex items-center justify-center">
+        <div 
+          className="h-4 w-4 rounded-full border-2 bg-white shadow-lg" 
+          style={{ borderColor: manaGold }}
+        >
+          <div 
+            className="h-2 w-2 rounded-full m-0.5" 
+            style={{ backgroundColor: manaGold }}
+          />
+        </div>
       </div>
+      
+      {/* Halos décoratifs */}
+      <div 
+        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-8 rounded-full opacity-20 blur-xl"
+        style={{ backgroundColor: manaGold }}
+      />
     </div>
   );
 }
@@ -374,26 +440,35 @@ function GlassCard({
 }) {
   return (
     <div
-      className={`rounded-2xl p-5 transition-transform card-hover ${
-        variant === "raised" ? "shadow-md" : ""
+      className={`group relative rounded-3xl p-6 transition-all duration-500 card-hover ${
+        variant === "raised" ? "hover:shadow-2xl hover:-translate-y-2" : "hover:shadow-xl hover:-translate-y-1"
       }`}
       style={{
-        background:
-          "linear-gradient(0deg, rgba(255,255,255,0.82), rgba(255,255,255,0.82))",
-        backdropFilter: "blur(6px)",
+        background: "linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7))",
+        backdropFilter: "blur(20px)",
         border: "1px solid",
-        borderColor: manaGoldBorder,
-        boxShadow: "0 1px 0 rgba(12,61,94,0.04)",
+        borderColor: `${manaGold}20`,
+        boxShadow: `0 8px 32px rgba(223,175,44,0.15), 0 1px 0 rgba(255,255,255,0.8) inset`,
       }}
     >
-      <div
-        className="rounded-xl p-0.5"
+      {/* Halo interne au hover */}
+      <div 
+        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(223,175,44,0.22), rgba(223,175,44,0.06))",
+          background: `linear-gradient(135deg, ${manaGold}08, transparent 60%)`,
+        }}
+      />
+      
+      {/* Contour doré premium */}
+      <div
+        className="relative rounded-2xl p-1"
+        style={{
+          background: `linear-gradient(135deg, ${manaGold}25, ${manaGold}10, ${manaGold}25)`,
         }}
       >
-        <div className="rounded-[10px] bg-white/90 p-4">{children}</div>
+        <div className="rounded-xl bg-white/95 backdrop-blur-sm p-5 relative z-10">
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -402,22 +477,32 @@ function GlassCard({
 function GlassRow({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className="rounded-xl border p-3 flex items-center gap-3 transition-all card-hover"
+      className="group rounded-2xl border p-4 flex items-center gap-4 transition-all duration-300 card-hover hover:shadow-lg"
       style={{
-        borderColor: manaGoldBorder,
-        backgroundColor: manaGoldBg,
-        backdropFilter: "blur(4px)",
+        borderColor: `${manaGold}25`,
+        backgroundColor: `rgba(255, 255, 255, 0.9)`,
+        backdropFilter: "blur(12px)",
+        boxShadow: `0 4px 16px ${manaGold}10`,
       }}
     >
-      {children}
+      {/* Effet de brillance au hover */}
+      <div 
+        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          background: `linear-gradient(135deg, ${manaGold}05, transparent 50%)`,
+        }}
+      />
+      <div className="relative z-10 flex items-center gap-4 w-full">
+        {children}
+      </div>
     </div>
   );
 }
 
-function PrimaryCta({
+function PremiumCta({
   href,
   label,
-  size = "md",
+  size = "lg",
 }: {
   href: string;
   label: string;
@@ -427,17 +512,34 @@ function PrimaryCta({
     <Button
       asChild
       size={size === "lg" ? "lg" : "default"}
-      className="shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-4"
+      className="group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-4"
       style={{
-        backgroundColor: manaGold,
-        color: "#0B2236",
-        boxShadow: "0 10px 30px rgba(223,175,44,0.35), 0 2px 6px rgba(12,61,94,0.08)",
-        fontWeight: 700,
+        background: `linear-gradient(135deg, ${manaGold}, #d4a029)`,
+        color: "white",
+        boxShadow: `0 16px 40px ${manaGold}45, 0 4px 16px rgba(12,61,94,0.15), 0 2px 8px rgba(113,192,136,0.1)`,
+        fontWeight: 600,
+        padding: size === "lg" ? "16px 32px" : "12px 24px",
+        fontSize: size === "lg" ? "18px" : "16px",
+        borderRadius: "16px",
+        border: `1px solid ${manaGold}40`,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.background = 'linear-gradient(135deg, #c4941f, #b8851a)';
+        e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.background = `linear-gradient(135deg, ${manaGold}, #d4a029)`;
+        e.currentTarget.style.transform = 'scale(1)';
       }}
     >
       <a href={href} target="_blank" rel="noopener noreferrer" aria-label="Discuter de votre contexte">
-        {label}
-        <Calendar className="ml-2 h-5 w-5" />
+        <span className="relative z-10 flex items-center gap-3">
+          <Star className="h-5 w-5" />
+          {label}
+          <Calendar className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </span>
+        {/* Effet de brillance au hover */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
       </a>
     </Button>
   );
@@ -457,14 +559,26 @@ const cssEnhance = `
     color:${manaDark};
     text-align:center;
     font-weight:800;
-    letter-spacing:-0.01em;
-    font-size:1.5rem;
+    letter-spacing:-0.02em;
+    font-size:1.75rem;
+    position: relative;
   }
   @media (min-width:768px){
-    .section-title{ font-size:1.75rem; }
+    .section-title{ font-size:2.25rem; }
   }
-  .card-hover{ will-change: transform, box-shadow; }
-  .card-hover:hover{ transform: translateY(1px); }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, ${manaGold}, transparent);
+    border-radius: 2px;
+  }
+  .card-hover{ will-change: transform, box-shadow; transition: all 0.3s ease; }
+  .card-hover:hover{ transform: translateY(-4px); }
   .glow{
     box-shadow: 0 0 0 6px rgba(223,175,44,0.08), 0 8px 24px rgba(223,175,44,0.20);
   }
