@@ -122,7 +122,7 @@ const welcomeEmailData = {
                     MANA Innovation
                   </p>
                   <p style="margin:0 0 16px 0;font-family:'Segoe UI', Arial, sans-serif;font-size:12px;line-height:1.6;color:#94a3b8;">
-                    Contact : <a href="mailto:hello@mana.fr" style="color:#c7d2fe;text-decoration:none;">hello@mana.fr</a> · Site : <a href="https://mana.fr" style="color:#c7d2fe;text-decoration:none;">mana.fr</a>
+                    Contact : <a href="mailto:contact@mana.fr" style="color:#c7d2fe;text-decoration:none;">hello@mana.fr</a> · Site : <a href="https://mana.fr" style="color:#c7d2fe;text-decoration:none;">mana.fr</a>
                   </p>
                   <p style="margin:0;font-family:'Segoe UI', Arial, sans-serif;font-size:11px;line-height:1.6;color:#64748b;">
                     Si vous ne souhaitez plus recevoir nos emails, 
@@ -165,7 +165,7 @@ Ressources complémentaires :
 - Manacademy : https://mana.fr/manacademy
 - Manadvise : https://mana.fr/manadvise
 
-MANA Innovation — Contact : hello@mana.fr — https://mana.fr
+MANA — Contact : contact@mana.fr — https://mana.fr
 Si vous ne souhaitez plus recevoir nos emails, cliquez ici.
   `
 };
