@@ -28,15 +28,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // --- CONFIG expéditeur & routage ---
     const FROM_LABEL = 'MANA';
-    const FROM_EMAIL = 'contact@mana.fr'; // demandé
-    const BCC_SUPPORT = 'support_manamind@mana.fr'; // pour recevoir la copie
+    const FROM_EMAIL = 'contact@mana.fr';
     const REPLY_TO = 'contact@mana.fr';
 
     const welcomeEmailData = {
       from: `${FROM_LABEL} <${FROM_EMAIL}>`,
       to: [email],
-      // Ajoute une copie discrète côté support (tu peux passer en "cc" si tu préfères)
-      bcc: [BCC_SUPPORT],
       reply_to: REPLY_TO,
       subject: `${firstName}, votre Managuide de l'innovation est prêt`,
       html: `
