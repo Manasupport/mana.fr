@@ -1,226 +1,171 @@
-// api/send-welcome-email.ts
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+// api/send-welcome-email.ts (remplace uniquement welcomeEmailData)
+const welcomeEmailData = {
+  from: 'MANA Innovation <hello@mana.fr>',
+  to: [email],
+  subject: `${firstName}, votre Managuide de l'innovation est prêt`,
+  html: `
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>MANA • Managuide</title>
+      <style>
+        /* Reset email-safe minimal */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table { border-collapse: collapse !important; }
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        body { margin: 0 !important; padding: 0 !important; width: 100% !important; }
+        /* Dark mode friendly (optionnel) */
+        @media (prefers-color-scheme: dark) {
+          body, .bg-page { background-color: #0b1220 !important; }
+          .card, .muted { background-color: #121a2b !important; }
+          .text-body { color: #e6edf5 !important; }
+          .text-muted { color: #9fb0c8 !important; }
+          .divider { border-color: #223354 !important; }
+        }
+      </style>
+    </head>
+    <body style="background:#f6f8fb;" class="bg-page">
+      <!-- Preheader (invisible) -->
+      <div style="display:none;max-height:0;overflow:hidden;opacity:0;">
+        Votre Managuide de l'innovation est disponible. Accès et étapes clés à suivre.
+      </div>
 
-interface WelcomeEmailData {
-  email: string;
-  firstName: string;
-  lastName: string;
-}
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f8fb;">
+        <tr>
+          <td align="center" style="padding:40px 16px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:640px;background:#ffffff;border-radius:14px;overflow:hidden;" class="card">
+              <!-- Header bandeau -->
+              <tr>
+                <td style="background:#0C3D5E;padding:28px 32px;">
+                  <h1 style="margin:0;font-family:'Segoe UI', Arial, sans-serif;font-size:22px;line-height:1.3;color:#ffffff;font-weight:700;">
+                    Bienvenue ${firstName}
+                  </h1>
+                  <p style="margin:8px 0 0 0;font-family:'Segoe UI', Arial, sans-serif;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.92);">
+                    Votre Managuide de l'innovation est prêt.
+                  </p>
+                </td>
+              </tr>
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+              <!-- Contenu principal -->
+              <tr>
+                <td style="padding:28px 32px;">
+                  <p style="margin:0 0 16px 0;font-family:'Segoe UI', Arial, sans-serif;font-size:15px;line-height:1.7;color:#0f2740;" class="text-body">
+                    Merci pour votre confiance. Vous venez de télécharger le <strong>Managuide de l'innovation</strong>.
+                  </p>
 
-  try {
-    const { email, firstName, lastName }: WelcomeEmailData = req.body;
+                  <!-- Bloc points clés -->
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f9;border:1px solid #e5e9f0;border-radius:12px;">
+                    <tr>
+                      <td style="padding:20px 20px 8px 20px;">
+                        <h2 style="margin:0 0 8px 0;font-family:'Segoe UI', Arial, sans-serif;font-size:16px;line-height:1.4;color:#0C3D5E;font-weight:700;">
+                          Ce que vous allez retrouver
+                        </h2>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:0 20px 20px 20px;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-family:'Segoe UI', Arial, sans-serif;font-size:14px;line-height:1.65;color:#3b516b;">
+                          <tr>
+                            <td valign="top" style="width:26px;padding:6px 0;"><span style="display:inline-block;background:#0C3D5E;color:#fff;width:22px;height:22px;border-radius:11px;font-size:12px;line-height:22px;text-align:center;font-weight:600;">1</span></td>
+                            <td style="padding:6px 0;">12 méthodes essentielles d'innovation</td>
+                          </tr>
+                          <tr>
+                            <td valign="top" style="width:26px;padding:6px 0;"><span style="display:inline-block;background:#dfaf2c;color:#fff;width:22px;height:22px;border-radius:11px;font-size:12px;line-height:22px;text-align:center;font-weight:600;">2</span></td>
+                            <td style="padding:6px 0;">Fiches pratiques prêtes à l'emploi</td>
+                          </tr>
+                          <tr>
+                            <td valign="top" style="width:26px;padding:6px 0;"><span style="display:inline-block;background:#0C3D5E;color:#fff;width:22px;height:22px;border-radius:11px;font-size:12px;line-height:22px;text-align:center;font-weight:600;">3</span></td>
+                            <td style="padding:6px 0;">Cadres décisionnels pour prioriser et mesurer l'impact</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
 
-    if (!email || !firstName) {
-      return res.status(400).json({ 
-        error: 'Missing required fields: email, firstName' 
-      });
-    }
+                  <!-- Lien d'accès discret (pas de gros bouton) -->
+                  <p style="margin:18px 0 0 0;font-family:'Segoe UI', Arial, sans-serif;font-size:14px;line-height:1.65;color:#3b516b;">
+                    Accéder au guide : 
+                    <a href="https://mana.fr/publications/managuide-innovation" style="color:#0C3D5E;text-decoration:underline;">https://mana.fr/publications/managuide-innovation</a>
+                  </p>
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY;
-    if (!RESEND_API_KEY) {
-      return res.status(500).json({ error: 'Email service not configured' });
-    }
+                  <!-- Prochaines étapes -->
+                  <hr class="divider" style="border:none;border-top:1px solid #e6edf3;margin:28px 0;" />
+                  <h3 style="margin:0 0 8px 0;font-family:'Segoe UI', Arial, sans-serif;font-size:16px;line-height:1.4;color:#0C3D5E;font-weight:700;">
+                    Prochaines étapes
+                  </h3>
+                  <ul style="margin:8px 0 0 18px;padding:0;font-family:'Segoe UI', Arial, sans-serif;font-size:14px;line-height:1.7;color:#3b516b;">
+                    <li>Identifier les méthodes adaptées à vos enjeux</li>
+                    <li>Lancer un test rapide sur un projet pilote</li>
+                    <li>Mesurer l'impact et itérer</li>
+                  </ul>
 
-    const welcomeEmailData = {
-      from: 'MANA Innovation <hello@mana.fr>',
-      to: [email],
-      subject: `🚀 ${firstName}, votre Managuide de l'innovation est prêt !`,
-      html: `
-        <div style="font-family: 'Inter', 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; background: white;">
-          <!-- Header avec dégradé MANA -->
-          <div style="background: linear-gradient(135deg, #0c3d5e 0%, #dfaf2c 100%); padding: 40px 32px; text-align: center;">
-            <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
-              🎯 Bienvenue ${firstName} !
-            </h1>
-            <p style="color: rgba(255,255,255,0.9); margin: 12px 0 0 0; font-size: 18px; font-weight: 400;">
-              Votre guide innovation vous attend
-            </p>
-          </div>
-          
-          <!-- Contenu principal -->
-          <div style="padding: 40px 32px;">
-            <!-- Message de bienvenue -->
-            <div style="margin-bottom: 32px; text-align: center;">
-              <h2 style="color: #0c3d5e; margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">
-                Merci pour votre confiance ! 🙏
-              </h2>
-              <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0;">
-                Vous venez de télécharger notre <strong>Managuide de l'innovation</strong> — 
-                12 méthodes éprouvées pour transformer vos idées en impact concret.
-              </p>
+                  <!-- Ressources complémentaires -->
+                  <div style="margin:24px 0 0 0;padding:16px 16px;border:1px solid #e5e9f0;border-radius:12px;background:#fafbfc;">
+                    <p style="margin:0 0 6px 0;font-family:'Segoe UI', Arial, sans-serif;font-size:14px;line-height:1.6;color:#0C3D5E;font-weight:700;">
+                      Ressources complémentaires
+                    </p>
+                    <p style="margin:0;font-family:'Segoe UI', Arial, sans-serif;font-size:14px;line-height:1.65;color:#3b516b;">
+                      Publications : <a href="https://mana.fr/publications" style="color:#0C3D5E;text-decoration:underline;">https://mana.fr/publications</a><br/>
+                      Manacademy : <a href="https://mana.fr/manacademy" style="color:#0C3D5E;text-decoration:underline;">https://mana.fr/manacademy</a><br/>
+                      Manadvise : <a href="https://mana.fr/manadvise" style="color:#0C3D5E;text-decoration:underline;">https://mana.fr/manadvise</a>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Footer -->
+              <tr>
+                <td style="background:#0f172a;padding:22px 32px;text-align:center;">
+                  <p style="margin:0 0 8px 0;font-family:'Segoe UI', Arial, sans-serif;font-size:14px;line-height:1.6;color:#ffffff;font-weight:600;">
+                    MANA Innovation
+                  </p>
+                  <p style="margin:0 0 16px 0;font-family:'Segoe UI', Arial, sans-serif;font-size:12px;line-height:1.6;color:#94a3b8;">
+                    Contact : <a href="mailto:hello@mana.fr" style="color:#c7d2fe;text-decoration:none;">hello@mana.fr</a> · Site : <a href="https://mana.fr" style="color:#c7d2fe;text-decoration:none;">mana.fr</a>
+                  </p>
+                  <p style="margin:0;font-family:'Segoe UI', Arial, sans-serif;font-size:11px;line-height:1.6;color:#64748b;">
+                    Si vous ne souhaitez plus recevoir nos emails, 
+                    <a href="#" style="color:#8fa3bf;text-decoration:underline;">cliquez ici</a>
+                  </p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Micro note conformité -->
+            <div style="max-width:640px;margin-top:12px;color:#8aa0b8;font-family:'Segoe UI', Arial, sans-serif;font-size:11px;text-align:center;">
+              Cet email a été envoyé à ${email}.
             </div>
-            
-            <!-- Ce qui vous attend -->
-            <div style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 16px; padding: 24px; margin-bottom: 32px;">
-              <h3 style="color: #0c3d5e; margin: 0 0 20px 0; font-size: 18px; font-weight: 600;">
-                📚 Ce que vous allez découvrir
-              </h3>
-              <div style="display: grid; gap: 12px;">
-                <div style="display: flex; align-items: flex-start; gap: 12px;">
-                  <span style="background: #0c3d5e; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0;">1</span>
-                  <span style="color: #475569; font-size: 15px; line-height: 1.5;">
-                    <strong>12 méthodes essentielles</strong> d'innovation testées et approuvées
-                  </span>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 12px;">
-                  <span style="background: #dfaf2c; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0;">2</span>
-                  <span style="color: #475569; font-size: 15px; line-height: 1.5;">
-                    <strong>Fiches pratiques</strong> prêtes à l'emploi pour vos projets
-                  </span>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 12px;">
-                  <span style="background: #0c3d5e; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0;">3</span>
-                  <span style="color: #475569; font-size: 15px; line-height: 1.5;">
-                    <strong>Cadres décisionnels</strong> pour prioriser et mesurer l'impact
-                  </span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- CTA Principal -->
-            <div style="text-align: center; margin-bottom: 32px;">
-              <a href="https://mana.fr/publications/managuide-innovation" 
-                 style="display: inline-block; background: linear-gradient(135deg, #0c3d5e 0%, #dfaf2c 100%); color: white; text-decoration: none; padding: 16px 32px; border-radius: 12px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 12px rgba(12, 61, 94, 0.3); transition: all 0.3s ease;">
-                📖 Accéder au guide complet
-              </a>
-            </div>
-            
-            <!-- Prochaines étapes -->
-            <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 24px; margin-bottom: 32px;">
-              <h3 style="color: #0c3d5e; margin: 0 0 20px 0; font-size: 18px; font-weight: 600;">
-                🚀 Et maintenant ?
-              </h3>
-              <div style="display: grid; gap: 16px;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <span style="color: #dfaf2c; font-size: 20px;">💡</span>
-                  <span style="color: #475569; font-size: 15px;">
-                    <strong>Explorez les 12 méthodes</strong> et identifiez celles qui correspondent à vos défis
-                  </span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <span style="color: #dfaf2c; font-size: 20px;">🎯</span>
-                  <span style="color: #475569; font-size: 15px;">
-                    <strong>Testez sur un projet pilote</strong> pour mesurer l'impact rapidement
-                  </span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                  <span style="color: #dfaf2c; font-size: 20px;">📞</span>
-                  <span style="color: #475569; font-size: 15px;">
-                    <strong>Besoin d'accompagnement ?</strong> Nos experts sont là pour vous guider
-                  </span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Ressources complémentaires -->
-            <div style="background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); border-radius: 12px; padding: 20px; margin-bottom: 32px;">
-              <h4 style="color: #0c3d5e; margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">
-                📌 Ressources complémentaires
-              </h4>
-              <div style="display: grid; gap: 8px; font-size: 14px;">
-                <a href="https://mana.fr/publications" style="color: #0c3d5e; text-decoration: none;">
-                  → Découvrir toutes nos publications
-                </a>
-                <a href="https://mana.fr/manacademy" style="color: #0c3d5e; text-decoration: none;">
-                  → Explorer Manacademy (formations)
-                </a>
-                <a href="https://mana.fr/manadvise" style="color: #0c3d5e; text-decoration: none;">
-                  → En savoir plus sur Manadvise (conseil)
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Footer -->
-          <div style="background: #0f172a; padding: 32px; text-align: center;">
-            <h4 style="color: white; margin: 0 0 12px 0; font-size: 18px; font-weight: 600;">
-              L'équipe MANA 🚀
-            </h4>
-            <p style="color: #94a3b8; margin: 0 0 20px 0; font-size: 14px; line-height: 1.5;">
-              Nous sommes ravis de vous accompagner dans votre démarche d'innovation.<br>
-              N'hésitez pas à nous contacter pour toute question !
-            </p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-              <a href="https://linkedin.com/company/manasupport" style="color: #94a3b8; text-decoration: none; font-size: 14px;">
-                LinkedIn
-              </a>
-              <a href="https://mana.fr" style="color: #94a3b8; text-decoration: none; font-size: 14px;">
-                Site web
-              </a>
-              <a href="mailto:hello@mana.fr" style="color: #94a3b8; text-decoration: none; font-size: 14px;">
-                Contact
-              </a>
-            </div>
-            <p style="color: #64748b; margin: 0; font-size: 12px;">
-              MANA • Révéler le potentiel d'innovation<br>
-              Si vous ne souhaitez plus recevoir nos emails, 
-              <a href="#" style="color: #64748b; text-decoration: underline;">cliquez ici</a>
-            </p>
-          </div>
-        </div>
-      `,
-      text: `
-🎯 Bienvenue ${firstName} !
+          </td>
+        </tr>
+      </table>
+    </body>
+    </html>
+  `,
+  text: `
+Bienvenue ${firstName}
 
-Merci pour votre confiance ! Vous venez de télécharger notre Managuide de l'innovation.
+Votre Managuide de l'innovation est prêt.
 
-📚 Ce que vous allez découvrir :
-• 12 méthodes essentielles d'innovation testées et approuvées
-• Fiches pratiques prêtes à l'emploi pour vos projets
-• Cadres décisionnels pour prioriser et mesurer l'impact
+Contenu :
+- 12 méthodes essentielles d'innovation
+- Fiches pratiques prêtes à l'emploi
+- Cadres décisionnels pour prioriser et mesurer l'impact
 
-🚀 Et maintenant ?
-💡 Explorez les 12 méthodes et identifiez celles qui correspondent à vos défis
-🎯 Testez sur un projet pilote pour mesurer l'impact rapidement
-📞 Besoin d'accompagnement ? Nos experts sont là pour vous guider
+Accéder au guide :
+https://mana.fr/publications/managuide-innovation
 
-📌 Ressources complémentaires :
-→ Découvrir toutes nos publications : https://mana.fr/publications
-→ Explorer Manacademy : https://mana.fr/manacademy
-→ En savoir plus sur Manadvise : https://mana.fr/manadvise
+Prochaines étapes :
+- Identifier les méthodes pertinentes
+- Lancer un test sur un projet pilote
+- Mesurer l'impact et itérer
 
-L'équipe MANA 🚀
-Contact : hello@mana.fr
-Site : https://mana.fr
-      `
-    };
+Ressources complémentaires :
+- Publications : https://mana.fr/publications
+- Manacademy : https://mana.fr/manacademy
+- Manadvise : https://mana.fr/manadvise
 
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(welcomeEmailData),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.text();
-      console.error('❌ Erreur Resend API welcome email:', response.status, errorData);
-      throw new Error(`Resend API error: ${response.status}`);
-    }
-
-    const result = await response.json();
-    console.log('✅ Email de bienvenue envoyé:', result.id);
-
-    return res.status(200).json({
-      success: true,
-      message: 'Email de bienvenue envoyé avec succès',
-      emailId: result.id
-    });
-
-  } catch (error) {
-    console.error('❌ Erreur email de bienvenue:', error);
-    
-    return res.status(500).json({
-      success: false,
-      error: 'Erreur lors de l\'envoi de l\'email de bienvenue',
-      details: error instanceof Error ? error.message : 'Unknown error'
-    });
-  }
-}
+MANA Innovation — Contact : hello@mana.fr — https://mana.fr
+Si vous ne souhaitez plus recevoir nos emails, cliquez ici.
+  `
+};
