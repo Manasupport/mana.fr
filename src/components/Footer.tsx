@@ -70,7 +70,6 @@ const Footer = () => {
                   <Link to="/publications" className="hover:text-manadvise transition-colors">Articles & publications</Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-manacademy transition-colors">Contact</Link>
                 </li>
               </ul>
             </div>
