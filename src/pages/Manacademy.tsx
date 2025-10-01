@@ -108,7 +108,7 @@ const formationDescriptionOverrides: Record<string, string> = {
     "Cette formation décrypte les clés d'un mindset agile et vous aide à concevoir votre modèle de conduite de projet adapté à votre métier.",
   "Culture & stratégie d'innovation":
     "Cette formation décrypte les clés d'un mindset d'innovation et vous aide à adopter une posture d'intrapreneur pour transformer vos idées en impact durable.",
-  "Innovation digitale & Intelligence artificielle":
+  "Acculturation à l’IA (plateformes & blockchain)":
     "Acculturation aux usages de l’IA et de l’innovation digitale, exploration d’outils IA/LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental des technologies.",
   "Business model design":
     "Prototyper et faire évoluer son business model (BMC, tests terrain, itérations) pour maximiser la valeur créée.",

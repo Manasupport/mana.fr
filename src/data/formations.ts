@@ -76,7 +76,7 @@ export const formations: Formation[] = [
   },
   {
     id: 'ia-cas-usage',
-    title: "Innovation digitale & Intelligence artificielle",
+    title: "Acculturation à l’IA (plateformes & blockchain)",
     axis: 'innovation',
     shortDescription:
       "Acculturation aux usages de l’IA et de l’innovation digitale, exploration d’outils IA/LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental des technologies.",
