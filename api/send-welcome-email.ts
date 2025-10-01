@@ -1,6 +1,6 @@
 // api/send-welcome-email.ts (remplace uniquement welcomeEmailData)
 const welcomeEmailData = {
-  from: 'MANA Innovation <hello@mana.fr>',
+  from: 'MANA <contact@mana.fr>',
   to: [email],
   subject: `${firstName}, votre Managuide de l'innovation est prêt`,
   html: `
