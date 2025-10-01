@@ -6,6 +6,16 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
   ArrowLeft,
   Download,
   Bookmark,
@@ -25,6 +35,63 @@ import { useTranslation } from "react-i18next";
 const publicUrl = (path: string) => {
   const base = import.meta.env.BASE_URL ?? "/";
   return `${base.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
+};
+
+/* ------------------------------------------------------------------ */
+/*                     Service Resend pour notifications email         */
+/* ------------------------------------------------------------------ */
+interface ManaguideDownloadData {
+  email: string;
+  firstName: string;
+  lastName: string;
+  downloadedAt: string;
+  userAgent: string;
+}
+
+const sendManaguideNotification = async (userData: ManaguideDownloadData) => {
+  try {
+    const response = await fetch('/api/send-managuide-notification', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const result = await response.json();
+    console.log('✅ Email de notification envoyé:', result);
+    return result;
+  } catch (error) {
+    console.error('❌ Erreur lors de l\'envoi de l\'email:', error);
+    throw error;
+  }
+};
+
+const sendWelcomeEmail = async (userData: { email: string; firstName: string; lastName: string }) => {
+  try {
+    const response = await fetch('/api/send-welcome-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const result = await response.json();
+    console.log('✅ Email de bienvenue envoyé:', result);
+    return result;
+  } catch (error) {
+    console.error('❌ Erreur lors de l\'envoi de l\'email de bienvenue:', error);
+    throw error;
+  }
 };
 
 /* ------------------------------------------------------------------ */
@@ -198,7 +265,7 @@ const Container = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Lead = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+  <p className="text-xl md:text-2xl leading-relaxed text-slate-600 font-medium mb-8 border-l-4 border-[#dfaf2c] pl-6 bg-gradient-to-r from-[#dfaf2c]/5 to-transparent py-4 rounded-r-2xl">
     {children}
   </p>
 );
@@ -210,12 +277,12 @@ const SectionTitle = ({
   icon?: React.ReactNode;
   children: React.ReactNode;
 }) => (
-  <h2 className="mt-10 mb-4 flex items-center gap-2 text-2xl font-bold tracking-tight text-[#0c3d5e]">
+  <h2 className="mt-12 mb-6 flex items-center gap-3 text-3xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0c3d5e] to-[#dfaf2c]">
     {icon} {children}
   </h2>
 );
 
-const Divider = () => <div className="my-8 h-px w-full bg-border" />;
+const Divider = () => <div className="my-12 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />;
 
 const Callout = ({
   title,
@@ -224,9 +291,9 @@ const Callout = ({
   title: string;
   children: React.ReactNode;
 }) => (
-  <div className="rounded-2xl border border-[#0c3d5e]/15 bg-[#0c3d5e]/5 p-5">
-    <div className="mb-2 text-[#0c3d5e] font-semibold">{title}</div>
-    <div className="text-sm leading-relaxed text-foreground/80">{children}</div>
+  <div className="rounded-3xl border border-[#0c3d5e]/10 bg-gradient-to-br from-[#0c3d5e]/5 to-white p-8 shadow-lg backdrop-blur-sm">
+    <div className="mb-4 text-[#0c3d5e] font-bold text-lg">{title}</div>
+    <div className="text-base leading-relaxed text-slate-700">{children}</div>
   </div>
 );
 
@@ -235,16 +302,16 @@ const KPIGrid = ({
 }: {
   items: { label: string; value: string }[];
 }) => (
-  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
     {items.map((k, i) => (
       <div
         key={i}
-        className="rounded-xl border border-border/60 bg-card px-4 py-3 shadow-sm transition-all duration-300 hover:shadow-md"
+        className="group rounded-2xl border border-white/20 bg-gradient-to-br from-white/80 to-slate-50/60 backdrop-blur-sm px-6 py-5 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
       >
-        <div className="text-xs uppercase tracking-wide text-muted-foreground">
+        <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">
           {k.label}
         </div>
-        <div className="mt-1 text-xl font-semibold text-[#0c3d5e]">
+        <div className="text-2xl font-black text-[#0c3d5e] group-hover:text-[#dfaf2c] transition-colors duration-300">
           {k.value}
         </div>
       </div>
@@ -253,14 +320,16 @@ const KPIGrid = ({
 );
 
 const Quote = ({ children }: { children: React.ReactNode }) => (
-  <div className="relative rounded-2xl border border-border/60 bg-card p-6">
-    <QuoteIcon className="absolute -top-3 -left-3 h-6 w-6 text-[#0c3d5e]" />
-    <p className="text-lg leading-relaxed italic">{children}</p>
+  <div className="relative rounded-3xl border border-white/30 bg-gradient-to-br from-white/90 to-slate-50/60 backdrop-blur-sm p-8 shadow-xl my-8">
+    <QuoteIcon className="absolute -top-4 -left-4 h-8 w-8 text-[#dfaf2c] bg-white rounded-full p-1 shadow-lg" />
+    <p className="text-xl leading-relaxed italic text-slate-700 font-medium">{children}</p>
   </div>
 );
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
-  <li className="pl-2 leading-relaxed">{children}</li>
+  <li className="pl-3 leading-relaxed text-slate-700 relative before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:bg-gradient-to-r before:from-[#0c3d5e] before:to-[#dfaf2c] before:rounded-full">
+    {children}
+  </li>
 );
 
 /* ------------------------------------------------------------------ */
@@ -311,11 +380,11 @@ function RichBody({ article }: { article: Article }) {
       <Divider />
 
       <SectionTitle>Chiffres clés du luxe</SectionTitle>
-      <div className="my-6 overflow-hidden rounded-2xl border border-border/60">
+      <div className="my-8 overflow-hidden rounded-3xl border border-white/20 shadow-xl bg-gradient-to-b from-white/80 to-slate-50/60 backdrop-blur-sm">
         <img
           src="/1-future.png"
           alt="Chiffres clés luxe"
-          className="w-full object-cover"
+          className="w-full object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>
       <ul className="list-disc ml-5 space-y-2">
@@ -335,11 +404,11 @@ function RichBody({ article }: { article: Article }) {
       <Divider />
 
       <SectionTitle>Les 4 axes stratégiques</SectionTitle>
-      <div className="my-6 overflow-hidden rounded-2xl border border-border/60">
+      <div className="my-8 overflow-hidden rounded-3xl border border-white/20 shadow-xl bg-gradient-to-b from-white/80 to-slate-50/60 backdrop-blur-sm">
         <img
           src="/2-future.png"
           alt="Axes stratégiques luxe"
-          className="w-full object-cover"
+          className="w-full object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>
       <ul className="list-disc ml-5 space-y-2">
@@ -362,12 +431,14 @@ function RichBody({ article }: { article: Article }) {
         durabilité ? De la chaîne d’approvisionnement jusqu’aux consommateurs,
         quelles technologies clés permettent une mode plus responsable ?
       </p>
-      <iframe
-        src="https://geo.dailymotion.com/player.html?video=k62haWxly8w0aIyheWY"
-        title="Digital & Sustainability"
-        className="w-full aspect-video rounded-xl border border-border/60"
-        allowFullScreen
-      />
+      <div className="overflow-hidden rounded-3xl border border-white/20 shadow-xl bg-gradient-to-b from-white/80 to-slate-50/60 backdrop-blur-sm p-2">
+        <iframe
+          src="https://geo.dailymotion.com/player.html?video=k62haWxly8w0aIyheWY"
+          title="Digital & Sustainability"
+          className="w-full aspect-video rounded-2xl"
+          allowFullScreen
+        />
+      </div>
 
       {/* Theme 2 */}
       <h3 className="text-lg font-semibold mt-8">
@@ -1635,6 +1706,46 @@ export default function ArticleDetail() {
   const { t } = useTranslation();
   const { slug = "" } = useParams<{ slug: string }>();
   const article = useMemo(() => ARTICLES.find((a) => a.slug === slug), [slug]);
+  
+  // États pour le popup de téléchargement
+  const [showDownloadDialog, setShowDownloadDialog] = useState(false);
+  const [formData, setFormData] = useState({
+    email: '',
+    firstName: '',
+    lastName: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // CSS global pour les listes premium
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      .premium-list {
+        list-style: none !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+      }
+      .premium-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .premium-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: 6px;
+        height: 6px;
+        background: linear-gradient(45deg, #0c3d5e, #dfaf2c);
+        border-radius: 50%;
+      }
+    `;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
 
   // Barre de progression de lecture
   const [progress, setProgress] = useState(0);
@@ -1677,13 +1788,86 @@ export default function ArticleDetail() {
   const pdfUrl = publicUrl(`pdfs/${article.file}`);
   const coverUrl = coverFromPdfFile(article.file);
 
-  const handleDownload = () => {
+  const handleDownloadClick = () => {
+    // Si c'est le Managuide d'innovation, afficher le popup
+    if (article.slug === 'managuide-innovation') {
+      setShowDownloadDialog(true);
+    } else {
+      // Téléchargement direct pour les autres articles
+      directDownload();
+    }
+  };
+
+  const directDownload = () => {
     const a = document.createElement("a");
     a.href = pdfUrl;
     a.download = article.file;
     document.body.appendChild(a);
     a.click();
     a.remove();
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.email || !formData.firstName || !formData.lastName) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Préparer les données à envoyer
+      const downloadData: ManaguideDownloadData = {
+        email: formData.email,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        downloadedAt: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+      };
+      
+      const welcomeData = {
+        email: formData.email,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+      };
+      
+      // Envoyer les emails en parallèle
+      const [notificationResult, welcomeResult] = await Promise.allSettled([
+        sendManaguideNotification(downloadData),
+        sendWelcomeEmail(welcomeData)
+      ]);
+      
+      // Log des résultats
+      if (notificationResult.status === 'fulfilled') {
+        console.log('✅ Notification interne envoyée');
+      } else {
+        console.warn('⚠️ Échec notification interne:', notificationResult.reason);
+      }
+      
+      if (welcomeResult.status === 'fulfilled') {
+        console.log('✅ Email de bienvenue envoyé');
+      } else {
+        console.warn('⚠️ Échec email de bienvenue:', welcomeResult.reason);
+      }
+      
+      // Fermer le popup et déclencher le téléchargement
+      setShowDownloadDialog(false);
+      directDownload();
+      
+      // Réinitialiser le formulaire
+      setFormData({ email: '', firstName: '', lastName: '' });
+      
+      console.log('✅ Téléchargement initié et emails traités');
+      
+    } catch (error) {
+      console.error('❌ Erreur lors du processus:', error);
+      // Même en cas d'erreur email, on permet le téléchargement
+      setShowDownloadDialog(false);
+      directDownload();
+      setFormData({ email: '', firstName: '', lastName: '' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -1698,16 +1882,17 @@ export default function ArticleDetail() {
 
       <Navigation />
 
-      {/* HERO (clean, sans aside) */}
-      <section className="relative pt-24 pb-10">
-        {/* halos */}
+      {/* HERO PREMIUM */}
+      <section className="relative pt-28 pb-16 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+        {/* Halos premium animés */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div
-            className={`absolute -top-40 -left-32 w-[42rem] h-[42rem] rounded-full bg-gradient-to-br ${theme.halo} opacity-25 blur-3xl`}
+            className={`absolute -top-48 -left-40 w-[50rem] h-[50rem] rounded-full bg-gradient-to-br ${theme.halo} opacity-30 blur-3xl animate-pulse`}
           />
           <div
-            className={`absolute -bottom-40 -right-32 w-[42rem] h-[42rem] rounded-full bg-gradient-to-tr ${theme.halo} opacity-20 blur-3xl`}
+            className={`absolute -bottom-48 -right-40 w-[50rem] h-[50rem] rounded-full bg-gradient-to-tr from-[#0c3d5e]/20 to-[#dfaf2c]/30 opacity-25 blur-3xl`}
           />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50 blur-2xl" />
         </div>
 
         <Container>
@@ -1715,7 +1900,7 @@ export default function ArticleDetail() {
             <Button
               variant="ghost"
               size="sm"
-              className="mb-4 hover:bg-muted/50 transition-colors"
+              className="mb-6 hover:bg-white/60 hover:backdrop-blur-sm transition-all duration-300 hover:-translate-x-1 transform rounded-xl px-4 py-2 border border-white/20"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               {t("article.backToList", {
@@ -1727,76 +1912,185 @@ export default function ArticleDetail() {
           {/* Header + Cover + CTA (1 seul bouton) */}
           <div className="space-y-6">
             <div>
-              <div className="mb-4 flex flex-wrap items-center gap-2">
-                <Badge className={theme.chip}>
-                  <span className="inline-flex items-center gap-1">
+              <div className="mb-6 flex flex-wrap items-center gap-3">
+                <Badge className={`${theme.chip} px-4 py-2 rounded-full font-semibold shadow-sm border-0 backdrop-blur-sm`}>
+                  <span className="inline-flex items-center gap-2">
                     {theme.icon}
                     {article.thematic}
                   </span>
                 </Badge>
-                <Badge variant="outline">{article.type}</Badge>
+                <Badge variant="outline" className="px-4 py-2 rounded-full font-medium border-slate-200 bg-white/60 backdrop-blur-sm">
+                  {article.type}
+                </Badge>
                 {article.publishedAt && (
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-sm text-slate-500 bg-white/40 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/30">
                     {article.publishedAt}
                   </span>
                 )}
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-[#0c3d5e]">
+              <h1 className="text-5xl md:text-6xl font-black leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0c3d5e] via-[#dfaf2c] to-[#0c3d5e] mb-6">
                 {article.title}
               </h1>
 
               {article.excerpt && (
-                <p className="mt-4 text-lg text-muted-foreground max-w-3xl">
+                <p className="text-xl md:text-2xl text-slate-600 max-w-4xl leading-relaxed font-medium">
                   {article.excerpt}
                 </p>
               )}
 
-              {/* CTA unique */}
-              <div className="mt-6">
+              {/* CTA Premium */}
+              <div className="mt-8 flex items-center gap-4">
                 <Button
-                  onClick={handleDownload}
-                  className="h-11 px-5 bg-[#0c3d5e] hover:bg-[#0a2f4a] text-white font-semibold rounded-xl shadow-sm hover:shadow transition-all"
+                  onClick={handleDownloadClick}
+                  className="h-12 px-6 bg-gradient-to-r from-[#0c3d5e] via-[#dfaf2c] to-[#0c3d5e] hover:shadow-lg text-white font-semibold rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 transform"
                   aria-label={t("article.download", {
                     defaultValue: "Télécharger le PDF",
                   })}
                 >
-                  <Download className="mr-2 h-4 w-4" />
+                  <Download className="mr-2 h-5 w-5" />
                   {t("article.download", { defaultValue: "Télécharger le PDF" })}
                 </Button>
+                
+                {article.slug === 'managuide-innovation' && (
+                  <div className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-white/60 backdrop-blur-sm px-3 py-2 rounded-full border border-white/20">
+                    <Sparkles className="h-4 w-4 text-[#dfaf2c]" />
+                    <span>Guide premium</span>
+                  </div>
+                )}
               </div>
             </div>
 
-            {/* Cover */}
-            <div className="overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-b from-white to-muted/40">
-              <div className="aspect-[16/9]">
-                <div className="w-full h-full grid place-items-center">
-                  <img
-                    src={coverUrl}
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-[1.02]"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
-                    }}
-                    loading="lazy"
-                  />
-                </div>
+            {/* Cover Premium */}
+            <div className="group overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-b from-white/80 to-slate-50/60 backdrop-blur-sm shadow-2xl hover:shadow-3xl transition-all duration-700">
+              <div className="aspect-[16/9] relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/20 z-10" />
+                <img
+                  src={coverUrl}
+                  alt={article.title}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                  }}
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* BODY (une seule colonne, fluide) */}
-      <section className="pb-20">
+      {/* BODY PREMIUM */}
+      <section className="pb-24 bg-gradient-to-b from-slate-50/30 to-white">
         <Container>
-          <div className="mt-4">
+          <div className="bg-white/60 backdrop-blur-sm rounded-3xl border border-white/20 shadow-xl p-8 md:p-12 -mt-8 relative z-10">
             <RichBody article={article} />
           </div>
         </Container>
       </section>
 
       <Footer />
+      
+      {/* Dialog Popup pour téléchargement Managuide */}
+      <Dialog open={showDownloadDialog} onOpenChange={setShowDownloadDialog}>
+        <DialogContent className="sm:max-w-md bg-white/95 backdrop-blur-xl border-white/20 shadow-2xl rounded-3xl">
+          <DialogHeader className="text-center space-y-4">
+            <div className="mx-auto w-16 h-16 bg-gradient-to-br from-[#0c3d5e] to-[#dfaf2c] rounded-2xl flex items-center justify-center mb-4">
+              <Download className="h-8 w-8 text-white" />
+            </div>
+            <DialogTitle className="text-2xl font-bold text-[#0c3d5e]">
+              Accéder au Managuide de l'innovation
+            </DialogTitle>
+            <DialogDescription className="text-base text-slate-600 leading-relaxed">
+              Pour télécharger notre guide premium, merci de renseigner vos informations. 
+              Vous recevrez également nos actualités innovation.
+            </DialogDescription>
+          </DialogHeader>
+          
+          <form onSubmit={handleFormSubmit} className="space-y-6 mt-6">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="firstName" className="text-sm font-semibold text-[#0c3d5e]">
+                  Prénom *
+                </Label>
+                <Input
+                  id="firstName"
+                  type="text"
+                  value={formData.firstName}
+                  onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                  className="h-12 border-slate-200 focus:border-[#0c3d5e] focus:ring-[#0c3d5e] rounded-xl"
+                  placeholder="Votre prénom"
+                  required
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="lastName" className="text-sm font-semibold text-[#0c3d5e]">
+                  Nom *
+                </Label>
+                <Input
+                  id="lastName"
+                  type="text"
+                  value={formData.lastName}
+                  onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                  className="h-12 border-slate-200 focus:border-[#0c3d5e] focus:ring-[#0c3d5e] rounded-xl"
+                  placeholder="Votre nom"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-sm font-semibold text-[#0c3d5e]">
+                Email professionnel *
+              </Label>
+              <Input
+                id="email"
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                className="h-12 border-slate-200 focus:border-[#0c3d5e] focus:ring-[#0c3d5e] rounded-xl"
+                placeholder="votre.email@entreprise.com"
+                required
+              />
+            </div>
+            
+            <div className="flex gap-3 pt-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setShowDownloadDialog(false)}
+                className="flex-1 h-12 rounded-xl border-slate-200 hover:bg-slate-50"
+                disabled={isSubmitting}
+              >
+                Annuler
+              </Button>
+              <Button
+                type="submit"
+                disabled={!formData.email || !formData.firstName || !formData.lastName || isSubmitting}
+                className="flex-1 h-12 bg-gradient-to-r from-[#0c3d5e] to-[#dfaf2c] hover:shadow-lg text-white font-semibold rounded-xl transition-all duration-300"
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                    Téléchargement...
+                  </>
+                ) : (
+                  <>
+                    <Download className="mr-2 h-4 w-4" />
+                    Télécharger le guide
+                  </>
+                )}
+              </Button>
+            </div>
+            
+            <p className="text-xs text-slate-500 text-center leading-relaxed">
+              En soumettant ce formulaire, vous acceptez de recevoir nos communications sur l'innovation. 
+              Vous pouvez vous désabonner à tout moment.
+            </p>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
