@@ -126,20 +126,10 @@ export default function ResourcesAcademic() {
 
       <Navigation />
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb (kept minimal; hero contains the back control) */}
       <div className="pt-20 pb-4">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <Button
-            variant="ghost"
-            size="sm"
-            asChild
-            className="group transition-colors hover:bg-muted/60"
-          >
-            <Link to="/resources" className="text-muted-foreground">
-              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
-              {t("resourcesAcademic.breadcrumb.back")}
-            </Link>
-          </Button>
+          {/* intentionally left blank; Back is provided in hero for consistency */}
         </div>
       </div>
 
