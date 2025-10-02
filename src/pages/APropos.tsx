@@ -12,6 +12,7 @@ import {
   Users,
   ShieldCheck,
   Timer,
+  Linkedin,
 } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -68,20 +69,20 @@ const APropos = () => {
   secteurs: ["Énergie & Mobilité", "Éducation", "Industrie", "Secteur public"],
 },
   {
-    name: "Stéphane Lesage",
-    photo: "/stephane.jpeg",
-    highlights: [
-      "Professeur affilié — ESCP",
-      "Contractuel — SKEMA, EXED Polytechnique, ENPC",
-      "+ de 18 ans dans le conseil en management et stratégie",
-    ],
-    tags: ["RSE", "Transformation", "Stratégie"],
-    formation: [
-      "DEA — ENPC",
-      "DESS — Sophia Antipolis",
-      "Certifications Black Belt Six Sigma / Lean",
-    ],
-    secteurs: ["Services", "Industrie agro-alimentaire", "Banque et Finance", "Retail"],
+      name: "Stéphane Lesage",
+      photo: "/stephane.jpeg",
+      highlights: [
+        "Professeur affilié — ESCP",
+        "Contractuel — SKEMA, EXED Polytechnique, ENPC",
+        "+ de 18 ans dans le conseil en management et stratégie",
+      ],
+      tags: ["Transformation", "Stratégie", "Innovation"],
+      formation: [
+        "DEA — ENPC",
+        "DESS — Sophia Antipolis",
+        "Certifications Black Belt Six Sigma / Lean",
+      ],
+      secteurs: ["Services", "Industrie agro-alimentaire", "Banque et Finance", "Retail"],
   },
 ];
 
@@ -403,7 +404,7 @@ const APropos = () => {
 </section>
 
       {/* ManaGlass – interlude */}
-      <section className="py-8">
+    <section className="py-4">
         <div className="mx-auto max-w-3xl px-6">
           <div className="rounded-2xl border bg-white/80 backdrop-blur-sm text-center px-6 py-6">
             <p className="text-[15px] md:text-base text-[#0C3D5E]/80">
@@ -419,7 +420,7 @@ const APropos = () => {
       </section>
 
       {/* Identité (style dictionnaire) & Principes d’action */}
-<section className="py-16 bg-muted/30">
+<section className="py-8 bg-muted/30">
   <div className="mx-auto max-w-6xl px-6">
     <div className="grid gap-8 md:grid-cols-2">
       {/* Carte Dictionnaire : Mana (n.m.) */}
@@ -463,7 +464,7 @@ const APropos = () => {
       <div className="rounded-2xl border bg-white p-8">
         <div className="mb-5 flex items-center justify-between">
           <h3 className="text-2xl md:text-3xl font-bold text-[#0C3D5E]">
-            {t("aboutPage.principles.title", "Principes d’action")}
+            {t("aboutPage.principles.title", "Nos principes d'action")}
           </h3>
           <span className="text-xs font-semibold rounded-full px-3 py-1"
                 style={{ backgroundColor: "rgba(113,192,136,0.12)", color: "#0C3D5E", border: "1px solid rgba(113,192,136,0.35)" }}>
@@ -503,8 +504,8 @@ const APropos = () => {
   </div>
 </section>
 
-      {/* Manassociés */}
-      <section className="py-20">
+  {/* Manassociés */}
+  <section className="py-8">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold">{t("aboutPage.associates.title", "Manassociés")}</h2>
@@ -585,6 +586,33 @@ const APropos = () => {
                     </ul>
                   </div>
                 </div>
+
+                {/* LinkedIn button (bottom-right) */}
+                <div className="absolute bottom-2 right-4">
+                  {p.name === "Dr. Benjamin Lehiany" && (
+                    <a
+                      href="https://www.linkedin.com/in/benjaminlehiany/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/90 shadow-sm border border-[#0C3D5E]/10 hover:bg-white transition"
+                      aria-label="Benjamin Lehiany LinkedIn"
+                    >
+                      <Linkedin className="h-4 w-4 text-[#0C3D5E]" />
+                    </a>
+                  )}
+
+                  {p.name === "Stéphane Lesage" && (
+                    <a
+                      href="https://www.linkedin.com/in/st%C3%A9phane-lesage-57451912/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/90 shadow-sm border border-[#0C3D5E]/10 hover:bg-white transition"
+                      aria-label="Stéphane Lesage LinkedIn"
+                    >
+                      <Linkedin className="h-4 w-4 text-[#0C3D5E]" />
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -596,7 +624,7 @@ const APropos = () => {
       </section>
 
       {/* Manateam — version raffinée centrée (fix avatar parfaitement rond) */}
-<section className="py-20 bg-muted/30">
+      <section className="py-8 bg-muted/30">
   <div className="mx-auto max-w-6xl px-6">
     <div className="mb-12 text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E]">
@@ -641,22 +669,45 @@ const APropos = () => {
               </div>
             </div>
 
-            {/* footer line */}
-            <div className="mt-6 flex items-center justify-between">
-              <div className="h-px w-2/3 bg-gradient-to-r from-transparent via-[#0C3D5E]/15 to-transparent" />
-              <span className="text-xs text-[#0C3D5E]/50">Mana Team</span>
-            </div>
+            {/* footer line removed per design request */}
           </div>
 
           {/* hover outline glow */}
           <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-[#0C3D5E]/10 transition-colors" />
+
+          {/* LinkedIn button (bottom-right for team members) */}
+          <div className="absolute bottom-2 right-3">
+            {m.name === "Salhia Darmon" && (
+              <a
+                href="https://www.linkedin.com/in/salhia-darmon/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/90 shadow-sm border border-[#0C3D5E]/10 hover:bg-white transition"
+                aria-label="Salhia Darmon LinkedIn"
+              >
+                <Linkedin className="h-4 w-4 text-[#0C3D5E]" />
+              </a>
+            )}
+
+            {m.name === "Yanis Otmani Es Sakali" && (
+              <a
+                href="https://www.linkedin.com/in/yanis-otmani-es-sakali-351476222/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/90 shadow-sm border border-[#0C3D5E]/10 hover:bg-white transition"
+                aria-label="Yanis Otmani LinkedIn"
+              >
+                <Linkedin className="h-4 w-4 text-[#0C3D5E]" />
+              </a>
+            )}
+          </div>
         </div>
       ))}
     </div>
   </div>
 </section>
 {/* Manalumnis — lignes centrées & ordre symétrique */}
-<section className="py-20">
+<section className="py-8">
   <div className="mx-auto max-w-6xl px-6">
     <div className="mb-12 text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E]">
@@ -733,8 +784,8 @@ const APropos = () => {
   </div>
 </section>
 
-      {/* CTA final — plus grand */}
-      <section className="bg-gradient-to-br from-white to-[#f7fafc] py-24">
+  {/* CTA final — plus grand */}
+  <section className="bg-gradient-to-br from-white to-[#f7fafc] py-12">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <h3 className="text-3xl md:text-5xl font-semibold md:font-bold">
             {t("aboutPage.cta.title", "Envie d’en savoir plus sur notre approche ?")}
