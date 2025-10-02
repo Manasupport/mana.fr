@@ -9,13 +9,13 @@ import { Link } from "react-router-dom";
 /*            Composant carte réutilisable                */
 /* ------------------------------------------------------ */
 const ResourceCard = ({ resource, type }: { resource: any; type: string }) => (
-  <Card className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card/80 shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl">
+  <Card className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card/80 shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-xl h-full flex flex-col">
     {/* halo de survol léger */}
     <div
       aria-hidden
       className="pointer-events-none absolute inset-0 bg-gradient-to-br from-manamind/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
     />
-    <CardHeader className="relative z-10 pb-3">
+  <CardHeader className="relative z-10 pb-3 flex-shrink-0">
       <div className="mb-4 flex items-start justify-between">
         <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-manamind to-manamind-dark shadow-md">
           <FileText className="h-5 w-5 text-white" />
@@ -37,18 +37,20 @@ const ResourceCard = ({ resource, type }: { resource: any; type: string }) => (
         {resource.description}
       </CardDescription>
     </CardHeader>
-    <CardContent className="relative z-10">
-      <Button
-        asChild
-        variant="outline"
-        size="sm"
-        className="group/btn w-full rounded-xl border-[#0c3d5e]/30 bg-white/60 backdrop-blur transition-all hover:border-[#0c3d5e] hover:bg-white"
-      >
-        <Link to={`/resources/view/${resource.id}`}>
-          View {type}
-          <FileText className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
-        </Link>
-      </Button>
+  <CardContent className="relative z-10 mt-auto pt-0">
+      <div className="mt-3">
+        <Button
+          asChild
+          variant="outline"
+          size="sm"
+          className="group/btn h-10 w-full rounded-xl border-[#0c3d5e]/30 bg-white/60 backdrop-blur transition-all hover:border-[#0c3d5e] hover:bg-white flex items-center justify-center gap-2 whitespace-nowrap"
+        >
+          <Link to={`/resources/view/${resource.id}`} className="flex items-center justify-center gap-2 w-full">
+            <span className="text-sm font-medium">View {type}</span>
+            <FileText className="ml-0 h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
+          </Link>
+        </Button>
+      </div>
     </CardContent>
   </Card>
 );
@@ -104,26 +106,33 @@ const ProjectManagement = () => {
         </div>
       </div>
 
-      {/* HERO — centré pour cohérence */}
-      <section className="pb-12">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <Button variant="ghost" size="sm" asChild className="mx-auto mb-6 hover:bg-muted/60">
+      {/* HERO — styled like Publications (halos, muted gradients, centered badge) */}
+  <section className="relative pt-20 pb-10 overflow-hidden">
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-40 -left-32 w-[42rem] h-[42rem] rounded-full bg-gradient-to-br from-[#0c3d5e] to-manamind opacity-15 blur-3xl" />
+          <div className="absolute -bottom-40 -right-32 w-[42rem] h-[42rem] rounded-full bg-gradient-to-tr from-manacademy to-manadvise opacity-20 blur-3xl" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Button variant="ghost" size="sm" asChild className="absolute left-4 -top-6 sm:-top-12 hover:bg-muted/60">
             <Link to="/resources/academic" className="text-muted-foreground">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Academic Resources
             </Link>
           </Button>
 
-          <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full bg-[#0c3d5e]/10 px-4 py-2 text-sm font-medium text-[#0c3d5e]">
-            🗂️ Project Management
+          <div className="inline-flex items-center gap-2 bg-[#0c3d5e]/10 text-[#0c3d5e] px-4 py-2 rounded-full text-sm font-medium mb-6 mx-auto">
+            Project Management
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-[#0c3d5e]">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-5 text-[#0c3d5e]">
             Project Management
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Essential tools and frameworks for successful project delivery
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Practical templates and tools to plan, prioritise and deliver projects with confidence.
           </p>
+
+          {/* CTAs removed per request */}
         </div>
       </section>
 
@@ -140,7 +149,7 @@ const ProjectManagement = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
             {toolsheets.map((tool) => (
               <ResourceCard key={tool.id} resource={tool} type="toolsheet" />
             ))}
@@ -161,7 +170,7 @@ const ProjectManagement = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
             {academicResources.map((resource) => (
               <ResourceCard key={resource.id} resource={resource} type="resource" />
             ))}
