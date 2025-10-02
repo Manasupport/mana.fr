@@ -143,23 +143,40 @@ export default function ResourcesAcademic() {
         </div>
       </div>
 
-      {/* HERO */}
-      <section className="pb-12">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full bg-[#0c3d5e]/10 px-4 py-2 text-sm font-medium text-[#0c3d5e]">
-            📚 {t("resourcesAcademic.badge", { defaultValue: "Ressources académiques" })}
+  {/* HERO — publications-like styling (halos, centered badge) */}
+  <section className="relative pt-28 pb-24 overflow-hidden">
+        {/* halos matching Publications hero */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-40 -left-32 w-[42rem] h-[42rem] rounded-full bg-gradient-to-br from-[#0c3d5e] to-manamind opacity-15 blur-3xl" />
+          <div className="absolute -bottom-40 -right-32 w-[42rem] h-[42rem] rounded-full bg-gradient-to-tr from-manacademy to-manadvise opacity-20 blur-3xl" />
+        </div>
+
+  <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Button variant="ghost" size="sm" asChild className="absolute left-4 -top-6 sm:-top-12 hover:bg-muted/60">
+            <Link to="/resources" className="text-muted-foreground">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {t("resourcesAcademic.breadcrumb.back")}
+            </Link>
+          </Button>
+
+          <div className="inline-flex items-center gap-2 bg-[#0c3d5e]/10 text-[#0c3d5e] px-4 py-2 rounded-full text-sm font-medium mb-6 mx-auto">
+            {t("resourcesAcademic.badge", { defaultValue: "Ressources académiques" })}
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-[#0c3d5e]">
+
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-5 text-[#0c3d5e]">
             {t("resourcesAcademic.header.title")}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t("resourcesAcademic.header.subtitle")}
           </p>
         </div>
+
+        {/* subtle bottom fade to soften seam with the following grid */}
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 -bottom-1 h-28 bg-gradient-to-b from-transparent to-background" />
       </section>
 
-      {/* Grille catégories (sans bloc Managuide) */}
-      <section className="pb-20">
+  {/* Grille catégories (sans bloc Managuide) */}
+  <section className="pb-20 mt-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-2">
             {categories.map((category) => {
