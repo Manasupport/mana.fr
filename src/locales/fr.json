@@ -28,7 +28,7 @@
     "entities": {
       "manamind": {
         "tagline": "Build Skills, Drive Innovation",
-        "description": "Manamind est une application edTech conçue pour créer et animer des parcours d'apprentissage sur mesure, centrée sur le développement des compétences."
+        "description": "Manamind est une application EdTech conçue pour créer et animer des parcours d’apprentissage sur mesure, centrée sur le développement des compétences et boostée par l’intelligence artificielle."
       },
       "manacademy": {
         "tagline": "Innovation to Raise Knowledge",
@@ -42,8 +42,8 @@
     "impactTitle": "L’impact en chiffres",
     "impactSubtitle": "Notre croissance témoigne de la confiance de nos partenaires",
     "stats": {
-      "partners": "Réseau d’experts",
-      "projects": "Projets d’open innovation",
+      "partners": "Communauté d’experts",
+      "projects": "Projets d'innovation",
       "organizations": "Organisations accompagnées",
       "learnersPerYear": "Apprenants / an"
     },
@@ -728,47 +728,49 @@
   "aboutPage": {
   "hero": {
     "badge": "Notre raison d’être",
-    "titlePrefix": "Animer les expertises pour",
-    "titleHighlight": "transformer l’action en impact.",
-    "subtitle": "Mana fait converger recherche, terrain et design de solutions pour accélérer l’innovation.",
-    "triad": "Trois approches, un même objectif : l’impact.",
+    "titlePrefix": "Croiser les regards pour",
+    "titleHighlight": "co-construire les innovations de demain.",
+    "subtitle": "Mana anime un écosystème d’open innovation composé d’étudiants, doctorants, chercheurs et entrepreneurs – tous innovateurs – engagés pour l’innovation durable.",
+    "triad": "Trois dispositifs, un objectif : l’impact.",
     "chips": [
       "Innovation & stratégie",
       "RSE & transitions",
       "Pédagogie & compétences"
     ]
   },
-  "manasTitle": "Nos 3 Mana",
-  "manasSubtitle": "Un écosystème unique qui réunit conseil stratégique, plateforme pédagogique et organisme de formation pour passer de l’idée à l’impact.",
+  "manasTitle": "Le Mana en 3 offres",
+  "manasSubtitle": "Mana fédère trois dynamiques complémentaires, Manadvise, Manamind et Manacademy, au service d’un même cap : concevoir, apprendre et agir pour développer les innovations et les compétences d’un avenir durable.",
   "manas": [
     {
       "id": "manadvise",
       "title": "Manadvise",
-      "subtitle": "Conseil stratégique à l’intersection de la recherche et du terrain.",
+      "subtitle": "Conseil en stratégie d’innovation durable à l’intersection de la recherche et du terrain.",
       "features": [
-        "Feuilles de route, décisions et mise à l’échelle.",
-        "Gouvernance, éthique & conformité (incl. IA).",
-        "Expérimentations rapides & mesure d’impact."
+        "Stratégie, innovation, transformation et performance",
+        "Intelligence collective et open innovation.",
+        "RSE, durabilité et transitions.",
+        "Dispositif agréé CIR et CII."
       ]
     },
     {
       "id": "manamind",
       "title": "Manamind",
-      "subtitle": "Plateforme pour créer, animer et auditer des parcours d’apprentissage.",
+      "subtitle": "Plateforme pour concevoir, animer et auditer des parcours d’apprentissage par compétences.",
       "features": [
-        "Expérience apprenant engageante & gamification.",
+        "Expérience apprenant engageante & ludique.",
         "Pilotage encadrants & analytics temps réel.",
-        "Traçabilité & auditabilité des acquis."
+        "Traçabilité & auditabilité des acquis.",
+        "Partenaire Edtech France."
       ]
     },
     {
       "id": "manacademy",
       "title": "Manacademy",
-      "subtitle": "Organisme de formation (OF) sur l’innovation, la stratégie et la RSE.",
+      "subtitle": "Organisme de formation spécialisé en innovation, stratégie et RSE.",
       "features": [
-        "Un Organisme de Formation certifié, expert des grandes transitions : innovation, stratégie et RSE.",
-        "Des formats modulables : séminaires, ateliers, parcours hybrides, adaptés à vos enjeux concrets.",
-        "Un réseau d’experts praticiens qui allient rigueur académique et retours terrains opérationnels."
+        "Organisme de Formation certifié, expert des grandes transitions.",
+        "Formats modulables : séminaires, ateliers, parcours hybrides, masterclass, sur mesure…",
+        "Communauté de formateurs qui allient rigueur académique et retours terrains opérationnels."
       ]
     }
   ],
