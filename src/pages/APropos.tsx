@@ -60,7 +60,7 @@ const APropos = () => {
     "Chercheur associé — Centre de Recherche en Gestion (i3)",
     "Innovation • Stratégie • Écoconception & économie circulaire",
   ],
-  tags: ["Innovation", "Stratégie", "Écoconception", "Économie circulaire"],
+  tags: ["Innovation", "Strategie", "Durabilité"],
   formation: [
     "Doctorat en Sciences de Gestion — École Polytechnique",
     "Master d'Économie — École d'Économie de Toulouse",
@@ -72,15 +72,15 @@ const APropos = () => {
       name: "Stéphane Lesage",
       photo: "/stephane.jpeg",
       highlights: [
+        "+ de 18 ans dans le conseil en management et stratégie",
         "Professeur affilié — ESCP",
         "Contractuel — SKEMA, EXED Polytechnique, ENPC",
-        "+ de 18 ans dans le conseil en management et stratégie",
       ],
       tags: ["Transformation", "Stratégie", "Innovation"],
       formation: [
         "DEA — ENPC",
         "DESS — Sophia Antipolis",
-        "Certifications Black Belt Six Sigma / Lean",
+        "Certifications Black Belt Six Sigma / Lean / Prosci",
       ],
       secteurs: ["Services", "Industrie agro-alimentaire", "Banque et Finance", "Retail"],
   },
@@ -609,7 +609,6 @@ const APropos = () => {
           </div>
 
           <div className="mx-auto mt-10 max-w-3xl text-center text-sm text-[#0C3D5E]/70">
-            {t("aboutPage.associates.footer", "Un binôme senior, renforcé par un réseau d’experts et de praticiens.")}
           </div>
         </div>
       </section>
