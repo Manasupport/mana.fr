@@ -789,7 +789,7 @@
   },
   "associates": {
     "title": "Manassociés",
-    "subtitle": "Deux profils complémentaires, ancrés dans la recherche et l’action.",
+    "subtitle": "Deux fondateurs aux compétences complémentaires engagés pour l’innovation durable",
     "labels": {
       "milestones": "Repères",
       "education": "Formation",
@@ -807,8 +807,8 @@
     "items": []
   },
   "cta": {
-    "title": "Envie d’en savoir plus sur notre approche ?",
-    "subtitle": "Découvrons ensemble comment nos trois activités se renforcent pour créer de la valeur.",
+    "title": "Envie d’en savoir plus ?",
+    "subtitle": "Découvrez nos trois dispositifs pour vous accompagner.",
     "button": "Nos activités"
   }
 },
