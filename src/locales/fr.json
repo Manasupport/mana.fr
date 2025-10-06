@@ -781,10 +781,10 @@
   "principles": {
     "title": "Nos principes d’action",
     "items": [
-      { "title": "Rigueur & clarté", "text": "Un cadre explicite, des décisions tracées, des mesures d’impact." },
-      { "title": "Co-construction", "text": "Des solutions bâties avec vos équipes, pas à côté." },
-      { "title": "Pragmatisme", "text": "Tester vite, apprendre, passer à l’échelle." },
-      { "title": "Responsabilité", "text": "Utilité sociale, sobriété et conformité au cœur." }
+      { "title": "Hybridation", "text": "Allier rigueur scientifique et agilité du conseil" },
+      { "title": "Co-construction", "text": "Concevoir des solutions innovantes, ensemble." },
+      { "title": "Pragmatisme", "text": "Tester, apprendre, passer à l’échelle." },
+      { "title": "Responsabilité", "text": "Concilier performance économique, écologique et sociale." }
     ]
   },
   "associates": {
