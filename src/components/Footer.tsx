@@ -57,13 +57,13 @@ const Footer = () => {
               <h4 className="text-white font-semibold mb-3">Nos activités</h4>
               <ul className="space-y-2 text-sm text-white/80">
                 <li>
+                  <Link to="/manadvise" className="hover:text-manadvise transition-colors">Manadvise → Conseil</Link>
+                </li>
+                <li>
                   <Link to="/manamind" className="hover:text-manamind transition-colors">Manamind → edTech</Link>
                 </li>
                 <li>
                   <Link to="/manacademy" className="hover:text-manacademy transition-colors">Manacademy → Formation</Link>
-                </li>
-                <li>
-                  <Link to="/manadvise" className="hover:text-manadvise transition-colors">Manadvise → Conseil</Link>
                 </li>
               </ul>
             </div>
