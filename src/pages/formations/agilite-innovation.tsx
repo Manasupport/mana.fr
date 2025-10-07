@@ -17,61 +17,57 @@ export default function AgiliteInnovation() {
       title="Agilité & innovation en contexte industriel"
       summary="Passer d’un pilotage rigide à un mode d’action agile, adapté aux réalités du terrain industriel : rythmes, rituels, responsabilités et outils qui fluidifient la collaboration et accélèrent la valeur."
       meta={[
-        { icon: Clock, text: "1–3 jours (modulable)" },
-        { icon: Users, text: "Atelier, séminaire ou parcours hybride" },
+        { icon: Clock, text: "Séquence interactive • fondamentaux" },
+        { icon: Users, text: "Directeur de programme, Directeur innovation, Chef de projet" },
       ]}
-      whyText="Projets multiples, dépendances techniques, équipes pluridisciplinaires : les approches “waterfall / cycle en V” atteignent vite leurs limites. Cette formation décrypte les clés d’un mindset agile et vous aide à co-concevoir un modèle de conduite de projet adapté au terrain industriel."
+  whyText="Passer d’un pilotage rigide à un mode d’action agile, adapté aux réalités du terrain industriel : rythmes, rituels, responsabilités et outils qui fluidifient la collaboration et accélèrent la valeur."
       pills={[
         { icon: Layers, label: "Complexité opérationnelle" },
         { icon: LineChart, label: "Efficacité & alignement" },
       ]}
       objectives={[
-        "Décoder les fondamentaux agiles, lean et design : apports, périmètre, forces/limites.",
-        "Choisir et adapter les méthodes pertinentes à son contexte industriel.",
-        "Pratiquer les principes agiles via un atelier collaboratif transposable.",
-        "Co-construire l’esquisse d’un modèle de projet agile : rythmes, rituels, rôles et pilotage.",
+        "Comprendre les fondamentaux agiles et leur applicabilité en industrie.",
+        "Expérimenter des rituels et outils pour fluidifier la collaboration.",
+        "Co-construire un modèle de gouvernance agile « maison » adapté à vos équipes.",
+        "Produire des artefacts opérationnels (rituels, responsabilités, métriques).",
       ]}
       modules={[
         {
-          title: "Séquence interactive • fondamentaux (~1h)",
-          desc: "Limites du waterfall / cycle en V, manifeste agile, principes lean & design. Quiz collectif sur atouts/limites et champs d’application.",
+          title: "Séquence interactive • fondamentaux",
+          desc: "Introduction aux fondamentaux : manifeste agile, principes lean & design, limites des approches rigides. Discussion interactive et diagnostic de maturité.",
         },
         {
-          title: "Focus méthodes",
-          desc: "Panorama Scrum / Kanban / Design Sprint et outils éprouvés. Quand les utiliser, comment les combiner en environnement technique.",
+          title: "Atelier collaboratif",
+          desc: "Travail en équipes sur un cas réel, restitution en pitch pour partager freins et opportunités. Co-construction du modèle agile 'maison'.",
         },
         {
-          title: "Applicabilité industrie",
-          desc: "Discussion guidée « dans notre contexte, ça donne quoi ? ». Apports de la recherche et clés d’adaptation.",
+          title: "Co-construction du modèle agile « maison »",
+          desc: "Synthèse des outputs : principes, rituels, responsabilités et métriques utiles dans votre contexte industriel.",
         },
         {
-          title: "Atelier collaboratif (~2h avec restitutions)",
-          desc: "Travail en tables sur un cas, restitution en pitch (3 min / table) pour partager freins & opportunités.",
-        },
-        {
-          title: "Co-construction du modèle agile “maison”",
-          desc: "Synthèse des outputs pour esquisser principes, rituels, responsabilités et métriques utiles.",
+          title: "Synthèse & plan d'action",
+          desc: "Synthèse des outputs et proposition d'une roadmap pour implémenter la gouvernance agile adaptée (rituels, rôles, métriques).",
         },
       ]}
       formats={[
-        {
-          name: "Séminaire intensif",
-          lines: ["2 jours", "12–20 pers", "Cas pratiques + restitutions"],
-        },
         {
           name: "Atelier découverte",
           lines: ["½ journée ~ 4h", "8–30 pers", "Acculturation + mini-atelier"],
         },
         {
+          name: "Séminaire intensif",
+          lines: ["2 jours", "12–20 pers", "Cas pratiques + restitutions"],
+        },
+        {
           name: "Parcours / Accompagnement",
-          lines: ["2–8 semaines", "6–12 pers", "Formation-action sur projet"],
+          lines: ["Atelier, séminaire ou parcours hybride", "6–12 pers", "Formation-action sur projet"],
         },
       ]}
       useCases={[
         "Diffuser une culture agile dans un département Études / Méthodes / Projets pour fluidifier la priorisation et les interactions.",
         "Transposer Scrum / Kanban / Lean à un processus industriel pour accélérer les cycles et intégrer les changements.",
         "Coordonner des programmes complexes multi-équipes : rituels courts, visuels de pilotage, synchronisation et arbitrages clairs.",
-        "Mettre en place un modèle de gouvernance agile « maison ».",
+        "Mettre en place un modèle de gouvernance agile « maison » — définir rituels, rôles et espaces d’autonomie.",
       ]}
     />
   );
