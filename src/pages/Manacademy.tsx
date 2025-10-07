@@ -25,6 +25,7 @@ import {
   Target,
   Eye,
   Zap,
+  ShieldCheck,
   Brain,
   Smartphone,
   Calculator,
@@ -420,21 +421,23 @@ const Manacademy = () => {
               {
                 icon: Zap,
                 title: "Innovation Pédagogique",
-                description: "Méthodes d'apprentissage avant-gardistes alliant théorie et pratique immersive.",
-                highlight: "Formats innovants"
+                description:
+                  "Méthodes d'apprentissage avant-gardistes alliant théorie et pratique immersive, elearning et ateliers d’intelligence collective.",
+                highlight: "Multitude de formats",
               },
               {
                 icon: Target,
                 title: "Accompagnement Personnalisé",
-                description: "Chaque formation est adaptée aux spécificités et objectifs de votre organisation.",
-                highlight: "100% sur-mesure"
+                description: "Chaque formation est adaptée aux spécificités et objectifs.",
+                highlight: "100% sur-mesure",
               },
               {
-                icon: Eye,
+                icon: ShieldCheck,
                 title: "Excellence Certifiée",
-                description: "Organisme de formation certifié avec les plus hauts standards qualité.",
-                highlight: "Qualité garantie"
-              }
+                description:
+                  "Organisme de formation certifié (n°11922589292) avec les plus hauts standards qualité.",
+                highlight: "Qualité garantie",
+              },
             ].map((item, index) => {
               const Icon = item.icon;
               return (
