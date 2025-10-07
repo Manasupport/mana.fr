@@ -399,7 +399,7 @@ const Manacademy = () => {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: manaDark }}>
-              Un écosystème d'expertise{" "}
+              Un écosystème d'expertises{" "}
               <span 
                 className="bg-gradient-to-r bg-clip-text text-transparent"
                 style={{ backgroundImage: `linear-gradient(135deg, ${manaGold}, ${manaGold}CC)` }}
