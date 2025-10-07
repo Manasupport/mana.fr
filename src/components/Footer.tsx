@@ -72,7 +72,7 @@ const Footer = () => {
               <h4 className="text-white font-semibold mb-3">Ressources</h4>
               <ul className="space-y-2 text-sm text-white/80">
                 <li>
-                  <Link to="/resources" className="hover:text-manamind transition-colors">Fiches & outils</Link>
+                  <a href="https://www.mana.fr/resources/academic" target="_blank" rel="noreferrer" className="hover:text-manamind transition-colors">Fiches & outils</a>
                 </li>
                 <li>
                   <Link to="/publications" className="hover:text-manadvise transition-colors">Articles & publications</Link>
