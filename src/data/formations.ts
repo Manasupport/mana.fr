@@ -25,7 +25,7 @@ export const formationAxes: FormationAxis[] = [
   {
     id: 'innovation',
     title: "Innover pour s'adapter",
-    description: "Accompagner vos équipes pour passer de l’idée à l’impact.",
+    description: "Accélérer l’innovation utile : méthodes, posture et cas d’usage.",
     formatsLabel: "Formats : séminaire, atelier, parcours hybride (présentiel ou distanciel)",
     icon: 'Lightbulb',
     accent: '#dfaf2c',
@@ -55,7 +55,7 @@ export const formations: Formation[] = [
     title: "Agilité & innovation en contexte industriel",
     axis: 'innovation',
     shortDescription:
-      "Comprendre et adopter les méthodes agiles (Scrum, Kanban, Design Sprint…) et leurs implications dans les environnements techniques, industriels ou projets complexes.",
+      "Cette formation décrypte les fondamentaux de l’approche agile et vous aide à concevoir votre modèle de conduite de projet adapté à votre métier.",
     duration: '1–3 jours',
     format: ['Séminaire', 'Atelier', 'Parcours hybride'],
     icon: 'Zap',
@@ -67,7 +67,7 @@ export const formations: Formation[] = [
     title: "Culture & stratégie d'innovation",
     axis: 'innovation',
     shortDescription:
-      "Décrypter les différents types d’innovation (produit, service, usage, business model), adopter une posture d’intrapreneur, diffuser l’innovation dans l’entreprise.",
+      "Cette formation decrypte les sous jacents d'une culture d'innovation et vous aide à diffuser la posture d'intrapreneur aux équipes.",
     duration: '1–2 jours',
     format: ['Séminaire', 'Atelier'],
     icon: 'Lightbulb',
@@ -76,10 +76,10 @@ export const formations: Formation[] = [
   },
   {
     id: 'ia-cas-usage',
-    title: "Acculturation à l’IA (plateformes & blockchain)",
+    title: "Acculturation et adoption de l’IA en entreprise",
     axis: 'innovation',
     shortDescription:
-      "Acculturation aux usages de l’IA et de l’innovation digitale, exploration d’outils IA/LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental des technologies.",
+      "Cette formation accelere l’adoption et l’exploration de l’IA et de l’innovation digitale, l’exploration d’outils IA générative /LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental…",
     duration: '1–2 jours',
     format: ['Atelier', 'Parcours hybride'],
     icon: 'Brain',
@@ -91,7 +91,7 @@ export const formations: Formation[] = [
     title: 'Business model design', // <= ex-"Méthodes mixtes quali-quanti"
     axis: 'innovation',
     shortDescription:
-      "Construire, tester et faire évoluer un business model désirable, viable et soutenable (outils : BMC, VPD, expérimentation…).",
+      "Cette formation fournit les clefs pour decrypter les nouveaux modeles d'affaires pour créer de la valeur durablement (plateformisation, économie de la fonctionnalité, circularité).",
     duration: '1–2 jours',
     format: ['Atelier', 'Workshop'],
     icon: 'Search',
