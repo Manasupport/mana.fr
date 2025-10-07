@@ -33,12 +33,20 @@ const Footer = () => {
               {t('footer.about', 'Nous aidons organisations & écoles à innover, former et transformer.' )}
             </p>
 
-            <div className="flex items-center gap-3 mt-2">
+            <div className="mt-2 flex items-center gap-3">
               <a aria-label="LinkedIn" href="https://www.linkedin.com/company/manadvise/" target="_blank" rel="noreferrer" className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition">
                 <Linkedin className="w-6 h-6 text-white/90" />
               </a>
               <a aria-label="Instagram" href="https://www.instagram.com/manadvise/" target="_blank" rel="noreferrer" className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition">
                 <Instagram className="w-6 h-6 text-white/90" />
+              </a>
+            </div>
+
+            {/* EdTech France membership logo */}
+            <div className="mt-4">
+              <div className="text-[10px] text-white/50 uppercase mb-1">Partenaire</div>
+              <a href="https://www.edtechfrance.fr" target="_blank" rel="noreferrer" className="inline-block">
+                <img src="/edtechfrance.png" alt="Membre EdTech France" className="h-6 w-auto object-contain opacity-90" />
               </a>
             </div>
           </div>
