@@ -10,10 +10,9 @@ import {
   Puzzle,
   Quote,
   Users,
-  UserRound,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 
 const Manadvise = () => {
   const { t } = useTranslation();
@@ -81,28 +80,6 @@ const missions = [
   },
 ];
 
-  // Réseau des Manadvisors (i18n)
-  type Advisor = { name: string; role: string };
-  const advisors: Advisor[] = useMemo(() => {
-    const fromI18n = t("manadvise.network.items", { returnObjects: true }) as Advisor[] | unknown;
-    return Array.isArray(fromI18n) ? (fromI18n as Advisor[]) : [];
-  }, [t]);
-
-  const [showAll, setShowAll] = useState(false);
-  const advisorsVisible = showAll ? advisors : advisors.slice(0, 12);
-
-  const initialsOf = (fullName: string) =>
-    fullName
-      .split(/\s|-/)
-      .filter(Boolean)
-      .slice(0, 2)
-      .map((p) => p[0]?.toUpperCase() ?? "")
-      .join("");
-
-  const chipsFromRole = (role: string) => {
-    const raw = role.split(/,|\/|•|&| et /i).map((s) => s.trim()).filter(Boolean);
-    return raw.length ? raw : [role];
-  };
 
   const scrollToApproach = () => {
     const el = document.getElementById("approche");
@@ -115,6 +92,29 @@ const missions = [
     const arr = t("manadvise.domains.items", { returnObjects: true }) as Domain[] | unknown;
     return Array.isArray(arr) ? (arr as Domain[]) : [];
   }, [t]);
+
+  // Partners carousel ref + auto-scroll effect
+  const partnersRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = partnersRef.current;
+    if (!el) return;
+
+    let animationId: number;
+
+    const step = () => {
+      // double the speed
+      el.scrollLeft += 2;
+      const half = el.scrollWidth / 2;
+      if (el.scrollLeft >= half) {
+        // smooth continuation: subtract half instead of snapping to 0
+        el.scrollLeft = el.scrollLeft - half;
+      }
+      animationId = requestAnimationFrame(step);
+    };
+
+    animationId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationId);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -271,6 +271,65 @@ const missions = [
         </div>
       </section>
 
+      {/* PARTNERS — auto-scrolling carousel (Ils nous font confiance style) */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#0C3D5E]">Ils nous font confiance</h2>
+          <p className="text-muted-foreground mb-6">Une sélection représentative de partenaires et clients.</p>
+
+          <div className="overflow-hidden w-full" ref={partnersRef}>
+            <div className="flex items-center space-x-6 w-max animate-none" id="partners-scroll">
+              {/* duplicated list for seamless loop (single long row) */}
+              {[
+                "/caceis.png",
+                "/chanel.png",
+                "/cib.png",
+                "/danone.png",
+                "/konica.png",
+                "/chair.png",
+                "/onepoint.png",
+                "/ditp.png",
+                "/rexel.png",
+                "/sodiaal.png",
+                "/totalenergies.png",
+                "/engie.png",
+                "/engiesolutions.png",
+                "/lesprairiesbio.png",
+                "/manao.png",
+                "/ratp.png",
+                "/vip.png",
+                "/caceis.png",
+                "/chanel.png",
+                "/cib.png",
+                "/danone.png",
+                "/konica.png",
+                "/chair.png",
+                "/onepoint.png",
+                "/ditp.png",
+                "/rexel.png",
+                "/sodiaal.png",
+                "/totalenergies.png",
+                "/engie.png",
+                "/engiesolutions.png",
+                "/lesprairiesbio.png",
+                "/manao.png",
+                "/ratp.png",
+                "/vip.png",
+              ].map((logo, idx) => {
+                const isEngieSolutions = logo.includes("engiesolutions");
+                const isRatp = logo.includes("ratp");
+                const imgClass = isEngieSolutions || isRatp ? "h-16 w-36 object-contain" : "h-12 w-28 object-contain";
+                return (
+                  <div key={`${logo}-${idx}`} className="flex-shrink-0 rounded-lg p-2 flex items-center justify-center">
+                    <img src={logo} alt={`partner-${idx}`} className={imgClass} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 2) Quelques témoignages clients */}
       <section className="py-16 bg-muted/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -291,68 +350,7 @@ const missions = [
         </div>
       </section>
 
-      {/* 3) Le réseau des Manadvisors */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6">
-            <Users className="h-10 w-10 mx-auto text-manadvise mb-3" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E]">Le réseau des Manadvisors</h2>
-            <p className="text-lg text-muted-foreground mt-2">{t("manadvise.advisorsSubtitle")}</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {advisorsVisible.map((a, i) => {
-              const chips = chipsFromRole(a.role);
-              return (
-                <div
-                  key={`${a.name}-${i}`}
-                  className="group relative overflow-hidden rounded-2xl border bg-white p-6 text-left transition-all hover:-translate-y-0.5 hover:shadow-xl"
-                  style={{ borderColor: "rgba(12,61,94,0.08)" }}
-                >
-                  <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-manadvise/10" />
-                  <div className="flex items-center gap-4">
-                    <div className="relative grid place-items-center h-12 w-12 rounded-full bg-manadvise/10 ring-1 ring-manadvise/20">
-                      <UserRound className="h-6 w-6 text-manadvise" />
-                      <div className="absolute -bottom-2 -right-2 rounded-full bg-white px-2 py-[2px] text-[11px] font-semibold text-[#0C3D5E] ring-1 ring-slate-200">
-                        {initialsOf(a.name)}
-                      </div>
-                    </div>
-
-                    <div className="min-w-0">
-                      <div className="text-base font-semibold text-[#0C3D5E] truncate">{a.name}</div>
-                      <div className="text-[11px] uppercase tracking-wide text-[#0C3D5E]/60">Advisor</div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {chips.map((c, k) => (
-                      <span
-                        key={k}
-                        className="rounded-full border px-2.5 py-1 text-xs"
-                        style={{
-                          borderColor: "rgba(0,165,180,0.25)",
-                          backgroundColor: "rgba(0,165,180,0.06)",
-                          color: "#0C3D5E",
-                        }}
-                      >
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {advisors.length > 12 && (
-            <div className="mt-8 text-center">
-              <Button variant="outline" onClick={() => setShowAll((v) => !v)}>
-                {showAll ? t("manadvise.network.showLess") : t("manadvise.network.showMore")}
-              </Button>
-            </div>
-          )}
-        </div>
-      </section>
+      
 
       {/* CTA FINAL */}
       <section className="py-16 bg-gradient-to-br from-manadvise-light to-white">
