@@ -10,11 +10,11 @@ import {
   Lightbulb,
   LineChart,
   Users,
+  UserRound,
   ShieldCheck,
   Timer,
-  Linkedin,
 } from "lucide-react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type Associate = {
@@ -60,7 +60,7 @@ const APropos = () => {
     "Chercheur associé — Centre de Recherche en Gestion (i3)",
     "Innovation • Stratégie • Écoconception & économie circulaire",
   ],
-  tags: ["Innovation", "Strategie", "Durabilité"],
+  tags: ["Innovation", "Stratégie", "Écoconception", "Économie circulaire"],
   formation: [
     "Doctorat en Sciences de Gestion — École Polytechnique",
     "Master d'Économie — École d'Économie de Toulouse",
@@ -69,20 +69,20 @@ const APropos = () => {
   secteurs: ["Énergie & Mobilité", "Éducation", "Industrie", "Secteur public"],
 },
   {
-      name: "Stéphane Lesage",
-      photo: "/stephane.jpeg",
-      highlights: [
-        "+ de 18 ans dans le conseil en management et stratégie",
-        "Professeur affilié — ESCP",
-        "Contractuel — SKEMA, EXED Polytechnique, ENPC",
-      ],
-      tags: ["Transformation", "Stratégie", "Innovation"],
-      formation: [
-        "DEA — ENPC",
-        "DESS — Sophia Antipolis",
-        "Certifications Black Belt Six Sigma / Lean / Prosci",
-      ],
-      secteurs: ["Services", "Industrie agro-alimentaire", "Banque et Finance", "Retail"],
+    name: "Stéphane Lesage",
+    photo: "/stephane.jpeg",
+    highlights: [
+      "Professeur affilié — ESCP",
+      "Contractuel — SKEMA, EXED Polytechnique, ENPC",
+      "+ de 18 ans dans le conseil en management et stratégie",
+    ],
+    tags: ["RSE", "Transformation", "Stratégie"],
+    formation: [
+      "DEA — ENPC",
+      "DESS — Sophia Antipolis",
+      "Certifications Black Belt Six Sigma / Lean",
+    ],
+    secteurs: ["Services", "Industrie agro-alimentaire", "Banque et Finance", "Retail"],
   },
 ];
 
@@ -114,6 +114,39 @@ const APropos = () => {
     const fromI18n = t("aboutPage.alumni.items", { returnObjects: true });
     return Array.isArray(fromI18n) && fromI18n.length ? (fromI18n as Alumni[]) : fallbackAlumni;
   }, [t]);
+
+  // Réseau des Manadvisors (liste explicite fournie) — moved here from Manadvise
+  type Advisor = { name: string; role: string };
+  const advisors: Advisor[] = [
+    { name: "Aurélie", role: "Transformation durable" },
+    { name: "Pierre-Yves", role: "Stratégie et financement" },
+    { name: "Nadia", role: "Conformité / RGPD" },
+    { name: "Claudia", role: "Innovation durable" },
+    { name: "Virginie", role: "Digital & Marketing" },
+    { name: "David", role: "Communication / Marque" },
+    { name: "Fabien", role: "Education" },
+    { name: "Jean-Charles", role: "Transformation" },
+    { name: "Stéphanie", role: "Impact social" },
+    { name: "Benjamin", role: "Digital & IA" },
+    { name: "Jérémie", role: "Web & IA" },
+    { name: "Farah", role: "Économie circulaire" },
+    { name: "Louisiane", role: "Innovation" },
+    { name: "Kévin", role: "International" },
+  ];
+
+  const [showAll, setShowAll] = useState(false);
+  const advisorsVisible = showAll ? advisors : advisors.slice(0, 12);
+
+  const initialsOf = (fullName: string) => {
+    if (!fullName) return "";
+    const first = fullName.split(/\s|-/).filter(Boolean)[0] ?? "";
+    return first[0]?.toUpperCase() ?? "";
+  };
+
+  const chipsFromRole = (role: string) => {
+    const raw = role.split(/,|\/|•|&| et /i).map((s) => s.trim()).filter(Boolean);
+    return raw.length ? raw : [role];
+  };
 
   const manas: ManaCard[] = useMemo(() => {
     const fromI18n = t("aboutPage.manas", { returnObjects: true });
@@ -404,7 +437,7 @@ const APropos = () => {
 </section>
 
       {/* ManaGlass – interlude */}
-    <section className="py-4">
+      <section className="py-8">
         <div className="mx-auto max-w-3xl px-6">
           <div className="rounded-2xl border bg-white/80 backdrop-blur-sm text-center px-6 py-6">
             <p className="text-[15px] md:text-base text-[#0C3D5E]/80">
@@ -420,7 +453,7 @@ const APropos = () => {
       </section>
 
       {/* Identité (style dictionnaire) & Principes d’action */}
-<section className="py-8 bg-muted/30">
+<section className="py-16 bg-muted/30">
   <div className="mx-auto max-w-6xl px-6">
     <div className="grid gap-8 md:grid-cols-2">
       {/* Carte Dictionnaire : Mana (n.m.) */}
@@ -436,22 +469,26 @@ const APropos = () => {
           </div>
 
           <h3 className="text-2xl md:text-3xl font-bold mb-2 text-[#0C3D5E]">
-            <span className="italic">Mana</span> <span className="text-[#0C3D5E]/60">(n.m.)</span> <span className="text-[#0C3D5E]/50">[ma-na]</span>
+            <span className="italic">{t("aboutPage.identity.headword", "Mana")}</span>{" "}
+            <span className="text-[#0C3D5E]/60">{t("aboutPage.identity.pos", "(n.m.)")}</span>{" "}
+            <span className="text-[#0C3D5E]/50">{t("aboutPage.identity.pron", "[ma-na]")}</span>
           </h3>
 
           <p className="text-[#0C3D5E]/80 leading-relaxed mb-4">
-            Énergie qui relie les individus et démultiplie le potentiel du collectif.
+            {t("aboutPage.identity.definition",
+              "Énergie qui relie les individus et démultiplie le potentiel du collectif. Notre manière d’agir : allier rigueur scientifique, puissance du terrain et exigence de résultat.")
+            }
           </p>
 
-          <div className="mt-4 rounded-xl border p-4 bg-[#0C3D5E]/[0.02]" style={{ borderColor: "rgba(12,61,94,0.10)" }}>
-            <div className="text-xs uppercase tracking-wide font-semibold mb-2 text-[#0C3D5E]/60">Exemples :</div>
-            <ul className="list-inside list-disc text-sm text-[#0C3D5E]/75 space-y-2">
-              <li>“Activer le mana d’une équipe pour transformer une idée en impact mesurable.”</li>
-              <li>“Le secret d’un atelier réussi ? Un peu de méthode, beaucoup de mana.”</li>
-              <li>“On a mesuré le mana de la salle : il dépassait les 9000.”</li>
-              <li>“Activer le mana, c’est transformer une visio en déclic collectif.”</li>
-              <li>“Et toi, t’as le Mana.”</li>
-            </ul>
+          <div className="mt-4 rounded-xl border p-4 bg-[#0C3D5E]/[0.02]"
+               style={{ borderColor: "rgba(12,61,94,0.10)" }}>
+            <div className="text-xs uppercase tracking-wide font-semibold mb-1 text-[#0C3D5E]/60">
+              {t("aboutPage.identity.exampleLabel", "Exemple d’usage")}
+            </div>
+            <p className="text-sm text-[#0C3D5E]/75 italic">
+              {t("aboutPage.identity.example",
+                "“Activer le mana d’une équipe pour transformer une idée en impact mesurable.”")}
+            </p>
           </div>
         </div>
       </div>
@@ -460,7 +497,7 @@ const APropos = () => {
       <div className="rounded-2xl border bg-white p-8">
         <div className="mb-5 flex items-center justify-between">
           <h3 className="text-2xl md:text-3xl font-bold text-[#0C3D5E]">
-            {t("aboutPage.principles.title", "Nos principes d'action")}
+            {t("aboutPage.principles.title", "Principes d’action")}
           </h3>
           <span className="text-xs font-semibold rounded-full px-3 py-1"
                 style={{ backgroundColor: "rgba(113,192,136,0.12)", color: "#0C3D5E", border: "1px solid rgba(113,192,136,0.35)" }}>
@@ -473,7 +510,9 @@ const APropos = () => {
             <div key={i}
                  className="group relative rounded-xl border bg-white p-4 hover:shadow-sm transition"
                  style={{ borderColor: "rgba(12,61,94,0.08)" }}>
-              {/* right-hand numeric label removed per request */}
+              <div className="absolute -right-1 -top-1 text-[#0C3D5E]/5 font-extrabold text-5xl leading-none select-none">
+                {(i + 1).toString().padStart(2, "0")}
+              </div>
 
               <div className="flex items-start gap-3">
                 <div className="shrink-0 w-8 h-8 rounded-lg grid place-items-center text-sm font-bold"
@@ -489,14 +528,17 @@ const APropos = () => {
           ))}
         </div>
 
-        {/* Légende / signature removed per request */}
+        {/* Légende / signature */}
+        <div className="mt-5 text-xs text-[#0C3D5E]/60">
+          {t("aboutPage.principles.footnote", "Des principes simples, testés sur le terrain, pour garder le cap.")}
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-  {/* Manassociés */}
-  <section className="py-8">
+      {/* Manassociés */}
+      <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold">{t("aboutPage.associates.title", "Manassociés")}</h2>
@@ -577,44 +619,18 @@ const APropos = () => {
                     </ul>
                   </div>
                 </div>
-
-                {/* LinkedIn button (bottom-right) */}
-                <div className="absolute bottom-2 right-4">
-                  {p.name === "Dr. Benjamin Lehiany" && (
-                    <a
-                      href="https://www.linkedin.com/in/benjaminlehiany/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/90 shadow-sm border border-[#0C3D5E]/10 hover:bg-white transition"
-                      aria-label="Benjamin Lehiany LinkedIn"
-                    >
-                      <Linkedin className="h-4 w-4 text-[#0C3D5E]" />
-                    </a>
-                  )}
-
-                  {p.name === "Stéphane Lesage" && (
-                    <a
-                      href="https://www.linkedin.com/in/st%C3%A9phane-lesage-57451912/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/90 shadow-sm border border-[#0C3D5E]/10 hover:bg-white transition"
-                      aria-label="Stéphane Lesage LinkedIn"
-                    >
-                      <Linkedin className="h-4 w-4 text-[#0C3D5E]" />
-                    </a>
-                  )}
-                </div>
               </div>
             ))}
           </div>
 
           <div className="mx-auto mt-10 max-w-3xl text-center text-sm text-[#0C3D5E]/70">
+            {t("aboutPage.associates.footer", "Un binôme senior, renforcé par un réseau d’experts et de praticiens.")}
           </div>
         </div>
       </section>
 
       {/* Manateam — version raffinée centrée (fix avatar parfaitement rond) */}
-      <section className="py-8 bg-muted/30">
+<section className="py-20 bg-muted/30">
   <div className="mx-auto max-w-6xl px-6">
     <div className="mb-12 text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E]">
@@ -659,45 +675,85 @@ const APropos = () => {
               </div>
             </div>
 
-            {/* footer line removed per design request */}
+            {/* footer line */}
+            <div className="mt-6 flex items-center justify-between">
+              <div className="h-px w-2/3 bg-gradient-to-r from-transparent via-[#0C3D5E]/15 to-transparent" />
+              <span className="text-xs text-[#0C3D5E]/50">Mana Team</span>
+            </div>
           </div>
 
           {/* hover outline glow */}
           <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-[#0C3D5E]/10 transition-colors" />
-
-          {/* LinkedIn button (bottom-right for team members) */}
-          <div className="absolute bottom-2 right-3">
-            {m.name === "Salhia Darmon" && (
-              <a
-                href="https://www.linkedin.com/in/salhia-darmon/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/90 shadow-sm border border-[#0C3D5E]/10 hover:bg-white transition"
-                aria-label="Salhia Darmon LinkedIn"
-              >
-                <Linkedin className="h-4 w-4 text-[#0C3D5E]" />
-              </a>
-            )}
-
-            {m.name === "Yanis Otmani Es Sakali" && (
-              <a
-                href="https://www.linkedin.com/in/yanis-otmani-es-sakali-351476222/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-white/90 shadow-sm border border-[#0C3D5E]/10 hover:bg-white transition"
-                aria-label="Yanis Otmani LinkedIn"
-              >
-                <Linkedin className="h-4 w-4 text-[#0C3D5E]" />
-              </a>
-            )}
-          </div>
         </div>
       ))}
     </div>
   </div>
 </section>
+      {/* Le réseau des Manadvisors — inséré entre Manateam et Manalumnis */}
+<section className="py-16">
+  <div className="mx-auto max-w-7xl px-6">
+    <div className="text-center mb-6">
+      <Users className="h-10 w-10 mx-auto text-manadvise mb-3" />
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E]">Le réseau des Manadvisors</h2>
+      <p className="text-lg text-[#0C3D5E]/70 mt-2">Un écosystème d’expertises accessibles à la carte.</p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {advisorsVisible.map((a, i) => {
+        const chips = chipsFromRole(a.role);
+        return (
+          <div
+            key={`${a.name}-${i}`}
+            className="group relative overflow-hidden rounded-2xl border bg-white p-6 text-left transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            style={{ borderColor: "rgba(12,61,94,0.08)" }}
+          >
+            <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-manadvise/10" />
+            <div className="flex items-center gap-4">
+              <div className="relative grid place-items-center h-12 w-12 rounded-full bg-manadvise/10 ring-1 ring-manadvise/20">
+                <UserRound className="h-6 w-6 text-manadvise" />
+                <div className="absolute -bottom-2 -right-2 rounded-full bg-white px-2 py-[2px] text-[11px] font-semibold text-[#0C3D5E] ring-1 ring-slate-200">
+                  {initialsOf(a.name)}
+                </div>
+              </div>
+
+              <div className="min-w-0">
+                <div className="text-base font-semibold text-[#0C3D5E] truncate">{a.name}</div>
+                <div className="text-[11px] uppercase tracking-wide text-[#0C3D5E]/60">Advisor</div>
+              </div>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {chips.map((c, k) => (
+                <span
+                  key={k}
+                  className="rounded-full border px-2.5 py-1 text-xs"
+                  style={{
+                    borderColor: "rgba(0,165,180,0.25)",
+                    backgroundColor: "rgba(0,165,180,0.06)",
+                    color: "#0C3D5E",
+                  }}
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    {advisors.length > 12 && (
+      <div className="mt-8 text-center">
+        <Button variant="outline" onClick={() => setShowAll((v) => !v)}>
+          {showAll ? t("manadvise.network.showLess") : t("manadvise.network.showMore")}
+        </Button>
+      </div>
+    )}
+  </div>
+</section>
+
 {/* Manalumnis — lignes centrées & ordre symétrique */}
-<section className="py-8">
+<section className="py-20">
   <div className="mx-auto max-w-6xl px-6">
     <div className="mb-12 text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-[#0C3D5E]">
@@ -774,8 +830,8 @@ const APropos = () => {
   </div>
 </section>
 
-  {/* CTA final — plus grand */}
-  <section className="bg-gradient-to-br from-white to-[#f7fafc] py-12">
+      {/* CTA final — plus grand */}
+      <section className="bg-gradient-to-br from-white to-[#f7fafc] py-24">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <h3 className="text-3xl md:text-5xl font-semibold md:font-bold">
             {t("aboutPage.cta.title", "Envie d’en savoir plus sur notre approche ?")}
