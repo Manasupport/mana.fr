@@ -85,7 +85,7 @@ const axisOverrides: Record<
   innovation: {
     title: "Innover pour s'adapter",
     description:
-      "Accélérer l’innovation utile : méthodes, posture et cas d’usage pour des contextes techniques et industriels.",
+      "Accélérer l’innovation utile : méthodes, posture et cas d’usage.",
     formatsLabel:
       "Formats : séminaire, atelier, parcours hybride (présentiel ou distanciel)",
   },
@@ -106,13 +106,13 @@ const axisOverrides: Record<
 const formationDescriptionOverrides: Record<string, string> = {
   // Innovation
   "Agilité & innovation en contexte industriel":
-    "Cette formation décrypte les clés d'un mindset agile et vous aide à concevoir votre modèle de conduite de projet adapté à votre métier.",
+    "Cette formation décrypte les fondamentaux de l’approche agile et vous aide à concevoir votre modèle de conduite de projet adapté à votre métier.",
   "Culture & stratégie d'innovation":
-    "Cette formation décrypte les clés d'un mindset d'innovation et vous aide à adopter une posture d'intrapreneur pour transformer vos idées en impact durable.",
-  "Acculturation à l’IA (plateformes & blockchain)":
-    "Acculturation aux usages de l’IA et de l’innovation digitale, exploration d’outils IA/LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental des technologies.",
+    "Cette formation decrypte les sous jacents d'une culture d'innovation et vous aide à diffuser la posture d'intrapreneur aux équipes.",
+  "Acculturation et adoption de l’IA en entreprise":
+    "Cette formation accelere l’adoption et l’exploration de l’IA et de l’innovation digitale, l’exploration d’outils IA générative /LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental...",
   "Business model design":
-    "Prototyper et faire évoluer son business model (BMC, tests terrain, itérations) pour maximiser la valeur créée.",
+    "Cette formation fournit les clefs pour decrypter les nouveaux modeles d'affaires pour créer de la valeur durablement (plateformisation, économie de la fonctionnalité, circularité).",
   // RSE
   "Stratégie de transformation durable & RSE opérationnelle":
     "Sensibilisation aux fondamentaux de la RSE, réflexion sur l'impact du secteur d'activité, définition de plans d'action concrets pour les équipes opérationnelles.",
