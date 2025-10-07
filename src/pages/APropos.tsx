@@ -469,26 +469,24 @@ const APropos = () => {
           </div>
 
           <h3 className="text-2xl md:text-3xl font-bold mb-2 text-[#0C3D5E]">
-            <span className="italic">{t("aboutPage.identity.headword", "Mana")}</span>{" "}
-            <span className="text-[#0C3D5E]/60">{t("aboutPage.identity.pos", "(n.m.)")}</span>{" "}
-            <span className="text-[#0C3D5E]/50">{t("aboutPage.identity.pron", "[ma-na]")}</span>
+            <span className="italic">Mana</span>{" "}
+            <span className="text-[#0C3D5E]/60">(n.m.)</span>{" "}
+            <span className="text-[#0C3D5E]/50">[ma-na]</span>
           </h3>
 
           <p className="text-[#0C3D5E]/80 leading-relaxed mb-4">
-            {t("aboutPage.identity.definition",
-              "Énergie qui relie les individus et démultiplie le potentiel du collectif. Notre manière d’agir : allier rigueur scientifique, puissance du terrain et exigence de résultat.")
-            }
+            Énergie qui relie les individus et démultiplie le potentiel du collectif.
           </p>
 
-          <div className="mt-4 rounded-xl border p-4 bg-[#0C3D5E]/[0.02]"
-               style={{ borderColor: "rgba(12,61,94,0.10)" }}>
-            <div className="text-xs uppercase tracking-wide font-semibold mb-1 text-[#0C3D5E]/60">
-              {t("aboutPage.identity.exampleLabel", "Exemple d’usage")}
-            </div>
-            <p className="text-sm text-[#0C3D5E]/75 italic">
-              {t("aboutPage.identity.example",
-                "“Activer le mana d’une équipe pour transformer une idée en impact mesurable.”")}
-            </p>
+          <div className="mt-4 rounded-xl border p-4 bg-[#0C3D5E]/[0.02]" style={{ borderColor: "rgba(12,61,94,0.10)" }}>
+            <div className="text-xs uppercase tracking-wide font-semibold mb-2 text-[#0C3D5E]/60">Exemples :</div>
+            <ul className="space-y-2 text-sm text-[#0C3D5E]/75 italic list-inside list-disc">
+              <li>“Activer le <strong>mana</strong> d’une équipe pour transformer une idée en impact mesurable.”</li>
+              <li>“Le secret d’un atelier réussi ? Un peu de méthode, beaucoup de <strong>mana</strong>.”</li>
+              <li>“On a mesuré le <strong>mana</strong> de la salle : il dépassait les 9000.”</li>
+              <li>“Activer le <strong>mana</strong>, c’est transformer une visio en déclic collectif.”</li>
+              <li>“Et toi, t’as le <strong>Mana</strong>. ”</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -510,9 +508,7 @@ const APropos = () => {
             <div key={i}
                  className="group relative rounded-xl border bg-white p-4 hover:shadow-sm transition"
                  style={{ borderColor: "rgba(12,61,94,0.08)" }}>
-              <div className="absolute -right-1 -top-1 text-[#0C3D5E]/5 font-extrabold text-5xl leading-none select-none">
-                {(i + 1).toString().padStart(2, "0")}
-              </div>
+              {/* numeric decoration removed as requested */}
 
               <div className="flex items-start gap-3">
                 <div className="shrink-0 w-8 h-8 rounded-lg grid place-items-center text-sm font-bold"
@@ -528,10 +524,7 @@ const APropos = () => {
           ))}
         </div>
 
-        {/* Légende / signature */}
-        <div className="mt-5 text-xs text-[#0C3D5E]/60">
-          {t("aboutPage.principles.footnote", "Des principes simples, testés sur le terrain, pour garder le cap.")}
-        </div>
+        {/* principles footnote removed as requested */}
       </div>
     </div>
   </div>
