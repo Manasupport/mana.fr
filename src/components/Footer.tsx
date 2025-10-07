@@ -21,41 +21,41 @@ const Footer = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {/* Brand / Animated logo */}
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <img src="/manasloganblc.png" alt="Mana" className="h-12 w-auto object-contain" />
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <img src="/manasloganblc.png" alt="Mana" className="h-10 w-auto object-contain" />
             </div>
 
-            <p className="text-sm text-white/70 max-w-md">
+            <p className="text-xs text-white/70 max-w-xs">
               {t('footer.about', 'Nous aidons organisations & écoles à innover, former et transformer.' )}
             </p>
 
-            <div className="mt-2 flex items-center gap-3">
-              <a aria-label="LinkedIn" href="https://www.linkedin.com/company/manadvise/" target="_blank" rel="noreferrer" className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition">
-                <Linkedin className="w-6 h-6 text-white/90" />
+            <div className="mt-1 flex items-center gap-2">
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/company/manadvise/" target="_blank" rel="noreferrer" className="p-1 rounded-full bg-white/6 hover:bg-white/12 transition">
+                <Linkedin className="w-5 h-5 text-white/90" />
               </a>
-              <a aria-label="Instagram" href="https://www.instagram.com/manadvise/" target="_blank" rel="noreferrer" className="p-2 rounded-full bg-white/6 hover:bg-white/12 transition">
-                <Instagram className="w-6 h-6 text-white/90" />
+              <a aria-label="Instagram" href="https://www.instagram.com/manadvise/" target="_blank" rel="noreferrer" className="p-1 rounded-full bg-white/6 hover:bg-white/12 transition">
+                <Instagram className="w-5 h-5 text-white/90" />
               </a>
             </div>
 
             {/* EdTech France membership logo */}
-            <div className="mt-4">
-              <div className="text-[10px] text-white/50 uppercase mb-1">Partenaire</div>
+            <div className="mt-1">
+              <div className="text-[9px] text-white/50 uppercase mb-1">Partenaire</div>
               <a href="https://www.edtechfrance.fr" target="_blank" rel="noreferrer" className="inline-block">
-                <img src="/edtechfrance.png" alt="Membre EdTech France" className="h-6 w-auto object-contain opacity-90" />
+                <img src="/edtechfrance.png" alt="Membre EdTech France" className="h-5 w-auto object-contain opacity-90" />
               </a>
             </div>
           </div>
 
           {/* Links */}
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-3">
             <div>
-              <h4 className="text-white font-semibold mb-3">Nos activités</h4>
-              <ul className="space-y-2 text-sm text-white/80">
+              <h4 className="text-white font-semibold mb-2">Nos activités</h4>
+              <ul className="space-y-1 text-sm text-white/80">
                 <li>
                   <Link to="/manadvise" className="hover:text-manadvise transition-colors">Manadvise → Conseil</Link>
                 </li>
@@ -69,8 +69,8 @@ const Footer = () => {
             </div>
 
             <div>
-              <h4 className="text-white font-semibold mb-3">Ressources</h4>
-              <ul className="space-y-2 text-sm text-white/80">
+              <h4 className="text-white font-semibold mb-2">Ressources</h4>
+              <ul className="space-y-1 text-sm text-white/80">
                 <li>
                   <a href="https://www.mana.fr/resources/academic" target="_blank" rel="noreferrer" className="hover:text-manamind transition-colors">Fiches & outils</a>
                 </li>
@@ -86,8 +86,8 @@ const Footer = () => {
           {/* Contact / CTA */}
           <div className="flex flex-col justify-between">
             <div>
-              <h4 className="text-white font-semibold mb-3">Contact</h4>
-              <div className="flex flex-col gap-3 text-sm text-white/80 mb-4">
+              <h4 className="text-white font-semibold mb-2">Contact</h4>
+              <div className="flex flex-col gap-2 text-sm text-white/80 mb-2">
                 <a className="flex items-center gap-2 hover:text-white transition" href="mailto:contact@mana.fr">
                   <Mail className="w-4 h-4 text-white/80" />
                   <span>contact@mana.fr</span>
@@ -105,15 +105,15 @@ const Footer = () => {
               {/* CTA removed per request */}
             </div>
 
-            <div className="mt-4 text-sm text-white/60">
-              <div className="mb-1">© {new Date().getFullYear()} Mana. {t('footer.allRightsReserved')}</div>
+            <div className="mt-2 text-xs text-white/60">
+              <div className="mb-0">© {new Date().getFullYear()} Mana. {t('footer.allRightsReserved')}</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* bottom wave gradient */}
-  <div className="h-4 w-full bg-gradient-to-t from-[#041e26] to-transparent opacity-36" />
+  <div className="h-3 w-full bg-gradient-to-t from-[#041e26] to-transparent opacity-36" />
     </footer>
   );
 };
