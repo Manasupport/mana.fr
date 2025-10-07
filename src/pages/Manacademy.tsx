@@ -85,7 +85,7 @@ const axisOverrides: Record<
   innovation: {
     title: "Innover pour s'adapter",
     description:
-      "Accélérer l’innovation utile : méthodes, posture et cas d’usage.",
+      "Accélérer l’innovation utile : méthodes, posture et cas d’usage pour des contextes techniques et industriels.",
     formatsLabel:
       "Formats : séminaire, atelier, parcours hybride (présentiel ou distanciel)",
   },
@@ -110,7 +110,7 @@ const formationDescriptionOverrides: Record<string, string> = {
   "Culture & stratégie d'innovation":
     "Cette formation decrypte les sous jacents d'une culture d'innovation et vous aide à diffuser la posture d'intrapreneur aux équipes.",
   "Acculturation et adoption de l’IA en entreprise":
-    "Cette formation accelere l’adoption et l’exploration de l’IA et de l’innovation digitale, l’exploration d’outils IA générative /LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental...",
+    "Cette formation accelere l’adoption et l’exploration de l’IA et de l’innovation digitale, l’exploration d’outils IA générative /LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental…",
   "Business model design":
     "Cette formation fournit les clefs pour decrypter les nouveaux modeles d'affaires pour créer de la valeur durablement (plateformisation, économie de la fonctionnalité, circularité).",
   // RSE
