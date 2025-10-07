@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -119,8 +120,8 @@ export default function FormationLayout(props: CourseTemplateProps) {
 
       <Navigation />
 
-      {/* Fil d’Ariane */}
-      <section className="pt-24 pb-6 border-b bg-white/80 backdrop-blur-sm">
+    {/* Fil d’Ariane */}
+  <section className="pt-16 pb-6 border-b bg-white/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
           <Link
             to={backHref}
@@ -133,7 +134,7 @@ export default function FormationLayout(props: CourseTemplateProps) {
       </section>
 
       {/* HERO PREMIUM */}
-      <section className="relative py-24 overflow-hidden" style={{ 
+  <section className="relative py-10 overflow-hidden" style={{ 
         background: `linear-gradient(135deg, 
           rgba(252, 248, 240, 0.95), 
           rgba(248, 245, 235, 0.98), 
@@ -173,7 +174,7 @@ export default function FormationLayout(props: CourseTemplateProps) {
 
         <div className="max-w-6xl mx-auto px-4 text-center">
           {badge && (
-            <div className="mb-8 flex justify-center">
+            <div className="mb-4 flex justify-center">
               <div 
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-sm border transition-all duration-300 hover:scale-105"
                 style={{ 
@@ -191,30 +192,29 @@ export default function FormationLayout(props: CourseTemplateProps) {
           )}
 
           <h1
-            className="text-5xl md:text-6xl font-bold leading-tight mb-8 tracking-tight hero-fade"
+            className="text-5xl md:text-6xl font-bold leading-tight mb-4 tracking-tight hero-fade"
             style={{ color: manaDark }}
           >
             {title}
           </h1>
-
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed hero-fade-delayed mb-12">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed hero-fade-delayed mb-4">
             {summary}
           </p>
 
           {/* Meta info premium */}
           {meta.length > 0 && (
-            <div className="mb-12 flex flex-wrap justify-center gap-4 text-sm hero-fade-delayed">
+            <div className="mb-4 flex flex-wrap justify-center gap-3 text-sm hero-fade-delayed">
               {meta.map((m, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center rounded-2xl border px-4 py-2 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center rounded-2xl border px-3 py-1.5 backdrop-blur-sm transition-all duration-300 hover:scale-105"
                   style={{ 
                     borderColor: `${manaGold}30`, 
                     background: `linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(223,175,44,0.05))`,
                     boxShadow: `0 4px 16px rgba(223, 175, 44, 0.15), 0 2px 8px rgba(113,192,136,0.08)`
                   }}
                 >
-                  <m.icon className="h-5 w-5 mr-3" style={{ color: manaGold }} />
+                  <m.icon className="h-5 w-5 mr-2" style={{ color: manaGold }} />
                   <span style={{ color: manaDark, fontWeight: '500' }}>{m.text}</span>
                 </span>
               ))}
@@ -228,10 +228,10 @@ export default function FormationLayout(props: CourseTemplateProps) {
         </div>
       </section>
 
-      <SectionDivider />
+  <SectionDivider />
 
       {/* POURQUOI - Section Premium */}
-      <section className="py-20 bg-gradient-to-br from-white to-gray-50/50 relative">
+  <section className="py-6 bg-gradient-to-br from-white to-gray-50/50 relative">
         {/* Halos décoratifs subtils */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
@@ -241,15 +241,15 @@ export default function FormationLayout(props: CourseTemplateProps) {
         </div>
         
         <div className="max-w-6xl mx-auto px-4 relative z-10">
-          <h2 className="section-title mb-12">{whyTitle}</h2>
-          <div className="grid lg:grid-cols-[1fr,400px] gap-12 items-start">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border" style={{ borderColor: `${manaGold}20` }}>
+          <h2 className="section-title mb-4">{whyTitle}</h2>
+          <div className="grid lg:grid-cols-[1fr,400px] gap-6 items-start">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg border" style={{ borderColor: `${manaGold}20` }}>
               <p className="text-lg text-muted-foreground leading-relaxed">{whyText}</p>
             </div>
 
             {pills.length > 0 && (
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold mb-6" style={{ color: manaDark }}>Points clés</h3>
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold mb-2" style={{ color: manaDark }}>Points clés</h3>
                 {pills.map((b, i) => (
                   <GlassRow key={i}>
                     <b.icon className="h-6 w-6 flex-shrink-0" style={{ color: manaGold }} />
@@ -264,13 +264,13 @@ export default function FormationLayout(props: CourseTemplateProps) {
         </div>
       </section>
 
-      <SectionDivider />
+  <SectionDivider />
 
       {/* OBJECTIFS */}
-      <section className="py-14" style={{ backgroundColor: `${manaGold}0A` }}>
+      <section className="py-6" style={{ backgroundColor: `${manaGold}0A` }}>
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="section-title">{objectivesTitle}</h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-6">
+          <div className="grid md:grid-cols-2 gap-3 mt-3">
             {objectives.map((item, i) => (
               <GlassCard key={i}>
                 <div className="flex items-start gap-3">
@@ -283,16 +283,16 @@ export default function FormationLayout(props: CourseTemplateProps) {
         </div>
       </section>
 
-      <SectionDivider />
+  <SectionDivider />
 
       {/* MODULES / DÉROULÉ */}
-      <section className="py-14 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="section-title">{modulesTitle}</h2>
-          <div className="space-y-5 mt-6">
+          <div className="space-y-3 mt-3">
             {modules.map((m, i) => (
               <GlassCard key={i}>
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-semibold" style={{ color: manaDark }}>
                     {m.title}
                   </h3>
@@ -308,10 +308,10 @@ export default function FormationLayout(props: CourseTemplateProps) {
       {formats.length > 0 && (
         <>
           <SectionDivider />
-          <section className="py-14" style={{ backgroundColor: `${manaGold}0A` }}>
+          <section className="py-6" style={{ backgroundColor: `${manaGold}0A` }}>
             <div className="max-w-6xl mx-auto px-4">
               <h2 className="section-title">{formatsTitle}</h2>
-              <div className="grid md:grid-cols-3 gap-6 mt-6">
+              <div className="grid md:grid-cols-3 gap-3 mt-3">
                 {formats.map((f, i) => (
                   <GlassCard key={i} variant="raised">
                     <h3 className="font-semibold text-lg mb-2" style={{ color: manaDark }}>
@@ -334,10 +334,10 @@ export default function FormationLayout(props: CourseTemplateProps) {
       {useCases.length > 0 && (
         <>
           <SectionDivider />
-          <section className="py-14 bg-white">
+          <section className="py-6 bg-white">
             <div className="max-w-6xl mx-auto px-4">
               <h2 className="section-title">{useCasesTitle}</h2>
-              <div className="grid md:grid-cols-2 gap-4 mt-6">
+              <div className="grid md:grid-cols-2 gap-2 mt-3">
                 {useCases.map((u, i) => (
                   <GlassRow key={i}>
                     <MessageSquare className="h-5 w-5 mt-0.5" style={{ color: manaGold }} />
@@ -351,7 +351,7 @@ export default function FormationLayout(props: CourseTemplateProps) {
       )}
 
       {/* SECTION CONTACT PREMIUM - Remplace CTA final redondant */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+  <section className="py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
         {/* Halos lumineux sophistiqués */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
@@ -366,7 +366,7 @@ export default function FormationLayout(props: CourseTemplateProps) {
 
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <div 
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-8 backdrop-blur-sm"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-4 backdrop-blur-sm"
             style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}
           >
             <Zap className="h-5 w-5" style={{ color: manaGold }} />
@@ -375,12 +375,12 @@ export default function FormationLayout(props: CourseTemplateProps) {
             </span>
           </div>
 
-          <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+          <h3 className="text-4xl md:text-5xl font-bold mb-4 text-white leading-tight">
             {ctaTitle || "Créons votre formation idéale"}
           </h3>
           
           {props.ctaText !== "" && ctaText && (
-            <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed max-w-3xl mx-auto">
               {ctaText}
             </p>
           )}
