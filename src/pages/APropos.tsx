@@ -11,6 +11,7 @@ import {
   LineChart,
   Users,
   UserRound,
+  Linkedin,
   ShieldCheck,
   Timer,
 } from "lucide-react";
@@ -204,6 +205,14 @@ const APropos = () => {
       ? (fromI18n as string[])
       : ["Innovation & stratégie", "RSE & transitions", "Pédagogie & compétences"];
   }, [t]);
+
+  // Liens LinkedIn pour profils connus (affichés si présent)
+  const linkedinMap: Record<string, string> = {
+    "Dr. Benjamin Lehiany": "https://www.linkedin.com/in/benjaminlehiany/",
+    "Stéphane Lesage": "https://www.linkedin.com/in/st%C3%A9phane-lesage-57451912/",
+    "Salhia Darmon": "https://www.linkedin.com/in/salhia-darmon/",
+    "Yanis Otmani Es Sakali": "https://www.linkedin.com/in/yanis-otmani-es-sakali-351476222/",
+  };
 
   const handleOpenActivities = () => {
     window.dispatchEvent(new CustomEvent("openActivitiesMenu"));
@@ -545,6 +554,18 @@ const APropos = () => {
                 key={p.name}
                 className="group relative overflow-hidden rounded-2xl border bg-white p-7 transition-all duration-500 hover:shadow-xl"
               >
+                {/* LinkedIn anchor (if available) */}
+                {linkedinMap[p.name] && (
+                  <a
+                    href={linkedinMap[p.name]}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`LinkedIn ${p.name}`}
+                    className="absolute right-4 bottom-4 p-2 rounded-full bg-white/90 hover:bg-white/100 shadow-md"
+                  >
+                    <Linkedin className="w-4 h-4 text-[#0C3D5E]" />
+                  </a>
+                )}
                 <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div className="h-full w-full bg-gradient-to-br from-[#0C3D5E]/5 via-transparent to-[#00a5b4]/5" />
                 </div>
@@ -670,12 +691,22 @@ const APropos = () => {
             {/* footer line */}
             <div className="mt-6 flex items-center justify-between">
               <div className="h-px w-2/3 bg-gradient-to-r from-transparent via-[#0C3D5E]/15 to-transparent" />
-              <span className="text-xs text-[#0C3D5E]/50">Mana Team</span>
             </div>
+            {linkedinMap[m.name] && (
+              <a
+                href={linkedinMap[m.name]}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`LinkedIn ${m.name}`}
+                className="absolute right-3 bottom-3 p-2 rounded-full bg-white/90 hover:bg-white/100 shadow-md"
+              >
+                <Linkedin className="w-4 h-4 text-[#0C3D5E]" />
+              </a>
+            )}
           </div>
 
-          {/* hover outline glow */}
-          <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-[#0C3D5E]/10 transition-colors" />
+          {/* hover outline glow - non-interactive so anchors remain clickable */}
+          <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-[#0C3D5E]/10 transition-colors pointer-events-none" />
         </div>
       ))}
     </div>
