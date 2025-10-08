@@ -72,15 +72,16 @@ const APropos = () => {
     name: "Stéphane Lesage",
     photo: "/stephane.jpeg",
     highlights: [
+      "+ de 18 ans dans le conseil en management et stratégie",
       "Professeur affilié — ESCP",
       "Contractuel — SKEMA, EXED Polytechnique, ENPC",
-      "+ de 18 ans dans le conseil en management et stratégie",
     ],
     tags: ["RSE", "Transformation", "Stratégie"],
     formation: [
-      "DEA — ENPC",
-      "DESS — Sophia Antipolis",
+      "D.E.A ENPC « Pilotage des Systèmes de Production »",
+      "D.E.S.S « Génie du Développement Industriel »",
       "Certifications Black Belt Six Sigma / Lean",
+      "Certification Prosci - Change Practitioner",
     ],
     secteurs: ["Services", "Industrie agro-alimentaire", "Banque et Finance", "Retail"],
   },
@@ -483,9 +484,7 @@ const APropos = () => {
             <ul className="space-y-2 text-sm text-[#0C3D5E]/75 italic list-inside list-disc">
               <li>“Activer le <strong>mana</strong> d’une équipe pour transformer une idée en impact mesurable.”</li>
               <li>“Le secret d’un atelier réussi ? Un peu de méthode, beaucoup de <strong>mana</strong>.”</li>
-              <li>“On a mesuré le <strong>mana</strong> de la salle : il dépassait les 9000.”</li>
-              <li>“Activer le <strong>mana</strong>, c’est transformer une visio en déclic collectif.”</li>
-              <li>“Et toi, t’as le <strong>Mana</strong>. ”</li>
+              <li>“Et toi, t’as le <strong>Mana</strong> ?”</li>
             </ul>
           </div>
         </div>
