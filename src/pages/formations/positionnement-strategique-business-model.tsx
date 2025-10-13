@@ -9,8 +9,9 @@ export default function PositionnementStrategiqueBusinessModel() {
       badge="Stratégie & modèle économique"
       title="Positionnement stratégique & business model"
       summary="Travailler la proposition de valeur, cartographier la concurrence et concevoir un business model lisible et différenciant (BMC, VPD, Océan Bleu)."
+  formatList={['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire']}
       meta={[
-        { icon: Clock, text: "1–2 jours (modulable)" },
+        { icon: Clock, text: "Discuter" },
         { icon: Users, text: "Managers, stratégie, innovation, intrapreneurs" },
       ]}
 
@@ -44,8 +45,8 @@ export default function PositionnementStrategiqueBusinessModel() {
 
       // Formats
       formats={[
-        { name: "Atelier + Séminaire", lines: ["1–2 jours", "Présentiel / distanciel"] },
         { name: "Découverte", lines: ["½ journée", "Acculturation + mini-atelier VPD/BMC"] },
+        { name: "Atelier + Séminaire", lines: ["1–2 jours", "Présentiel / distanciel"] },
         { name: "Parcours", lines: ["2–6 semaines", "Accompagnement sur un cas réel"] },
       ]}
 
@@ -62,10 +63,10 @@ export default function PositionnementStrategiqueBusinessModel() {
       // (Si tu veux une section dédiée, on l’ajoute dans le layout.)
 
       // CTA Manamind
-      ctaTitle="Concevons un positionnement clair et différenciant"
-      ctaText="On structure votre proposition de valeur et votre business model pour convaincre et exécuter."
-      ctaButton="Discuter"
-      ctaHref={CAL_LINK}
+  ctaTitle="Concevons un positionnement clair et différenciant"
+  ctaText="Discuter"
+  ctaButton="Discuter"
+  ctaHref={CAL_LINK}
     />
   );
 }

@@ -57,7 +57,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Cette formation décrypte les fondamentaux de l’approche agile et vous aide à concevoir votre modèle de conduite de projet adapté à votre métier.",
     duration: '1–3 jours',
-    format: ['Séminaire', 'Atelier', 'Parcours hybride'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Zap',
     accent: '#dfaf2c',
     slug: 'agilite-innovation', // <= correspond à agilite-innovation.tsx
@@ -69,7 +69,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Cette formation decrypte les sous jacents d'une culture d'innovation et vous aide à diffuser la posture d'intrapreneur aux équipes.",
     duration: '1–2 jours',
-    format: ['Séminaire', 'Atelier'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Lightbulb',
     accent: '#dfaf2c',
     slug: 'culture-strategie-innovation',
@@ -81,7 +81,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Cette formation accelere l’adoption et l’exploration de l’IA et de l’innovation digitale, l’exploration d’outils IA générative /LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental…",
     duration: '1–2 jours',
-    format: ['Atelier', 'Parcours hybride'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Brain',
     accent: '#dfaf2c',
     slug: 'intelligence-artificielle-cas-usage',
@@ -93,7 +93,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Cette formation fournit les clefs pour decrypter les nouveaux modeles d'affaires pour créer de la valeur durablement (plateformisation, économie de la fonctionnalité, circularité).",
     duration: '1–2 jours',
-    format: ['Atelier', 'Workshop'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Search',
     accent: '#dfaf2c',
     slug: 'business-model-design', // <= correspond à business-model-design.tsx
@@ -107,7 +107,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Sensibilisation aux fondamentaux de la RSE, réflexion secteur par secteur, définition de plans d’action concrets pour les équipes.",
     duration: '1–3 jours',
-    format: ['Séminaire', 'Cas pratiques', 'Accompagnement terrain'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Leaf',
     accent: '#dfaf2c',
     slug: 'strategie-transformation-durable-rse-operationnelle',
@@ -119,7 +119,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Comprendre les référentiels, évaluer l’impact environnemental de vos offres. Introduction aux obligations de reporting (CSRD).",
     duration: '1–2 jours',
-    format: ['Séminaire', 'Hybride'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Calculator',
     accent: '#dfaf2c',
     slug: 'eco-conception-bilan-carbone-csrd',
@@ -131,7 +131,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Découvrir les modèles durables, explorer les principes d’écoconception, réinterroger le business model à l’aune des limites planétaires.",
     duration: '1–2 jours',
-    format: ['Workshop', 'Séminaire'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Recycle',
     accent: '#dfaf2c',
     slug: 'economie-circulaire-eco-innovation',
@@ -143,7 +143,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Mesurer l’empreinte environnementale du numérique et déployer une stratégie digitale durable.",
     duration: '1 jour',
-    format: ['Présentiel', 'Distanciel'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Monitor',
     accent: '#dfaf2c',
     slug: 'numerique-responsable-impact-digital',
@@ -157,7 +157,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Clarifier les fondamentaux identitaires de votre organisation pour renforcer l’engagement et la cohérence stratégique.",
     duration: '1–2 jours',
-    format: ['Workshop', 'Parcours'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Eye',
     accent: '#dfaf2c',
     slug: 'vision-mission-raison-detre-valeurs',
@@ -169,7 +169,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Maîtriser SWOT, PESTEL, 5 forces, BCG… et structurer la prise de décision.",
     duration: '1–2 jours',
-    format: ['Présentiel', 'Hybride'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Search',
     accent: '#dfaf2c',
     slug: 'diagnostic-strategique',
@@ -181,7 +181,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Explorer diversification, internationalisation, croissance interne/externe, partenariats…",
     duration: '1–2 jours',
-    format: ['Workshop', 'Accompagnement'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'TrendingUp',
     accent: '#dfaf2c',
     slug: 'strategies-de-croissance',
@@ -193,7 +193,7 @@ export const formations: Formation[] = [
     shortDescription:
       "Proposition de valeur, benchmark, Océan Bleu, Business Model Canvas, Value Proposition Design.",
     duration: '1–2 jours',
-    format: ['Workshop', 'Parcours'],
+  format: ['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire'],
     icon: 'Building2',
     accent: '#dfaf2c',
     slug: 'positionnement-strategique-business-model',

@@ -8,34 +8,34 @@ export default function DiagnosticStrategique() {
     <FormationLayout
       badge="Stratégie & décision"
       title="Diagnostic stratégique"
-      summary="Maîtriser et appliquer les outils d’analyse (PESTEL, 5 forces, chaîne de valeur, VRIO/VRIN, SWOT, BCG) pour éclairer et aligner vos décisions."
+      summary="Maîtriser et appliquer les outils d’analyse (PESTEL, 5+1 forces, chaîne de valeur, VRIO/VRIN, SWOT…) pour diagnostiquer les environnements internes et externes de l’entreprise."
       meta={[
-        { icon: Clock, text: "1–2 jours (modulable)" },
+        { icon: Clock, text: "Discuter" },
         { icon: Users, text: "Managers, équipes stratégie/innovation, CODIR/COMEX" },
       ]}
       // Pourquoi
       whyText="Dans un environnement instable (économie, numérique, société), les décisions réactives coûtent cher. Cette formation fournit un cadre clair pour analyser l’externe et l’interne, structurer un diagnostic robuste et formuler des recommandations actionnables."
       pills={[
-        { icon: Target, label: "Prioriser avec des preuves" },
+        { icon: Target, label: "Diagnostic stratégique" },
         { icon: Layers3, label: "Relier interne & externe" },
       ]}
       // Objectifs (pas « pédagogiques »)
       objectives={[
         "Analyser l’environnement externe (PESTEL, 5+1 forces, groupes stratégiques).",
         "Identifier ressources, compétences et capacités distinctives (RBV, chaîne de valeur, VRIO/VRIN).",
-        "Réaliser une synthèse SWOT utile à la décision.",
-        "Formuler des recommandations étayées et priorisées.",
+        "Réaliser une synthèse SWOT pour un diagnostic complet.",
+        "Formuler des recommandations stratégiques étayées et priorisées.",
         "Relier diagnostic et choix de business model / portefeuille d’activités.",
       ]}
       // Contenu & déroulé
       modules={[
         { title: "Introduction & cadrage", desc: "Pourquoi diagnostiquer avant d’agir ? Périmètre et livrables attendus." },
-        { title: "Externe — PESTEL", desc: "Facteurs macro, signaux faibles et impacts pour votre secteur." },
-        { title: "Externe — 5+1 forces & groupes stratégiques", desc: "Cartes de jeu concurrentielles et dynamiques sectorielles." },
+        { title: "Externe — PESTEL et méthode des scénarios", desc: "Facteurs macro, signaux faibles et impacts pour votre secteur." },
+        { title: "Externe — 5+1 forces & groupes stratégiques", desc: "Structures du secteur d’activités, facteurs clés de succès et cartographie du jeu concurrentiel." },
         { title: "Interne — chaîne de valeur & RBV", desc: "Ressources, compétences distinctives et liens avec la performance." },
         { title: "Interne — VRIO/VRIN", desc: "Tester la durabilité des avantages concurrentiels." },
-        { title: "Synthèse — SWOT", desc: "Options, scénarios et choix prioritaires basés sur les faits." },
-        { title: "Portefeuille — BCG (selon contexte)", desc: "Arbitrages d’investissement et trajectoires." },
+        { title: "Synthèse — SWOT", desc: "Diagnostic, options stratégiques, scénarios et choix prioritaires basés sur les faits." },
+        { title: "Feuille de route stratégique", desc: "Arbitrages d’investissement et trajectoires." },
         { title: "Ateliers d’application", desc: "Travail sur cas réels des participants, cadrage des next steps." },
       ]}
       // Formats & modalités (adapté aux infos pratiques)
@@ -47,15 +47,15 @@ export default function DiagnosticStrategique() {
       // Cas d’usage
       useCases={[
         "Identifier des compétences distinctives et ajuster le positionnement face à de nouveaux entrants.",
-        "Anticiper un virage réglementaire via PESTEL & Porter, puis traduire en clés de succès.",
+        "Anticiper un virage réglementaire via PESTEL et les méthodes de prospective stratégique, puis traduire en menaces et opportunités scénarisées.",
         "Croiser VRIO et SWOT pour prioriser un plan stratégique à 12–24 mois.",
-        "Confronter le diagnostic aux business models émergents (plateformes, IA, blockchain) et orienter l’innovation.",
+        "Confronter le diagnostic aux business models émergents (plateformes, IA, blockchain) et orienter la stratégie.",
       ]}
       // CTA manamind
-      ctaTitle="On aligne vos décisions sur un diagnostic solide"
-      ctaText="Atelier modulable, livrables actionnables, cap sur l’impact."
-      ctaButton="Discuter"
-      ctaHref={CAL_LINK}
+  ctaTitle="On aligne vos décisions sur un diagnostic solide"
+  ctaText="Discuter"
+  ctaButton="Discuter"
+  ctaHref={CAL_LINK}
     />
   );
 }

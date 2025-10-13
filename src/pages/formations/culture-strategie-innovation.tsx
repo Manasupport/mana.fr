@@ -6,9 +6,10 @@ const CAL_LINK = "https://calendar.app.google/MHJFvXizPczcPjnB7";
 export default function CultureStrategieInnovation() {
   return (
     <FormationLayout
-      badge="Stratégie • Organisation"
+        badge="Innover pour s'adapter"
       title="Culture & stratégie d’innovation"
       summary="Évaluer la maturité d’innovation et aligner culture, stratégie et performance."
+        formatList={['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire']}
       meta={[
         { icon: Clock, text: "1–2 jours (modulable)" },
         { icon: Users, text: "Direction, managers, équipes transverses" },

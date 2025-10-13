@@ -22,13 +22,14 @@ export default function StrategiesDeCroissance() {
       badge="Stratégie & développement"
       title="Stratégies de croissance"
       summary="Explorer les voies de développement : diversification, internationalisation, croissance interne ou externe, alliances et partenariats."
+  formatList={['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire']}
       meta={[
-        { icon: Clock, text: "1–2 jours (modulable)" },
+        { icon: Clock, text: "Discuter" },
         { icon: Users, text: "Managers, CODIR/COMEX, stratégie/innovation" },
       ]}
 
       // Pourquoi
-      whyText="Les organisations hésitent entre plusieurs options de développement. Sans cadre, les décisions deviennent opportunistes et coûteuses. Cette formation apporte des outils pour comparer les voies de croissance et choisir celles qui créent une valeur durable."
+  whyText="La croissance est un prérequis stratégique de nos économies concurrentielles. Sans arbitrage stratégique des multiples modes de croissance possibles, les décisions deviennent opportunistes et coûteuses. Cette formation apporte des outils pour analyser les voies de croissance et choisir celles qui créent une valeur durable pour l’entreprise et son écosystème."
       pills={[
         { icon: Target, label: "Choisir en connaissance de cause" },
         { icon: Layers3, label: "Structurer le portefeuille" },
@@ -36,11 +37,11 @@ export default function StrategiesDeCroissance() {
 
       // Objectifs (pas « pédagogiques »)
       objectives={[
-        "Identifier et comparer les options de croissance (matrice Ansoff : pénétration, développement, diversification).",
+        "Identifier et comparer les options de croissance (matrice des directions stratégiques: pénétration, développement de marché, développement de produits, diversification).",
         "Analyser les conditions de succès de l’internationalisation : drivers, sélection des marchés, modes d’entrée.",
         "Évaluer les modes de croissance : interne, externe (M&A), joint-ventures, alliances.",
         "Mobiliser les outils de portfolio management : BCG, McKinsey/GE, ADL, options réelles.",
-        "Relier croissance et innovation de business model dans un contexte numérique.",
+        "Concevoir une feuille de route de croissance à 12-24 mois.",
       ]}
 
       // Contenu & déroulé
@@ -56,8 +57,8 @@ export default function StrategiesDeCroissance() {
 
       // Formats
       formats={[
-        { name: "Séminaire & Ateliers", lines: ["1–2 jours", "Présentiel / distanciel"] },
         { name: "Découverte", lines: ["½ journée", "Acculturation + mini-atelier"] },
+        { name: "Séminaire & Ateliers", lines: ["1–2 jours", "Présentiel / distanciel"] },
         { name: "Parcours", lines: ["2–6 semaines", "Accompagnement sur cas réel"] },
       ]}
 
@@ -65,7 +66,7 @@ export default function StrategiesDeCroissance() {
       useCases={[
         "Tester l’opportunité d’une diversification et arbitrer avec les 3 tests de Porter.",
         "Choisir un mode d’entrée pertinent pour l’internationalisation d’une activité.",
-        "Repositionner un portefeuille avec la matrice BCG ou McKinsey/GE.",
+        "Repositionner un portefeuille d’activités avec la matrice BCG ou McKinsey/GE.",
         "Nouer des partenariats/alliances pour accélérer l’innovation et l’accès marché.",
       ]}
 
@@ -73,10 +74,10 @@ export default function StrategiesDeCroissance() {
       // Ex : IA = nouveaux relais de croissance ; Plateformes = modèles écosystémiques ; Blockchain = confiance distribuée
 
       // CTA Manamind
-      ctaTitle="Éclairons votre trajectoire de croissance"
-      ctaText="On compare objectivement les options et on bâtit un scénario créateur de valeur."
-      ctaButton="Discuter"
-      ctaHref={CAL_LINK}
+  ctaTitle="Éclairons votre trajectoire de croissance"
+  ctaText="Discuter"
+  ctaButton="Discuter"
+  ctaHref={CAL_LINK}
     />
   );
 }

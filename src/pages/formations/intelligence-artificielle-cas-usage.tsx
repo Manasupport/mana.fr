@@ -9,6 +9,7 @@ export default function IntelligenceArtificielle() {
       badge="IA • Digital"
       title="Acculturation et adoption de l’IA en entreprise"
       summary="Acculturation aux usages de l’IA et de l’innovation digitale, exploration d’outils IA/LLM, ateliers d’idéation autour de cas métiers, sensibilisation à l’impact environnemental"
+      formatList={['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire']}
       meta={[
         { icon: Clock, text: "1 jour (modulable ½ à 1j)" },
         { icon: Users, text: "Décideurs, métiers, opérations, IT" },

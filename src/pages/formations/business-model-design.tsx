@@ -11,8 +11,9 @@ export default function BusinessModelDesign() {
       summary="Prototyper, tester et faire évoluer votre modèle d’affaires à l’ère des plateformes, de l’IA et des nouvelles attentes sociétales — de façon pragmatique et durable."
       meta={[
         { icon: Clock, text: "1–2 jours (modulable)" },
-        { icon: Users, text: "Atelier / Workshop (présentiel ou distanciel)" },
+        { icon: Users, text: "Direction, managers, équipes transverses" },
       ]}
+        formatList={['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire']}
       whyText="Face à la pression des nouveaux entrants, aux usages digitaux et aux impératifs de durabilité, les modèles historiques s’essoufflent. Cette formation propose un cadre de design, d’expérimentation et d’itération pour faire évoluer votre business model rapidement et de manière mesurable."
       pills={[
         { icon: Layers, label: "Clarifier le modèle actuel" },

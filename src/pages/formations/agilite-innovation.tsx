@@ -16,6 +16,7 @@ export default function AgiliteInnovation() {
       badge="Innovation • Industrie"
       title="Agilité & innovation en contexte industriel"
       summary="Passer d’un pilotage rigide à un mode d’action agile, adapté aux réalités du terrain industriel : rythmes, rituels, responsabilités et outils qui fluidifient la collaboration et accélèrent la valeur."
+      formatList={['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire']}
       meta={[
         { icon: Clock, text: "Séquence interactive • fondamentaux" },
         { icon: Users, text: "Directeur de programme, Directeur innovation, Chef de projet" },

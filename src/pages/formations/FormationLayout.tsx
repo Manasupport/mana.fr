@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, CheckCircle2, MessageSquare, Sparkles, Star, Zap } from "lucide-react";
+import { ArrowLeft, Calendar, CheckCircle2, MessageSquare, Sparkles, Star, Zap, LayoutList } from "lucide-react";
+import { DEFAULT_FORMATS } from '@/data/formats';
 
 /**
  * FormationLayout — Manacademy Premium
@@ -36,6 +37,8 @@ export type CourseTemplateProps = {
   title: string;
   summary: string;
   meta?: MetaItem[];
+  // Optional list of formats to display in the first hero pastille (overrides first meta.icon/text)
+  formatList?: string[];
 
   // Section Pourquoi
   whyTitle?: string;
@@ -77,6 +80,7 @@ export default function FormationLayout(props: CourseTemplateProps) {
     title,
     summary,
     meta = [],
+  formatList,
 
     // Pourquoi
     whyTitle = "Pourquoi cette formation ?",
@@ -204,20 +208,47 @@ export default function FormationLayout(props: CourseTemplateProps) {
           {/* Meta info premium */}
           {meta.length > 0 && (
             <div className="mb-4 flex flex-wrap justify-center gap-3 text-sm hero-fade-delayed">
-              {meta.map((m, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center rounded-2xl border px-3 py-1.5 backdrop-blur-sm transition-all duration-300 hover:scale-105"
-                  style={{ 
-                    borderColor: `${manaGold}30`, 
-                    background: `linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(223,175,44,0.05))`,
-                    boxShadow: `0 4px 16px rgba(223, 175, 44, 0.15), 0 2px 8px rgba(113,192,136,0.08)`
-                  }}
-                >
-                  <m.icon className="h-5 w-5 mr-2" style={{ color: manaGold }} />
-                  <span style={{ color: manaDark, fontWeight: '500' }}>{m.text}</span>
-                </span>
-              ))}
+              {/** Render unified formats as first pastille using DEFAULT_FORMATS (or formatList prop if provided). Then render the rest of meta starting from index 1. */}
+              {(() => {
+                const formatsParts = (formatList && formatList.length > 0) ? formatList : Array.from(DEFAULT_FORMATS);
+
+                const formatsSpan = (
+                  <span
+                    className="inline-flex items-center rounded-2xl border px-3 py-1.5 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                    style={{
+                      borderColor: `${manaGold}30`,
+                      background: `linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(223,175,44,0.05))`,
+                      boxShadow: `0 4px 16px rgba(223, 175, 44, 0.15), 0 2px 8px rgba(113,192,136,0.08)`,
+                    }}
+                  >
+                    <LayoutList className="h-5 w-5 mr-2" style={{ color: manaGold }} />
+                    <span style={{ color: manaDark, fontWeight: '500' }}>{formatsParts.join(' • ')}</span>
+                  </span>
+                );
+
+                const restMeta = meta.slice(1);
+                if (restMeta.length > 0) {
+                  return [
+                    formatsSpan,
+                    ...restMeta.map((m, i) => (
+                      <span
+                        key={i}
+                        className="inline-flex items-center rounded-2xl border px-3 py-1.5 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                        style={{
+                          borderColor: `${manaGold}30`,
+                          background: `linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(223,175,44,0.05))`,
+                          boxShadow: `0 4px 16px rgba(223, 175, 44, 0.15), 0 2px 8px rgba(113,192,136,0.08)`,
+                        }}
+                      >
+                        <m.icon className="h-5 w-5 mr-2" style={{ color: manaGold }} />
+                        <span style={{ color: manaDark, fontWeight: '500' }}>{m.text}</span>
+                      </span>
+                    )),
+                  ];
+                }
+
+                return formatsSpan;
+              })()}
             </div>
           )}
 

@@ -9,17 +9,18 @@ export default function EcoConceptionBilanCarboneCsrd() {
       badge="Éco-conception & Reporting"
       title="Éco-conception, bilan carbone, CSRD"
       summary="Comprendre les référentiels, mesurer les impacts et structurer un reporting crédible. Une approche concrète pour intégrer l’éco-conception et anticiper la CSRD."
+  formatList={['Masterclass', 'Atelier collectif', 'Format hybride', 'Séminaire']}
       meta={[
-        { icon: Clock, text: "1–2 jours (modulable)" },
+        { icon: Clock, text: "Discuter" },
         { icon: Users, text: "Managers, responsables RSE, chefs de projet, intrapreneurs" },
       ]}
       // Pourquoi
-      whyText="Pression réglementaire (CSRD, loi AGEC, taxonomie…), attentes clients et concurrence internationale : mesurer, réduire et rendre compte n’est plus optionnel. Beaucoup d’équipes manquent de repères pour conduire un bilan carbone, lire une ACV ou structurer un reporting fiable. Ce parcours offre un cadre clair et des ateliers pratico-pratiques pour passer à l’action."
+      whyText="Pression réglementaire (CSRD, loi AGEC, taxonomie…), attentes clients et concurrence internationale : mesurer, éviter, réduire et rendre compte n’est plus optionnel. Beaucoup d’équipes manquent de repères pour conduire un bilan carbone, lire une ACV ou structurer un reporting fiable. Ce parcours offre un cadre clair et des ateliers pratico-pratiques pour passer à l’action."
       pills={[
         { icon: BarChart3, label: "Mesurer & prioriser" },
         { icon: Layers, label: "Cycle de vie & ACV" },
       ]}
-      // Objectifs (pas « pédagogiques »)
+      // Objectifs
       objectives={[
         "S’approprier les principes d’éco-conception et la logique cycle de vie.",
         "Mener un premier diagnostic environnemental (bilan GES, bases ACV).",
@@ -40,11 +41,11 @@ export default function EcoConceptionBilanCarboneCsrd() {
       ]}
       // Formats & modalités
       formats={[
-        { name: "Séminaire + Ateliers", lines: ["1–2 jours", "Présentiel / distanciel", "Cas concrets des participants"] },
         { name: "Atelier découverte", lines: ["½ journée", "Acculturation + mini-atelier bilan GES"] },
+        { name: "Séminaire + Ateliers", lines: ["1–2 jours", "Présentiel / distanciel", "Cas concrets des participants"] },
         { name: "Parcours", lines: ["2–6 semaines", "Accompagnement à la mise en œuvre"] },
       ]}
-      // Cas d’usage
+      // Exemples d’applications
       useCases={[
         "Comparer plusieurs designs produits via PEF pour réduire l’empreinte carbone.",
         "Structurer un premier reporting CSRD avec atelier de double matérialité.",
@@ -53,7 +54,7 @@ export default function EcoConceptionBilanCarboneCsrd() {
       ]}
       // CTA manamind
       ctaTitle="Intégrons l’éco-conception dans vos décisions"
-      ctaText="Diagnostic rapide, jalons CSRD, plan bas carbone actionnable."
+      ctaText="Discuter"
       ctaButton="Discuter"
       ctaHref={CAL_LINK}
     />
