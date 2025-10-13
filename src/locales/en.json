@@ -27,15 +27,15 @@
     "ecosystemSubtitle": "The ecosystem that connects reflection, action, and lasting impact.",
     "entities": {
       "manamind": {
-        "tagline": "Build skills, drive innovation",
+        "tagline": "Build skills, Drive Innovation",
         "description": "Manamind is an EdTech application designed to create and deliver customized learning pathways, focused on skills development."
       },
       "manacademy": {
-        "tagline": "Innovate to raise knowledge",
+        "tagline": "Innovate to Raise Knowledge",
         "description": "Manacademy is the training and educational innovation center dedicated to impactful learning. Its cutting-edge programs prepare the leaders of tomorrow’s transitions."
       },
       "manadvise": {
-        "tagline": "Innovation at the crossroads",
+        "tagline": "Innovation at the Crossroads",
         "description": "Manadvise fosters synergies between the academic ecosystem and the business world. We coordinate consulting and research projects to address the challenges of impact-driven innovation."
       }
     },
@@ -486,7 +486,7 @@
   "hero": {
     "badge": "Build skills, drive innovation",
     "titlePrefix": "The innovative learning experience that",
-    "highlight": "boosts engagement",
+    "highlight": "boosts skills",
     "subtitle": "An application to design, deliver and track tailored learning journeys focused on skills. Already used by leading schools, universities and training organizations.",
     "buttons": {
       "discover": "Discover Manamind",
