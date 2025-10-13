@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { FileText, Download, ArrowLeft, FolderOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getPdfPath } from "@/lib/resources";
 
 /* ------------------------------------------------------ */
 /*            Composant carte réutilisable                */
@@ -20,15 +21,17 @@ const ResourceCard = ({ resource, type }: { resource: any; type: string }) => (
         <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-manamind to-manamind-dark shadow-md">
           <FileText className="h-5 w-5 text-white" />
         </div>
-        {/* action secondaire discrète */}
-        <Button
-          variant="ghost"
-          size="sm"
-          className="opacity-0 transition-opacity group-hover:opacity-100"
+        {/* action secondaire discrète — now downloads the mapped PDF */}
+        <a
+          href={getPdfPath(resource.id)}
+          download
+          className="opacity-0 transition-opacity group-hover:opacity-100 inline-flex items-center"
           aria-label="Quick download"
         >
-          <Download className="h-4 w-4" />
-        </Button>
+          <Button variant="ghost" size="sm">
+            <Download className="h-4 w-4" />
+          </Button>
+        </a>
       </div>
       <CardTitle className="text-lg leading-snug text-[#0c3d5e]">
         {resource.title}
