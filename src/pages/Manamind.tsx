@@ -74,7 +74,7 @@ const Manamind = () => {
 
      {/* HERO — taille visuel fixée + pas de rognage du titre */}
     <section
-      className="relative pt-32 pb-20"
+      className="relative pt-24 pb-20"
       // on enlève overflow-hidden pour éviter tout clipping vertical du titre
       // style visuel inchangé
     >
@@ -88,7 +88,7 @@ const Manamind = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Colonne gauche */}
           <div className="space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-manamind/10 text-manamind-dark px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center space-x-2 bg-manamind/10 text-manamind-dark px-4 py-2 rounded-full text-sm font-medium mb-3">
               <Brain className="h-4 w-4" />
               <span>{t("manamindPage.hero.badge", "Build Skills, Drive Innovation")}</span>
             </div>
