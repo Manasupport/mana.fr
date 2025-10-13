@@ -144,21 +144,22 @@ const Manamind = () => {
             <div className="relative">
               {/* bulles décoratives */}
               <div
-                className="absolute -top-10 -right-10 h-40 w-40 rounded-full opacity-25"
+                className="absolute -top-10 -right-10 lg:-right-32 h-40 w-40 rounded-full opacity-25"
                 style={{ backgroundColor: manaMind }}
               />
               <div
-                className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full opacity-20"
+                className="absolute -bottom-10 -left-10 lg:left-20 h-32 w-32 rounded-full opacity-20"
                 style={{ backgroundColor: manaDark }}
               />
 
               {/* Remplacer la maquette par l'image publique /mac.png */}
               <div
-                className="relative rounded-3xl overflow-hidden transition-transform duration-300 transform-gpu hover:scale-105"
+                className="relative rounded-3xl overflow-hidden transition-transform duration-300 transform-gpu hover:scale-105 lg:translate-x-20"
                 style={{
-                  width: "684px",
-                  maxWidth: "43vw",
-                  minWidth: "342px",
+                  // increased ~10% as requested
+                  width: "827px",
+                  maxWidth: "52vw",
+                  minWidth: "414px",
                   aspectRatio: "16 / 9",
                 }}
               >
