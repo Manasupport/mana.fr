@@ -253,22 +253,12 @@ const Manacademy = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Colonne gauche - contenu */}
             <div className="space-y-8">
-              {/* Badge premium */}
-              <div className="inline-flex items-center space-x-3 px-6 py-3 rounded-full border backdrop-blur-sm transition-all duration-300 hover:scale-105"
-                style={{ 
-                  backgroundColor: `${manaGold}12`, 
-                  borderColor: `${manaGold}30`,
-                  boxShadow: `0 4px 20px ${manaGold}15`
-                }}
+              {/* Badge premium (compact style) */}
+              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
+                style={{ backgroundColor: `${manaGold}10`, color: manaDark }}
               >
-                <div 
-                  className="h-2 w-2 rounded-full animate-pulse"
-                  style={{ backgroundColor: manaGold }}
-                />
-                <GraduationCap className="h-5 w-5" style={{ color: manaGold }} />
-                <span className="text-sm font-semibold tracking-wide" style={{ color: manaDark }}>
-                  {t("manacademyPage.hero.badge", "Innovation to Raise Knowledge")}
-                </span>
+                <GraduationCap className="h-4 w-4" style={{ color: manaGold }} />
+                <span>{t("manacademyPage.hero.badge", "Innovation to Raise Knowledge")}</span>
               </div>
 
               {/* Titre principal avec effet typographique */}

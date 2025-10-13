@@ -88,15 +88,9 @@ const Manamind = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Colonne gauche */}
           <div className="space-y-8">
-            <div
-              className="inline-flex items-center space-x-3 px-6 py-3 rounded-full border backdrop-blur-sm transition-all duration-300 hover:scale-105"
-              style={{ backgroundColor: `${manaMind}14`, borderColor: `${manaMind}33`, boxShadow: `0 4px 20px ${manaMind}25` }}
-            >
-              <div className="h-2 w-2 rounded-full animate-pulse" style={{ backgroundColor: manaMind }} />
-              <Brain className="h-5 w-5" style={{ color: manaMind }} />
-              <span className="text-sm font-semibold tracking-wide" style={{ color: manaDark }}>
-                {t("manamindPage.hero.badge", "Build Skills, Drive Innovation")}
-              </span>
+            <div className="inline-flex items-center space-x-2 bg-manamind/10 text-manamind-dark px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Brain className="h-4 w-4" />
+              <span>{t("manamindPage.hero.badge", "Build Skills, Drive Innovation")}</span>
             </div>
 
             {/* Fix rognage : on évite leading-tight qui coupe les descendantes avec bg-clip-text */}
