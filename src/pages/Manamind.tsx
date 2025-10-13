@@ -162,14 +162,14 @@ const Manamind = () => {
               <div
                 className="relative rounded-3xl overflow-hidden transition-transform duration-300 transform-gpu hover:scale-105"
                 style={{
-                  width: "680px",
-                  maxWidth: "42vw",
-                  minWidth: "320px",
+                  width: "684px",
+                  maxWidth: "43vw",
+                  minWidth: "342px",
                   aspectRatio: "16 / 9",
                 }}
               >
                 <img
-                  src="/mac.png"
+                  src="/mac.gif"
                   alt={t("manamindPage.hero.macAlt", "Manamind preview screenshot")}
                   className="w-full h-full object-cover"
                   style={{ display: "block" }}
