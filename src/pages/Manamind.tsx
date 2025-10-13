@@ -158,39 +158,22 @@ const Manamind = () => {
                 style={{ backgroundColor: manaDark }}
               />
 
-              {/* Carte maquette : largeur accrue + ratio + shadow */}
+              {/* Remplacer la maquette par l'image publique /mac.png */}
               <div
-                className="
-                  relative bg-white rounded-3xl shadow-2xl
-                  p-8
-                  transition-transform duration-500
-                "
+                className="relative rounded-3xl overflow-hidden transition-transform duration-300 transform-gpu hover:scale-105"
                 style={{
-                  // 👇 dimensions proches du rendu “grand” du 1er screen
-                  width: "680px",          // force la largeur visuelle
-                  maxWidth: "42vw",        // garde la responsivité sur grands écrans
-                  minWidth: "520px",       // évite qu'elle ne devienne petite
-                  aspectRatio: "16 / 9",   // ratio stable
-                  boxShadow: "0 40px 80px rgba(12,61,94,0.20)",
+                  width: "680px",
+                  maxWidth: "42vw",
+                  minWidth: "320px",
+                  aspectRatio: "16 / 9",
                 }}
               >
-                {/* “UI phantom” */}
-                <div className="space-y-4">
-                  <div className="h-4 rounded w-3/4" style={{ backgroundColor: `${manaMind}20` }} />
-                  <div className="h-4 bg-gray-200 rounded w-1/2" />
-                  <div className="grid grid-cols-3 gap-4 my-6">
-                    <div className="h-24 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${manaMind}12` }}>
-                      <Brain className="h-9 w-9" style={{ color: manaMind }} />
-                    </div>
-                    <div className="h-24 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${manaMind}12` }}>
-                      <Users className="h-9 w-9" style={{ color: manaMind }} />
-                    </div>
-                    <div className="h-24 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${manaMind}12` }}>
-                      <BarChart3 className="h-9 w-9" style={{ color: manaMind }} />
-                    </div>
-                  </div>
-                  <div className="h-4 bg-gray-200 rounded w-2/3" />
-                </div>
+                <img
+                  src="/mac.png"
+                  alt={t("manamindPage.hero.macAlt", "Manamind preview screenshot")}
+                  className="w-full h-full object-cover"
+                  style={{ display: "block" }}
+                />
               </div>
             </div>
           </div>
