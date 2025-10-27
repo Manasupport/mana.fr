@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { getFormattedResourceCounts } from "@/utils/resourceCounter";
 
 /* ------------------------------------------------------------------ */
 /*                     Icônes configurables via i18n                   */
@@ -69,14 +70,26 @@ type Category = {
 export default function ResourcesAcademic() {
   const { t } = useTranslation();
 
-  // Catégories via i18n (fallback inclus)
+  // Get dynamic resource counts
+  const resourceCounts = getFormattedResourceCounts();
+
+  // Catégories via i18n (fallback inclus) with dynamic counts
   const fromI18n =
     (t("resourcesAcademic.categories", { returnObjects: true }) as Category[]) ??
     [];
 
   const categories: Category[] =
     fromI18n.length > 0
-      ? fromI18n
+      ? fromI18n.map(category => ({
+          ...category,
+          // Override resourceCount with dynamic values
+          resourceCount: 
+            category.id === "project-management" ? resourceCounts.projectManagement :
+            category.id === "international-strategy" ? resourceCounts.internationalStrategy :
+            category.id === "thesis" ? resourceCounts.thesis :
+            category.id === "design-thinking" ? resourceCounts.designThinking :
+            category.resourceCount // fallback to original
+        }))
       : [
           {
             id: "project-management",
@@ -85,7 +98,7 @@ export default function ResourcesAcademic() {
               "Essential tools and frameworks for successful project delivery",
             icon: "target",
             color: "manamind",
-            resourceCount: 14,
+            resourceCount: resourceCounts.projectManagement,
           },
           {
             id: "international-strategy",
@@ -94,7 +107,7 @@ export default function ResourcesAcademic() {
               "Strategic frameworks for global business expansion",
             icon: "globe",
             color: "manadvise",
-            resourceCount: 6,
+            resourceCount: resourceCounts.internationalStrategy,
           },
           {
             id: "thesis",
@@ -103,7 +116,7 @@ export default function ResourcesAcademic() {
               "Academic research and thesis development resources",
             icon: "fileText",
             color: "manacademy",
-            resourceCount: 1,
+            resourceCount: resourceCounts.thesis,
           },
           {
             id: "design-thinking",
@@ -112,7 +125,7 @@ export default function ResourcesAcademic() {
               "Creative problem-solving and innovation methodologies",
             icon: "lightbulb",
             color: "mana-accent",
-            resourceCount: 14,
+            resourceCount: resourceCounts.designThinking,
           },
         ];
 
