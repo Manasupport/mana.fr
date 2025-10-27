@@ -251,9 +251,28 @@ const Publications = () => {
       });
   }, [articles, selectedThematic, selectedType]);
 
-  // Sélection éditoriale pour la mise en avant
+  // Sélection éditoriale pour la mise en avant avec rotation quotidienne
   const featuredArticles = useMemo(() => {
-    return filteredArticles.filter(article => article.featured).slice(0, 3);
+    // Filtrer tous les articles éligibles pour être featured
+    const eligibleForFeatured = filteredArticles.filter(article => 
+      article.featured || article.type === "Guide" || article.type === "Étude"
+    );
+    
+    if (eligibleForFeatured.length === 0) return [];
+    
+    // Créer une rotation basée sur la date du jour
+    const today = new Date();
+    const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+    
+    // Mélanger la liste de façon déterministe basée sur le jour de l'année
+    const shuffled = [...eligibleForFeatured].sort((a, b) => {
+      // Utiliser l'ID de l'article + jour de l'année comme seed pour un tri stable
+      const seedA = (a.id + dayOfYear) * 9301 + 49297;
+      const seedB = (b.id + dayOfYear) * 9301 + 49297;
+      return (seedA % 233280) - (seedB % 233280);
+    });
+    
+    return shuffled.slice(0, 3);
   }, [filteredArticles]);
 
   // Articles restants (tous sauf ceux déjà affichés en featured)
@@ -390,11 +409,17 @@ const Publications = () => {
           {/* Mise en avant éditoriale - Top 3 Featured */}
           {featuredArticles.length > 0 && (
             <div className="mb-20">
-              <div className="flex items-center gap-3 mb-12">
-                <Star className="h-6 w-6" style={{ color: manaGold }} />
-                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: manaDark }}>
-                  {t("publications.featured.title", "À la une")}
-                </h2>
+              <div className="flex items-center justify-between mb-12">
+                <div className="flex items-center gap-3">
+                  <Star className="h-6 w-6" style={{ color: manaGold }} />
+                  <h2 className="text-2xl md:text-3xl font-bold" style={{ color: manaDark }}>
+                    {t("publications.featured.title", "À la une")}
+                  </h2>
+                </div>
+                <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground bg-white/60 backdrop-blur-sm px-3 py-2 rounded-full border border-white/20">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span>Sélection quotidienne</span>
+                </div>
               </div>
 
               <div className="grid lg:grid-cols-2 gap-8">
