@@ -53,6 +53,7 @@ const PDF_FILE_BY_ID: Record<string, string> = {
   "empathy-map": "empathy-map.pdf",
   "challenge-summary": "challenge-summary-canvas.pdf",
   "user-journey": "the-user-journey-map.pdf",
+  "storymapping1": "storymapping1.pdf",
 
   // Design Thinking – Academic
   "problem-solving": "problem-solving-creativity-by-design-thinking.pdf",
@@ -272,6 +273,11 @@ const META_BY_ID: Record<string, Meta> = {
   "user-journey": {
     title: "User Journey Map",
     description: "Visualize user steps, pains, and moments",
+    category: "Design Thinking",
+  },
+  "storymapping1": {
+    title: "Story mapping",
+    description: "A highly effective tool for defining the uses of a solution and translating them into prioritised features",
     category: "Design Thinking",
   },
 

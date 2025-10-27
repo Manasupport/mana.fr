@@ -62,6 +62,7 @@ export default function DesignThinking() {
     { id: "how-might-we", title: "How Might We", description: "Reframe problems as opportunities for innovation" },
     { id: "what-if", title: "What if...", description: "Explore alternative scenarios and possibilities" },
     { id: "the-golden-rules-of-brainstorming", title: "Golden Rules of Brainstorming", description: "Best practices for effective idea generation sessions" },
+    { id: "storymapping1", title: "Story mapping", description: "A highly effective tool for defining the uses of a solution and translating them into prioritised features" },
     { id: "the-6-golden-rules-of-prototyping", title: "Six Golden Rules of Prototyping", description: "Guidelines for creating effective prototypes" },
     { id: "solutions-mapping", title: "Solution Mapping", description: "Visualize and organize potential solutions" },
     { id: "prototyping-the-solution", title: "Prototype Operationalization Canvas", description: "Plan the implementation of prototype concepts" },

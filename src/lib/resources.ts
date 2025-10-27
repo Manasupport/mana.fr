@@ -49,6 +49,7 @@ const PDF_FILE_BY_ID: Record<string, string> = {
   "empathy-map": "empathy-map.pdf",
   "challenge-summary": "challenge-summary-canvas.pdf",
   "user-journey": "the-user-journey-map.pdf",
+  "storymapping1": "storymapping1.pdf",
 
   // Design Thinking – Academic
   "problem-solving": "problem-solving-creativity-by-design-thinking.pdf",
