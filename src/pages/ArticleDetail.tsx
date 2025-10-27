@@ -40,17 +40,19 @@ const publicUrl = (path: string) => {
 /* ------------------------------------------------------------------ */
 /*                     Service Resend pour notifications email         */
 /* ------------------------------------------------------------------ */
-interface ManaguideDownloadData {
+interface GuideDownloadData {
   email: string;
   firstName: string;
   lastName: string;
+  guideName: string;
   downloadedAt: string;
   userAgent: string;
 }
 
-const sendManaguideNotification = async (userData: ManaguideDownloadData) => {
+// Service de notification générique pour tous les guides
+const sendGuideNotification = async (userData: GuideDownloadData) => {
   try {
-    const response = await fetch('/api/send-managuide-notification', {
+    const response = await fetch('/api/send-guide-notification', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -71,9 +73,29 @@ const sendManaguideNotification = async (userData: ManaguideDownloadData) => {
   }
 };
 
-const sendWelcomeEmail = async (userData: { email: string; firstName: string; lastName: string }) => {
+// Service d'email de bienvenue spécifique selon le guide
+const sendGuideWelcomeEmail = async (userData: { email: string; firstName: string; lastName: string }, guideSlug: string) => {
   try {
-    const response = await fetch('/api/send-welcome-email', {
+    let apiEndpoint = '/api/send-welcome-email'; // par défaut pour le managuide
+    
+    // Choisir l'API selon le guide
+    switch (guideSlug) {
+      case 'innovation-durable-concept-action':
+        apiEndpoint = '/api/send-innovation-durable-welcome';
+        break;
+      case 'innovation-design-idees-preuves':
+        apiEndpoint = '/api/send-innovation-design-welcome';
+        break;
+      case 'innovation-agile-principes-resultats':
+        apiEndpoint = '/api/send-innovation-agile-welcome';
+        break;
+      case 'managuide-innovation':
+      default:
+        apiEndpoint = '/api/send-welcome-email';
+        break;
+    }
+    
+    const response = await fetch(apiEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -123,9 +145,23 @@ const THEME = {
   },
 } as const;
 
-/** Couverture = même nom que le PDF mais en .jpg, même dossier /public/pdfs/ */
-const coverFromPdfFile = (pdfFile: string) =>
-  publicUrl(`pdfs/${pdfFile.replace(/\.pdf$/i, ".jpg")}`);
+/** Couverture = mapping spécifique pour chaque guide */
+const getCoverImageUrl = (articleFile: string) => {
+  // Mapping spécifique pour les nouveaux guides
+  const coverMap: { [key: string]: string } = {
+    '1-innovation-durable.pdf': '1-innovationdurable.png',
+    '2-innovationparledesign.pdf': '2-innovationparledesign.png', 
+    '3-innovationagile.pdf': '3-innovationagile.png'
+  };
+  
+  // Si c'est un des nouveaux guides, utiliser le mapping
+  if (coverMap[articleFile]) {
+    return publicUrl(coverMap[articleFile]);
+  }
+  
+  // Sinon, utiliser la logique par défaut avec .jpg dans le dossier pdfs/
+  return publicUrl(`pdfs/${articleFile.replace(/\.pdf$/i, ".jpg")}`);
+};
 
 /* ------------------------------------------------------------------ */
 /*                          Data articles                              */
@@ -253,6 +289,39 @@ const ARTICLES: Article[] = [
     type: "Article",
     file: "archetypes-entreprises-innovantes.pdf",
     publishedAt: "Publié le 26 mai 2021",
+  },
+  {
+    id: 11,
+    slug: "innovation-durable-concept-action",
+    title: "Innover Durable : du concept à l'action",
+    excerpt:
+      "Face aux limites planétaires et attentes sociétales, découvrez 4 approches pour ancrer l'innovation dans une dynamique de performance durable.",
+    thematic: "Innovation",
+    type: "Guide",
+    file: "1-innovation-durable.pdf",
+    publishedAt: "Publié le 27 octobre 2025",
+  },
+  {
+    id: 12,
+    slug: "innovation-design-idees-preuves",
+    title: "Innovation par le design : des idées aux preuves",
+    excerpt:
+      "Le design articule désirabilité, faisabilité et viabilité pour transformer des problèmes réels en solutions testées.",
+    thematic: "Innovation",
+    type: "Guide",
+    file: "2-innovationparledesign.pdf",
+    publishedAt: "Publié le 27 octobre 2025",
+  },
+  {
+    id: 13,
+    slug: "innovation-agile-principes-resultats",
+    title: "Innovation agile : des principes aux résultats",
+    excerpt:
+      "L'agilité dépasse le 'commande-contrôle' grâce à des valeurs et pratiques pour livrer vite et s'adapter.",
+    thematic: "Innovation",
+    type: "Guide",
+    file: "3-innovationagile.pdf",
+    publishedAt: "Publié le 27 octobre 2025",
   },
 ];
 
@@ -1686,6 +1755,207 @@ function RichBody({ article }: { article: Article }) {
     </>
   );
 
+    case "innovation-durable-concept-action":
+      return (
+        <>
+          <Lead>
+            Face aux limites planétaires, aux attentes sociétales et aux contraintes réglementaires croissantes, les organisations ne peuvent plus innover comme auparavant. L'<strong>innovation durable</strong> s'impose comme une stratégie essentielle : créer de la valeur, en respectant les ressources, l'environnement et les communautés.
+          </Lead>
+
+          <Divider />
+
+          <SectionTitle icon={<Sparkles className="h-6 w-6" />}>
+            Quatre approches complémentaires
+          </SectionTitle>
+          <p className="leading-relaxed">
+            Ce guide présente quatre approches complémentaires permettant d'ancrer l'innovation dans une dynamique de performance durable :
+          </p>
+
+          <div className="space-y-8 mt-8">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-green-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
+                Innovation frugale
+              </h3>
+              <p className="text-green-700 leading-relaxed">
+                <strong>Faire mieux avec moins.</strong> Il s'agit de concevoir des solutions essentielles et accessibles, en optimisant l'usage des ressources. Née dans les pays émergents, cette démarche inspire aujourd'hui des produits plus simples, robustes et réparables, tout en restant économiquement viables.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-blue-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
+                Éco-conception
+              </h3>
+              <p className="text-blue-700 leading-relaxed">
+                <strong>Intégrer l'environnement dès la conception</strong>, sur l'ensemble du cycle de vie d'un produit ou d'un service. L'objectif est de réduire les impacts négatifs sans dégrader la qualité d'usage, grâce à des méthodes structurées permettant des améliorations concrètes et mesurables.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-purple-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
+                Éco-innovation
+              </h3>
+              <p className="text-purple-700 leading-relaxed">
+                <strong>Réorienter l'innovation vers les usages</strong> plutôt que le produit seul. En s'appuyant sur le design et le marketing, elle rend les bénéfices environnementaux plus visibles et attractifs. Cette dynamique stratégique renforce l'engagement des parties prenantes et facilite la transformation interne.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-orange-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center text-white text-sm font-bold">4</div>
+                Business Models circulaires
+              </h3>
+              <p className="text-orange-700 leading-relaxed">
+                <strong>Quitter la logique linéaire "produire – vendre – jeter"</strong> au profit du réemploi, de la réparation, du partage ou du recyclage. L'objectif est de découpler le développement économique de la consommation de ressources, en renforçant la résilience et la compétitivité à long terme.
+              </p>
+            </div>
+          </div>
+
+          <Divider />
+
+          <SectionTitle>En synthèse</SectionTitle>
+          <Callout title="Une réponse stratégique aux enjeux actuels">
+            L'innovation durable n'est pas un supplément, mais une réponse stratégique aux enjeux économiques, sociaux et environnementaux actuels. Les organisations qui l'adoptent dès aujourd'hui sont celles qui façonneront les modèles de demain.
+          </Callout>
+        </>
+      );
+
+    case "innovation-design-idees-preuves":
+      return (
+        <>
+          <Lead>
+            Innover ne se résume ni à la "bonne idée" ni à la seule technologie. Le <strong>design</strong> articule trois piliers — désirabilité (usagers), faisabilité (technique) et viabilité (économique) — pour transformer des problèmes réels en solutions testées et pertinentes.
+          </Lead>
+
+          <Divider />
+
+          <SectionTitle icon={<Target className="h-6 w-6" />}>
+            Quatre approches pour passer de l'intuition à l'évidence
+          </SectionTitle>
+          <p className="leading-relaxed">
+            Ce guide présente quatre approches complémentaires pour passer de l'intuition à l'évidence opérationnelle :
+          </p>
+
+          <div className="space-y-8 mt-8">
+            <div className="bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-rose-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-rose-600 rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
+                Design Thinking
+              </h3>
+              <p className="text-rose-700 leading-relaxed">
+                <strong>État d'esprit et cadre itératif centré humain</strong> : empathie, définition, idéation, prototypage, test. Objectif : apprendre vite, en cycles courts, en mobilisant l'intelligence collective et des preuves d'usage.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-emerald-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
+                Design Sprint
+              </h3>
+              <p className="text-emerald-700 leading-relaxed">
+                <strong>Processus concentré sur cinq jours</strong> pour cadrer un problème, prototyper une solution réaliste et la tester auprès d'utilisateurs. Bénéfice : réduire l'incertitude et éviter des mois de développement inutile.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-50 to-lime-50 border border-green-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-green-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
+                Design Circulaire
+              </h3>
+              <p className="text-green-700 leading-relaxed">
+                <strong>Intégration des principes de l'économie circulaire</strong> dès la conception : durabilité, réparabilité, réemploi, matériaux sûrs, efficience systémique et pensée en écosystèmes. But : maximiser la valeur sur tout le cycle de vie.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-indigo-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center text-white text-sm font-bold">4</div>
+                Design Fiction
+              </h3>
+              <p className="text-indigo-700 leading-relaxed">
+                <strong>Prospective par le design</strong> : scénarios et artefacts plausibles pour explorer des futurs (désirables ou à éviter), ouvrir le débat et orienter les décisions d'aujourd'hui.
+              </p>
+            </div>
+          </div>
+
+          <Divider />
+
+          <SectionTitle>En synthèse</SectionTitle>
+          <Callout title="Un levier stratégique pour l'innovation">
+            Le design est un levier stratégique qui relie usages, technologies et modèles économiques. En combinant Thinking, Sprint, Circulaire et Fiction, les organisations apprennent plus vite, réduisent les risques et conçoivent des solutions utiles, viables et responsables.
+          </Callout>
+        </>
+      );
+
+    case "innovation-agile-principes-resultats":
+      return (
+        <>
+          <Lead>
+            L'<strong>agilité</strong> n'est pas une recette unique, mais un état d'esprit soutenu par des valeurs et des pratiques qui rompent avec le "commande-contrôle". Depuis le Manifeste Agile (2001) — 4 valeurs, 12 principes — l'approche s'est imposée comme un levier de transformation pour livrer vite, apprendre en continu et s'adapter au changement.
+          </Lead>
+
+          <Divider />
+
+          <SectionTitle icon={<Zap className="h-6 w-6" />}>
+            4 cadres pour passer des intentions aux résultats
+          </SectionTitle>
+          <p className="leading-relaxed">
+            Ce guide présente 4 cadres complémentaires pour passer des intentions aux résultats mesurables :
+          </p>
+
+          <div className="space-y-8 mt-8">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-blue-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
+                Scrum
+              </h3>
+              <p className="text-blue-700 leading-relaxed">
+                <strong>Cadre itératif pour équipes produits</strong> : rôles définis (Product Owner, Scrum Master, Développeurs), sprints courts, rituels d'inspection et d'adaptation (daily, revue, rétrospective). Objectif : livrer fréquemment de la valeur et ajuster en continu.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-purple-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
+                SAFe
+              </h3>
+              <p className="text-purple-700 leading-relaxed">
+                <strong>Agilité à l'échelle de l'entreprise</strong> : aligne vision, portefeuille et exécution via des trains de release, PI Planning et pratiques Lean-DevOps. Objectif : synchroniser plusieurs équipes, accélérer le flux et connecter technologie et stratégie.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-green-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
+                Kanban
+              </h3>
+              <p className="text-green-700 leading-relaxed">
+                <strong>Gestion du flux tiré et visualisé</strong> : limiter le travail en cours (WIP), réduire les goulots d'étranglement, améliorer le lead time. Objectif : optimiser la fluidité sans bouleverser l'organisation existante.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-orange-800 mb-3 flex items-center gap-2">
+                <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center text-white text-sm font-bold">4</div>
+                Scrumban
+              </h3>
+              <p className="text-orange-700 leading-relaxed">
+                <strong>Hybride Scrum × Kanban</strong> : itérations et rôles de Scrum, flux et limites WIP de Kanban. Objectif : concilier planification légère et réactivité aux priorités changeantes.
+              </p>
+            </div>
+          </div>
+
+          <Divider />
+
+          <SectionTitle>En synthèse</SectionTitle>
+          <Callout title="Livrer tôt, apprendre vite, ajuster souvent">
+            L'innovation agile, c'est livrer tôt, apprendre vite, ajuster souvent. En combinant Scrum, SAFe, Kanban et Scrumban selon l'échelle et la maturité, les organisations réduisent l'incertitude, améliorent le time-to-value et ancrent une culture d'amélioration continue.
+          </Callout>
+        </>
+      );
+
     default:
       return (
         <>
@@ -1786,11 +2056,11 @@ export default function ArticleDetail() {
 
   const theme = THEME[article.thematic];
   const pdfUrl = publicUrl(`pdfs/${article.file}`);
-  const coverUrl = coverFromPdfFile(article.file);
+  const coverUrl = getCoverImageUrl(article.file);
 
   const handleDownloadClick = () => {
-    // Si c'est le Managuide d'innovation, afficher le popup
-    if (article.slug === 'managuide-innovation') {
+    // Si c'est un Guide, afficher le popup de formulaire
+    if (article.type === 'Guide') {
       setShowDownloadDialog(true);
     } else {
       // Téléchargement direct pour les autres articles
@@ -1817,10 +2087,11 @@ export default function ArticleDetail() {
     
     try {
       // Préparer les données à envoyer
-      const downloadData: ManaguideDownloadData = {
+      const downloadData: GuideDownloadData = {
         email: formData.email,
         firstName: formData.firstName,
         lastName: formData.lastName,
+        guideName: article.title,
         downloadedAt: new Date().toISOString(),
         userAgent: navigator.userAgent,
       };
@@ -1833,8 +2104,8 @@ export default function ArticleDetail() {
       
       // Envoyer les emails en parallèle
       const [notificationResult, welcomeResult] = await Promise.allSettled([
-        sendManaguideNotification(downloadData),
-        sendWelcomeEmail(welcomeData)
+        sendGuideNotification(downloadData),
+        sendGuideWelcomeEmail(welcomeData, article.slug)
       ]);
       
       // Log des résultats
@@ -1952,7 +2223,7 @@ export default function ArticleDetail() {
                   {t("article.download", { defaultValue: "Télécharger le PDF" })}
                 </Button>
                 
-                {article.slug === 'managuide-innovation' && (
+                {article.type === 'Guide' && (
                   <div className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-white/60 backdrop-blur-sm px-3 py-2 rounded-full border border-white/20">
                     <Sparkles className="h-4 w-4 text-[#dfaf2c]" />
                     <span>Guide premium</span>
@@ -1999,10 +2270,10 @@ export default function ArticleDetail() {
               <Download className="h-8 w-8 text-white" />
             </div>
             <DialogTitle className="text-2xl font-bold text-[#0c3d5e]">
-              Accéder au Managuide de l'innovation
+              Accéder au {article.title}
             </DialogTitle>
             <DialogDescription className="text-base text-slate-600 leading-relaxed">
-              Pour télécharger notre guide premium, merci de renseigner vos informations. 
+              Pour télécharger ce guide premium, merci de renseigner vos informations. 
               Vous recevrez également nos actualités innovation.
             </DialogDescription>
           </DialogHeader>

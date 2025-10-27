@@ -22,8 +22,26 @@ import {
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-/** Miniature = même nom que le PDF mais en .jpg, dans le même dossier /pdfs/ */
-const coverFromPdf = (pdfUrl: string) => pdfUrl.replace(/\.pdf$/i, ".jpg");
+/** Miniature = mapping spécifique pour les nouveaux guides + logique par défaut */
+const getCoverImageUrl = (pdfUrl: string) => {
+  // Extraire le nom du fichier PDF de l'URL
+  const pdfFileName = pdfUrl.split('/').pop() || '';
+  
+  // Mapping spécifique pour les nouveaux guides (images dans /public/)
+  const coverMap: { [key: string]: string } = {
+    '1-innovation-durable.pdf': '/1-innovationdurable.png',
+    '2-innovationparledesign.pdf': '/2-innovationparledesign.png', 
+    '3-innovationagile.pdf': '/3-innovationagile.png'
+  };
+  
+  // Si c'est un des nouveaux guides, utiliser le mapping
+  if (coverMap[pdfFileName]) {
+    return coverMap[pdfFileName];
+  }
+  
+  // Sinon, utiliser la logique par défaut avec .jpg dans le dossier pdfs/
+  return pdfUrl.replace(/\.pdf$/i, ".jpg");
+};
 
 // Couleurs et styles pour direction artistique premium
 const manaDark = "#0C3D5E";
@@ -165,6 +183,42 @@ const Publications = () => {
       publishedAt: "2023-08-25",
       readTime: "16 min"
     },
+    {
+      id: 11,
+      title: "Innover Durable : du concept à l'action",
+      excerpt: "Face aux limites planétaires et attentes sociétales, découvrez 4 approches pour ancrer l'innovation dans une dynamique de performance durable : innovation frugale, éco-conception, éco-innovation et modèles circulaires.",
+      thematic: "Innovation",
+      type: "Guide",
+      slug: "innovation-durable-concept-action",
+      pdfUrl: "/pdfs/1-innovation-durable.pdf",
+      featured: true,
+      publishedAt: "2025-10-27",
+      readTime: "18 min"
+    },
+    {
+      id: 12,
+      title: "Innovation par le design : des idées aux preuves",
+      excerpt: "Le design articule désirabilité, faisabilité et viabilité pour transformer des problèmes réels en solutions testées. Maîtrisez Design Thinking, Sprint, Circulaire et Fiction pour apprendre vite et réduire les risques.",
+      thematic: "Innovation",
+      type: "Guide",
+      slug: "innovation-design-idees-preuves",
+      pdfUrl: "/pdfs/2-innovationparledesign.pdf",
+      featured: true,
+      publishedAt: "2025-10-27",
+      readTime: "16 min"
+    },
+    {
+      id: 13,
+      title: "Innovation agile : des principes aux résultats",
+      excerpt: "L'agilité dépasse le 'commande-contrôle' grâce à des valeurs et pratiques pour livrer vite et s'adapter. Explorez Scrum, SAFe, Kanban et Scrumban pour passer des intentions aux résultats mesurables.",
+      thematic: "Innovation",
+      type: "Guide",
+      slug: "innovation-agile-principes-resultats",
+      pdfUrl: "/pdfs/3-innovationagile.pdf",
+      featured: true,
+      publishedAt: "2025-10-27",
+      readTime: "14 min"
+    },
   ];
 
   // Système de couleurs sophistiqué par thématique
@@ -202,9 +256,11 @@ const Publications = () => {
     return filteredArticles.filter(article => article.featured).slice(0, 3);
   }, [filteredArticles]);
 
-  const regularArticles = useMemo(() => {
-    return filteredArticles.filter(article => !article.featured);
-  }, [filteredArticles]);
+  // Articles restants (tous sauf ceux déjà affichés en featured)
+  const remainingArticles = useMemo(() => {
+    const featuredSlugs = featuredArticles.map(article => article.slug);
+    return filteredArticles.filter(article => !featuredSlugs.includes(article.slug));
+  }, [filteredArticles, featuredArticles]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -351,7 +407,7 @@ const Publications = () => {
                     >
                       <div className="aspect-[4/3] overflow-hidden relative">
                         <img
-                          src={coverFromPdf(featuredArticles[0].pdfUrl)}
+                          src={getCoverImageUrl(featuredArticles[0].pdfUrl)}
                           alt={featuredArticles[0].title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           onError={(e) => {
@@ -427,7 +483,7 @@ const Publications = () => {
                       <div className="grid md:grid-cols-5 gap-0">
                         <div className="md:col-span-2 aspect-[4/3] md:aspect-auto overflow-hidden">
                           <img
-                            src={coverFromPdf(article.pdfUrl)}
+                            src={getCoverImageUrl(article.pdfUrl)}
                             alt={article.title}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             onError={(e) => {
@@ -473,7 +529,7 @@ const Publications = () => {
           )}
 
           {/* Grille régulière pour les autres articles */}
-          {regularArticles.length > 0 && (
+          {remainingArticles.length > 0 && (
             <div>
               <div className="flex items-center gap-3 mb-12">
                 <Eye className="h-6 w-6" style={{ color: manaDark }} />
@@ -483,7 +539,7 @@ const Publications = () => {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {regularArticles.map((article) => (
+                {remainingArticles.map((article) => (
                   <Card
                     key={article.id}
                     className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white rounded-2xl cursor-pointer"
@@ -491,7 +547,7 @@ const Publications = () => {
                   >
                     <div className="aspect-[16/10] overflow-hidden relative">
                       <img
-                        src={coverFromPdf(article.pdfUrl)}
+                        src={getCoverImageUrl(article.pdfUrl)}
                         alt={article.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         onError={(e) => {
