@@ -87,6 +87,15 @@ const Navigation = () => {
             </Link>
 
             <Link
+              to="/indice-maturite"
+              className={`relative px-1 py-1 text-base font-medium transition-all duration-300 group hover:scale-[1.03]
+                ${location.pathname === "/indice-maturite" ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}
+            >
+              Indice de Maturité
+              <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary group-hover:w-full transition-all duration-300"></span>
+            </Link>
+
+            <Link
               to="/nous-rejoindre"
               className={`relative px-1 py-1 text-base font-medium transition-all duration-300 group hover:scale-[1.03]
                 ${location.pathname === "/nous-rejoindre" ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}
@@ -141,6 +150,11 @@ const Navigation = () => {
               <Link to="/resources" onClick={() => setIsOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                 location.pathname.startsWith("/resources") ? "text-primary bg-muted" : "text-muted-foreground hover:text-primary hover:bg-muted"}`}>
                 {t("navigation.resources")}
+              </Link>
+
+              <Link to="/indice-maturite" onClick={() => setIsOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                location.pathname === "/indice-maturite" ? "text-primary bg-muted" : "text-muted-foreground hover:text-primary hover:bg-muted"}`}>
+                Indice de Maturité
               </Link>
 
               <Link to="/nous-rejoindre" onClick={() => setIsOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${

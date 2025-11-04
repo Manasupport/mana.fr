@@ -26,6 +26,7 @@ import DesignThinking from "./pages/DesignThinking";
 import ResourceView from "./pages/ResourceView";
 import Publications from "./pages/Publications";
 import ArticleDetail from "./pages/ArticleDetail";
+import IndiceMaturite from "./pages/IndiceMaturite";
 
 // === Formations (pages individuelles) ===
 import AgiliteInnovation from "./pages/formations/agilite-innovation";
@@ -82,6 +83,9 @@ const App = () => (
           <Route path="/publications" element={<Publications />} />
           <Route path="/articles/:slug" element={<ArticleDetail />} />
           <Route path="/resources/publication" element={<Publications />} />
+
+          {/* Indice de Maturité Innovation */}
+          <Route path="/indice-maturite" element={<IndiceMaturite />} />
 
           {/* === Routes Formations (statiques) === */}
           <Route path="/formations/agilite-innovation" element={<AgiliteInnovation />} />

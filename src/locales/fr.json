@@ -826,5 +826,126 @@
     },
     "success": "Message envoyé avec succès !",
     "error": "Erreur lors de l'envoi du message"
+  },
+  "indiceMaturite": {
+    "title": "Indice de Maturité Innovation",
+    "subtitle": "Évaluez votre niveau de maturité innovation en 40 questions",
+    "hero": {
+      "titlePart1": "Indice de Maturité",
+      "titlePart2": "Innovation",
+      "description": "Gratuit • Confidentiel • Résultats instantanés"
+    },
+    "introduction": {
+      "title": "Évaluez votre maturité innovation",
+      "subtitle": "Un diagnostic complet en 40 questions pour révéler votre profil organisationnel",
+      "description": "Cet indice de maturité innovation vous permet d'obtenir une évaluation précise de votre organisation à travers 8 dimensions clés. Découvrez votre archétype et recevez des recommandations personnalisées.",
+      "features": {
+        "evaluation": "Évaluation complète en 8 dimensions",
+        "archetype": "Identification de votre archétype organisationnel",
+        "recommendations": "Recommandations personnalisées par niveau",
+        "report": "Rapport détaillé exportable en PDF"
+      },
+      "duration": "15-20 minutes",
+      "questions": "40 questions",
+      "start": "Commencer l'évaluation",
+      "stats": {
+        "questions": "Questions",
+        "dimensions": "Dimensions",
+        "archetypes": "Archétypes",
+        "minutes": "Min"
+      },
+      "mainFeatures": {
+        "completeEvaluation": {
+          "title": "Évaluation Complète",
+          "description": "Questionnaire scientifique couvrant toutes les dimensions de l'innovation organisationnelle"
+        },
+        "personalizedProfile": {
+          "title": "Profil Personnalisé",
+          "description": "Découvrez votre archétype d'innovation unique parmi 27 profils organisationnels"
+        },
+        "actionPlan": {
+          "title": "Plan d'Action",
+          "description": "Recommandations concrètes et roadmap personnalisée pour accélérer votre transformation"
+        }
+      },
+      "howItWorks": {
+        "title": "Comment ça fonctionne",
+        "steps": {
+          "respond": {
+            "title": "Répondez",
+            "description": "40 questions stratégiques sur 8 dimensions clés de l'innovation"
+          },
+          "analyze": {
+            "title": "Analysez",
+            "description": "Algorithme avancé détermine votre profil et niveau de maturité"
+          },
+          "progress": {
+            "title": "Progressez", 
+            "description": "Plan d'action personnalisé avec KPIs et recommandations"
+          }
+        }
+      },
+      "dimensionsTitle": "Les 8 Dimensions de l'Innovation",
+      "pageTitle": "Évaluation Innovation Professionnelle",
+      "heroTitle": "Découvrez votre profil d'innovation, identifiez vos forces et obtenez un plan d'action personnalisé pour transformer votre organisation",
+      "completeScientificEvaluation": "Une évaluation complète et scientifique de votre maturité innovation",
+      "forYourOrganization": "Pour votre organisation",
+      "benchmarkMaturity": "Benchmark votre maturité innovation",
+      "identifyStrengths": "Identifiez vos forces et axes d'amélioration",
+      "getRoadmap": "Obtenez une roadmap personnalisée",
+      "expectedResults": "Résultats attendus",
+      "accelerateTransformation": "Accélérez votre transformation innovation",
+      "optimizeInvestments": "Optimisez vos investissements R&D",
+      "developAdvantage": "Développez votre avantage concurrentiel",
+      "estimatedTimeAndPrivacy": "Temps estimé : 15-20 minutes pour une évaluation complète. Vos réponses restent confidentielles et vous recevrez un rapport détaillé immédiatement."
+    },
+    "questionnaire": {
+      "progress": "Section {{current}} sur {{total}}",
+      "questionsCompleted": "{{answered}}/{{total}} questions complétées",
+      "percentCompleted": "{{percent}}% terminé",
+      "previousSection": "Section Précédente", 
+      "nextSection": "Section Suivante",
+      "seeResults": "Voir les Résultats",
+      "restart": "Recommencer"
+    },
+    "results": {
+      "title": "Vos résultats",
+      "maturityLevel": "Niveau de maturité",
+      "yourArchetype": "Votre archétype",
+      "radarChart": "Graphique radar",
+      "recommendations": "Recommandations",
+      "detailedAnalysis": "Analyse détaillée",
+      "exportPdf": "Exporter en PDF",
+      "shareResults": "Partager les résultats",
+      "retakeAssessment": "Refaire l'évaluation",
+      "generating": "Génération...",
+      "downloadPdf": "Télécharger PDF",
+      "newEvaluation": "Nouvelle Évaluation",
+      "globalScore": "Score Global",
+      "level": "Niveau",
+      "maturity": "Maturité",
+      "archetype": "Archétype",
+      "overview": "Vue d'ensemble",
+      "details": "Détails",
+      "actionPlan": "Plan d'Action",
+      "yourInnovationProfile": "Votre Profil Innovation",
+      "evaluationResults": "Résultats de votre évaluation de maturité innovation",
+      "maturityProfile": "Profil de Maturité Innovation",
+      "dimensionVisualization": "Visualisation de vos scores par dimension",
+      "yourScore": "Votre score",
+      "averageScore": "Score moyen: {{percent}}%",
+      "maturityScore": "Score de maturité",
+      "dimensionRecommendations": "Recommandations par Dimension",
+      "validationError": "Veuillez répondre à toutes les questions avant de continuer.",
+      "pdfGenerationError": "Erreur lors de la génération du rapport",
+      "detailedScores": "Scores Détaillés par Dimension",
+      "points": "points",
+      "yourProfile": "Votre profil détaillé",
+      "confidence": "Niveau de confiance",
+      "characteristics": "Caractéristiques",
+      "strengths": "Points forts",
+      "challengesToImprove": "Défis à relever",
+      "strategicRecommendations": "Recommandations stratégiques"
+    }
   }
 }

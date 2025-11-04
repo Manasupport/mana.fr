@@ -1,0 +1,717 @@
+{
+  "recommendations": {
+    "strategic-vision": {
+      "level1": {
+        "title": "Définir une Vision Innovation",
+        "description": "Votre organisation manque d'une vision claire pour l'innovation. Il est essentiel de commencer par définir une stratégie d'innovation alignée avec vos objectifs business.",
+        "actions": [
+          "Organiser des ateliers de définition de la vision innovation avec le comité de direction",
+          "Identifier 3-5 domaines d'innovation prioritaires alignés avec la stratégie d'entreprise",
+          "Définir des objectifs innovation mesurables sur 1-3 ans",
+          "Communiquer la vision innovation à toutes les équipes"
+        ],
+        "kpis": [
+          "Pourcentage de collaborateurs connaissant la vision innovation",
+          "Nombre d'initiatives lancées en cohérence avec la vision",
+          "Allocation budgétaire dédiée à l'innovation"
+        ],
+        "timeline": "3-6 mois"
+      },
+      "level2": {
+        "title": "Structurer la Stratégie Innovation",
+        "description": "Vous avez une vision émergente mais elle nécessite d'être structurée et intégrée plus profondément dans votre stratégie globale.",
+        "actions": [
+          "Développer une roadmap innovation détaillée sur 3-5 ans",
+          "Intégrer l'innovation dans tous les plans stratégiques métiers",
+          "Créer des indicateurs de suivi stratégique de l'innovation",
+          "Établir des revues trimestrielles de la stratégie innovation"
+        ],
+        "kpis": [
+          "Nombre de projets innovation alignés avec la stratégie",
+          "ROI des investissements innovation",
+          "Temps de mise sur le marché des innovations"
+        ],
+        "timeline": "6-12 mois"
+      },
+      "level3": {
+        "title": "Optimiser l'Alignement Stratégique",
+        "description": "Votre stratégie innovation est bien définie. Focus sur l'optimisation de l'alignement et l'amélioration de l'exécution.",
+        "actions": [
+          "Mettre en place un portfolio management innovation avancé",
+          "Développer des métriques d'impact business de l'innovation",
+          "Créer des mécanismes d'adaptation rapide de la stratégie",
+          "Renforcer l'innovation dans les décisions stratégiques"
+        ],
+        "kpis": [
+          "Contribution de l'innovation au CA",
+          "Vitesse d'adaptation stratégique",
+          "Score de maturité des projets innovation"
+        ],
+        "timeline": "12-18 mois"
+      },
+      "level4": {
+        "title": "Excellence Stratégique",
+        "description": "Votre organisation atteint un niveau d'excellence stratégique. Concentrez-vous sur l'innovation continue et l'anticipation.",
+        "actions": [
+          "Développer une capacité d'innovation de rupture",
+          "Créer un observatoire des tendances et signaux faibles",
+          "Mettre en place une stratégie d'innovation ouverte",
+          "Développer l'influence de votre organisation sur l'écosystème"
+        ],
+        "kpis": [
+          "Pourcentage d'innovations disruptives",
+          "Influence sur les tendances sectorielles",
+          "Nombre de partenariats stratégiques innovation"
+        ],
+        "timeline": "En continu"
+      },
+      "level5": {
+        "title": "Leadership d'Innovation",
+        "description": "Vous êtes un leader reconnu. Focus sur l'écosystème et l'influence pour maintenir votre avance concurrentielle.",
+        "actions": [
+          "Développer votre rôle de 'thought leader' sectoriel",
+          "Créer des standards d'innovation pour votre industrie",
+          "Mentorer d'autres organisations dans leur transformation",
+          "Investir dans l'innovation de rupture et les technologies émergentes"
+        ],
+        "kpis": [
+          "Reconnaissance comme leader d'innovation",
+          "Impact sur l'évolution du secteur",
+          "Retour sur investissement des innovations de rupture"
+        ],
+        "timeline": "En continu"
+      }
+    },
+    "governance-organization": {
+      "level1": {
+        "title": "Structurer la Gouvernance Innovation",
+        "description": "Il est essentiel de mettre en place une structure organisationnelle dédiée à l'innovation avec des rôles et responsabilités clairs.",
+        "actions": [
+          "Nommer un responsable innovation ou créer une équipe dédiée",
+          "Définir les rôles et responsabilités de chaque acteur",
+          "Créer un comité de pilotage innovation avec la direction",
+          "Établir des processus de décision clairs pour l'innovation"
+        ],
+        "kpis": [
+          "Nombre de personnes dédiées à l'innovation",
+          "Fréquence des comités innovation",
+          "Temps de prise de décision sur les projets"
+        ],
+        "timeline": "2-4 mois"
+      },
+      "level2": {
+        "title": "Professionnaliser l'Organisation",
+        "description": "Votre structure innovation existe mais nécessite d'être professionnalisée et renforcée.",
+        "actions": [
+          "Structurer un département innovation avec budget dédié",
+          "Mettre en place une gouvernance portfolio innovation",
+          "Créer des liens transversaux entre innovation et métiers",
+          "Développer des outils de pilotage et de reporting"
+        ],
+        "kpis": [
+          "Budget alloué à l'innovation",
+          "Nombre de projets dans le pipeline",
+          "Taux de réussite des projets innovation"
+        ],
+        "timeline": "6-9 mois"
+      },
+      "level3": {
+        "title": "Optimiser la Gouvernance",
+        "description": "Votre gouvernance est solide. Focus sur l'optimisation des processus et l'agilité organisationnelle.",
+        "actions": [
+          "Implémenter une gouvernance agile de l'innovation",
+          "Créer des mécanismes de fast-track pour les projets prioritaires",
+          "Développer l'autonomie des équipes innovation",
+          "Mettre en place des revues de portfolio régulières"
+        ],
+        "kpis": [
+          "Temps de cycle des projets innovation",
+          "Niveau d'autonomie des équipes",
+          "Satisfaction des équipes innovation"
+        ],
+        "timeline": "9-12 mois"
+      },
+      "level4": {
+        "title": "Gouvernance Avancée",
+        "description": "Excellente gouvernance. Concentrez-vous sur l'innovation distribuée et l'intelligence collective.",
+        "actions": [
+          "Déployer l'innovation dans toute l'organisation",
+          "Créer des mécanismes d'intelligence collective",
+          "Mettre en place une gouvernance adaptative",
+          "Développer des centres d'excellence innovation"
+        ],
+        "kpis": [
+          "Pourcentage d'équipes impliquées dans l'innovation",
+          "Nombre d'innovations bottom-up",
+          "Score d'adaptabilité organisationnelle"
+        ],
+        "timeline": "12-18 mois"
+      },
+      "level5": {
+        "title": "Excellence Organisationnelle",
+        "description": "Votre organisation est exemplaire. Focus sur l'innovation continue et l'influence externe.",
+        "actions": [
+          "Devenir une référence en matière d'organisation innovation",
+          "Partager vos bonnes pratiques avec l'écosystème",
+          "Expérimenter de nouveaux modèles organisationnels",
+          "Mentorer d'autres organisations"
+        ],
+        "kpis": [
+          "Reconnaissance externe de votre modèle",
+          "Nombre d'organisations mentorées",
+          "Innovation dans vos propres processus"
+        ],
+        "timeline": "En continu"
+      }
+    },
+    "human-resources": {
+      "level1": {
+        "title": "Sensibiliser et Former",
+        "description": "Il est crucial de sensibiliser vos équipes à l'innovation et de commencer à développer les compétences de base.",
+        "actions": [
+          "Organiser des sessions de sensibilisation à l'innovation",
+          "Former les managers aux bases de l'innovation",
+          "Créer des communautés d'intérêt innovation",
+          "Mettre en place un programme de formation de base"
+        ],
+        "kpis": [
+          "Pourcentage d'équipes sensibilisées",
+          "Nombre d'heures de formation innovation",
+          "Niveau d'engagement initial des équipes"
+        ],
+        "timeline": "3-6 mois"
+      },
+      "level2": {
+        "title": "Développer les Compétences",
+        "description": "Structurez le développement des compétences innovation et créez des incitations appropriées.",
+        "actions": [
+          "Créer un référentiel de compétences innovation",
+          "Mettre en place un plan de formation structuré",
+          "Développer un système de reconnaissance innovation",
+          "Intégrer l'innovation dans les objectifs individuels"
+        ],
+        "kpis": [
+          "Nombre de collaborateurs formés",
+          "Score de compétences innovation",
+          "Nombre d'initiatives bottom-up"
+        ],
+        "timeline": "6-12 mois"
+      },
+      "level3": {
+        "title": "Cultiver l'Excellence",
+        "description": "Vos équipes sont compétentes. Focus sur l'excellence et la spécialisation des talents innovation.",
+        "actions": [
+          "Créer une académie interne innovation",
+          "Développer des parcours de spécialisation",
+          "Mettre en place du mentoring innovation",
+          "Créer des équipes d'innovation transversales"
+        ],
+        "kpis": [
+          "Niveau d'expertise des équipes",
+          "Nombre de mentors innovation",
+          "Taux de rétention des talents innovation"
+        ],
+        "timeline": "12-18 mois"
+      },
+      "level4": {
+        "title": "Innovation Talent Management",
+        "description": "Excellent niveau de compétences. Développez une stratégie RH innovation avancée.",
+        "actions": [
+          "Créer une marque employeur innovation forte",
+          "Développer des parcours de carrière innovation",
+          "Mettre en place des programmes d'échange",
+          "Créer un vivier de talents innovation"
+        ],
+        "kpis": [
+          "Attractivité pour les talents innovation",
+          "Évolution de carrière des profils innovation",
+          "Score de satisfaction des équipes"
+        ],
+        "timeline": "18-24 mois"
+      },
+      "level5": {
+        "title": "Référence Talent Innovation",
+        "description": "Vous êtes une référence. Partagez votre expertise et continuez à innover en RH.",
+        "actions": [
+          "Devenir une destination de choix pour les talents innovation",
+          "Créer des programmes de développement sectoriels",
+          "Innover dans vos propres pratiques RH",
+          "Contribuer à l'écosystème de formation innovation"
+        ],
+        "kpis": [
+          "Reconnaissance comme référence RH innovation",
+          "Contribution à l'écosystème formation",
+          "Innovation dans vos pratiques RH"
+        ],
+        "timeline": "En continu"
+      }
+    },
+    "culture-innovation": {
+      "level1": {
+        "title": "Initier le Changement Culturel",
+        "description": "Commencez par sensibiliser à l'importance du changement et créer les premiers espaces d'innovation.",
+        "actions": [
+          "Communiquer sur l'importance de l'innovation",
+          "Organiser des événements d'ouverture d'esprit",
+          "Créer des espaces de créativité et d'échange",
+          "Célébrer les premières initiatives"
+        ],
+        "kpis": [
+          "Niveau d'ouverture au changement",
+          "Nombre d'idées proposées",
+          "Participation aux événements innovation"
+        ],
+        "timeline": "3-6 mois"
+      },
+      "level2": {
+        "title": "Développer la Culture",
+        "description": "Renforcez les valeurs innovation et développez une tolérance constructive à l'échec.",
+        "actions": [
+          "Formaliser les valeurs innovation",
+          "Créer des rituels innovation réguliers",
+          "Développer la tolérance à l'échec constructif",
+          "Encourager la collaboration transversale"
+        ],
+        "kpis": [
+          "Adhésion aux valeurs innovation",
+          "Nombre d'échecs valorisés en apprentissage",
+          "Score de collaboration inter-équipes"
+        ],
+        "timeline": "6-12 mois"
+      },
+      "level3": {
+        "title": "Ancrer les Comportements",
+        "description": "La culture innovation se développe. Ancrez les nouveaux comportements et développez l'autonomie.",
+        "actions": [
+          "Renforcer l'autonomie des équipes",
+          "Créer des mécanismes de partage d'expérience",
+          "Développer l'innovation collaborative",
+          "Institutionnaliser les bonnes pratiques"
+        ],
+        "kpis": [
+          "Niveau d'autonomie des équipes",
+          "Nombre de collaborations spontanées",
+          "Adoption des bonnes pratiques"
+        ],
+        "timeline": "12-18 mois"
+      },
+      "level4": {
+        "title": "Culture d'Excellence",
+        "description": "Culture innovation mature. Focus sur l'innovation continue et l'amélioration culturelle.",
+        "actions": [
+          "Créer une culture d'amélioration continue",
+          "Développer l'innovation dans tous les processus",
+          "Renforcer l'agilité culturelle",
+          "Créer des ambassadeurs culture innovation"
+        ],
+        "kpis": [
+          "Score d'agilité culturelle",
+          "Nombre d'améliorations continues",
+          "Influence culturelle externe"
+        ],
+        "timeline": "18-24 mois"
+      },
+      "level5": {
+        "title": "Culture Innovation Leader",
+        "description": "Votre culture est exemplaire. Inspirez l'écosystème et continuez à innover culturellement.",
+        "actions": [
+          "Devenir une référence culturelle innovation",
+          "Partager votre culture avec l'écosystème",
+          "Expérimenter de nouveaux modèles culturels",
+          "Influencer les standards culturels du secteur"
+        ],
+        "kpis": [
+          "Reconnaissance comme référence culturelle",
+          "Influence sur l'écosystème",
+          "Innovation dans vos propres pratiques culturelles"
+        ],
+        "timeline": "En continu"
+      }
+    },
+    "processes-methods": {
+      "level1": {
+        "title": "Structurer les Premiers Processus",
+        "description": "Mettez en place des processus d'innovation de base et familiarisez-vous avec les méthodes essentielles.",
+        "actions": [
+          "Définir un processus d'innovation simple",
+          "Former aux méthodes de base (brainstorming, design thinking)",
+          "Créer des templates et outils simples",
+          "Organiser des ateliers pratiques"
+        ],
+        "kpis": [
+          "Nombre de projets suivant le processus",
+          "Équipes formées aux méthodes de base",
+          "Utilisation des templates"
+        ],
+        "timeline": "2-4 mois"
+      },
+      "level2": {
+        "title": "Enrichir la Boîte à Outils",
+        "description": "Développez votre palette méthodologique et commencez à structurer la gestion de portefeuille.",
+        "actions": [
+          "Intégrer des méthodes avancées (lean startup, agile)",
+          "Créer un processus de gestion de portefeuille",
+          "Développer des outils de mesure et suivi",
+          "Institutionnaliser le prototypage"
+        ],
+        "kpis": [
+          "Diversité des méthodes utilisées",
+          "Nombre de prototypes réalisés",
+          "Temps de cycle des projets"
+        ],
+        "timeline": "6-9 mois"
+      },
+      "level3": {
+        "title": "Optimiser et Personnaliser",
+        "description": "Vos processus sont solides. Optimisez-les et adaptez-les à vos spécificités.",
+        "actions": [
+          "Personnaliser les processus selon les contextes",
+          "Créer des accélérateurs de projets",
+          "Développer l'agilité processuelle",
+          "Mettre en place des boucles d'amélioration"
+        ],
+        "kpis": [
+          "Vitesse d'adaptation des processus",
+          "Satisfaction des équipes projet",
+          "Taux de réussite des innovations"
+        ],
+        "timeline": "9-15 mois"
+      },
+      "level4": {
+        "title": "Excellence Processuelle",
+        "description": "Processus excellents. Développez l'innovation dans vos propres méthodes.",
+        "actions": [
+          "Créer vos propres méthodologies",
+          "Développer l'intelligence artificielle dans les processus",
+          "Créer des écosystèmes d'innovation ouverte",
+          "Optimiser en continu avec des analytics avancées"
+        ],
+        "kpis": [
+          "Innovation dans vos processus",
+          "Utilisation d'IA dans l'innovation",
+          "Performance comparative des processus"
+        ],
+        "timeline": "15-24 mois"
+      },
+      "level5": {
+        "title": "Référence Méthodologique",
+        "description": "Vous êtes une référence. Partagez votre expertise et influencez les standards.",
+        "actions": [
+          "Publier vos méthodologies",
+          "Créer des standards pour le secteur",
+          "Former d'autres organisations",
+          "Continuer à innover méthodologiquement"
+        ],
+        "kpis": [
+          "Adoption externe de vos méthodes",
+          "Reconnaissance méthodologique",
+          "Contribution aux standards sectoriels"
+        ],
+        "timeline": "En continu"
+      }
+    },
+    "technology-digital": {
+      "level1": {
+        "title": "Digitaliser l'Innovation",
+        "description": "Commencez par adopter des outils numériques de base pour soutenir vos processus d'innovation.",
+        "actions": [
+          "Adopter des outils collaboratifs pour l'innovation",
+          "Créer une plateforme de partage d'idées",
+          "Digitaliser la documentation des projets",
+          "Former aux outils numériques de créativité"
+        ],
+        "kpis": [
+          "Adoption des outils numériques",
+          "Nombre d'idées digitalisées",
+          "Utilisation des plateformes collaboratives"
+        ],
+        "timeline": "3-6 mois"
+      },
+      "level2": {
+        "title": "Intégrer les Technologies",
+        "description": "Développez un écosystème technologique intégré pour l'innovation.",
+        "actions": [
+          "Intégrer des outils d'analytics innovation",
+          "Développer une veille technologique structurée",
+          "Créer un lab d'expérimentation technologique",
+          "Adopter des technologies émergentes"
+        ],
+        "kpis": [
+          "Nombre de technologies testées",
+          "Qualité de la veille technologique",
+          "Projets utilisant des tech émergentes"
+        ],
+        "timeline": "6-12 mois"
+      },
+      "level3": {
+        "title": "Optimisation Technologique",
+        "description": "Votre écosystème tech est solide. Optimisez l'usage et développez l'expertise.",
+        "actions": [
+          "Optimiser l'architecture technologique",
+          "Développer l'expertise en IA/ML",
+          "Créer des APIs d'innovation",
+          "Automatiser les processus répétitifs"
+        ],
+        "kpis": [
+          "Performance de l'écosystème tech",
+          "Niveau d'automatisation",
+          "Expertise technologique des équipes"
+        ],
+        "timeline": "12-18 mois"
+      },
+      "level4": {
+        "title": "Leadership Technologique",
+        "description": "Excellence technologique. Développez votre capacité d'innovation technologique.",
+        "actions": [
+          "Créer vos propres solutions tech",
+          "Développer l'IA pour l'innovation",
+          "Créer un écosystème tech ouvert",
+          "Influencer les standards technologiques"
+        ],
+        "kpis": [
+          "Solutions développées en interne",
+          "Utilisation avancée de l'IA",
+          "Influence sur les standards tech"
+        ],
+        "timeline": "18-24 mois"
+      },
+      "level5": {
+        "title": "Pionnier Technologique",
+        "description": "Vous êtes un pionnier. Continuez à explorer et partager votre expertise.",
+        "actions": [
+          "Explorer les technologies de rupture",
+          "Créer des standards technologiques",
+          "Partager votre expertise avec l'écosystème",
+          "Investir dans la recherche technologique"
+        ],
+        "kpis": [
+          "Technologies de rupture adoptées",
+          "Standards créés",
+          "Impact sur l'écosystème technologique"
+        ],
+        "timeline": "En continu"
+      }
+    },
+    "partnerships-ecosystem": {
+      "level1": {
+        "title": "Ouvrir l'Innovation",
+        "description": "Commencez à vous ouvrir vers l'extérieur et créez vos premiers partenariats innovation.",
+        "actions": [
+          "Identifier les partenaires potentiels",
+          "Créer vos premiers partenariats",
+          "Participer aux événements innovation",
+          "Rejoindre des communautés sectorielles"
+        ],
+        "kpis": [
+          "Nombre de partenariats créés",
+          "Participation aux événements",
+          "Projets collaboratifs lancés"
+        ],
+        "timeline": "3-6 mois"
+      },
+      "level2": {
+        "title": "Développer l'Écosystème",
+        "description": "Structurez votre approche partenariale et diversifiez vos collaborations.",
+        "actions": [
+          "Créer une stratégie partenariale",
+          "Développer des partenariats avec startups",
+          "Collaborer avec le monde académique",
+          "Créer des programmes de co-innovation"
+        ],
+        "kpis": [
+          "Diversité des partenaires",
+          "Nombre de projets co-innovation",
+          "Valeur créée par les partenariats"
+        ],
+        "timeline": "6-12 mois"
+      },
+      "level3": {
+        "title": "Orchestrer l'Innovation Ouverte",
+        "description": "Votre écosystème se développe. Devenez un orchestrateur d'innovation ouverte.",
+        "actions": [
+          "Créer une plateforme d'innovation ouverte",
+          "Développer des programmes d'incubation",
+          "Organiser des challenges innovation",
+          "Créer des consortiums sectoriels"
+        ],
+        "kpis": [
+          "Taille de votre écosystème",
+          "Nombre de challenges organisés",
+          "Startups incubées ou accélérées"
+        ],
+        "timeline": "12-18 mois"
+      },
+      "level4": {
+        "title": "Leadership Écosystémique",
+        "description": "Excellent écosystème. Développez votre leadership et votre influence.",
+        "actions": [
+          "Devenir un hub d'innovation reconnu",
+          "Créer des standards de collaboration",
+          "Développer l'innovation internationale",
+          "Créer des fonds d'investissement innovation"
+        ],
+        "kpis": [
+          "Reconnaissance comme hub innovation",
+          "Partenariats internationaux",
+          "ROI des investissements écosystème"
+        ],
+        "timeline": "18-24 mois"
+      },
+      "level5": {
+        "title": "Référence Écosystémique",
+        "description": "Vous êtes une référence. Continuez à innover dans la collaboration.",
+        "actions": [
+          "Créer de nouveaux modèles de collaboration",
+          "Influencer les politiques d'innovation",
+          "Développer l'innovation globale",
+          "Mentorer d'autres écosystèmes"
+        ],
+        "kpis": [
+          "Innovation dans vos modèles collaboratifs",
+          "Influence sur les politiques",
+          "Impact écosystémique global"
+        ],
+        "timeline": "En continu"
+      }
+    },
+    "market-customer": {
+      "level1": {
+        "title": "Centrer sur le Client",
+        "description": "Développez une approche client pour orienter vos innovations.",
+        "actions": [
+          "Mettre en place une écoute client structurée",
+          "Organiser des sessions de co-création",
+          "Créer des personas innovation",
+          "Tester vos idées auprès des clients"
+        ],
+        "kpis": [
+          "Fréquence des interactions clients",
+          "Nombre de tests utilisateurs",
+          "Satisfaction client sur les innovations"
+        ],
+        "timeline": "2-4 mois"
+      },
+      "level2": {
+        "title": "Affiner la Connaissance Marché",
+        "description": "Développez votre intelligence marché et vos capacités d'analyse.",
+        "actions": [
+          "Créer une veille marché systématique",
+          "Développer des études de marché innovation",
+          "Segmenter vos approches innovation",
+          "Créer des laboratoires utilisateurs"
+        ],
+        "kpis": [
+          "Qualité de la veille marché",
+          "Précision de la segmentation",
+          "Taux de succès marché des innovations"
+        ],
+        "timeline": "6-9 mois"
+      },
+      "level3": {
+        "title": "Optimiser l'Approche Marché",
+        "description": "Votre connaissance marché est solide. Optimisez votre approche et anticipez.",
+        "actions": [
+          "Développer l'anticipation des tendances",
+          "Créer des expériences client innovantes",
+          "Personnaliser vos approches par segment",
+          "Mesurer l'impact client de l'innovation"
+        ],
+        "kpis": [
+          "Capacité d'anticipation des tendances",
+          "Score d'expérience client",
+          "NPS innovation"
+        ],
+        "timeline": "9-15 mois"
+      },
+      "level4": {
+        "title": "Excellence Client-Marché",
+        "description": "Excellence dans l'approche client. Développez votre capacité d'influence marché.",
+        "actions": [
+          "Créer les tendances du marché",
+          "Développer l'innovation expérientielle",
+          "Créer des écosystèmes clients",
+          "Influencer les comportements de consommation"
+        ],
+        "kpis": [
+          "Influence sur les tendances marché",
+          "Innovation dans l'expérience client",
+          "Leadership d'opinion sectoriel"
+        ],
+        "timeline": "15-24 mois"
+      },
+      "level5": {
+        "title": "Leader Marché Innovation",
+        "description": "Vous êtes un leader marché. Continuez à créer de nouveaux standards.",
+        "actions": [
+          "Définir les nouveaux usages",
+          "Créer de nouveaux marchés",
+          "Influencer les réglementations",
+          "Devenir une référence globale"
+        ],
+        "kpis": [
+          "Nouveaux marchés créés",
+          "Influence réglementaire",
+          "Reconnaissance internationale"
+        ],
+        "timeline": "En continu"
+      }
+    }
+  },
+  "globalRecommendations": {
+    "emerging": {
+      "priority": "Poser les bases",
+      "focus": ["Vision", "Structure", "Culture"],
+      "timeframe": "6-12 mois",
+      "keyActions": [
+        "Définir une vision innovation claire",
+        "Créer une structure dédiée",
+        "Sensibiliser et former les équipes",
+        "Lancer les premiers projets pilotes"
+      ]
+    },
+    "developing": {
+      "priority": "Structurer et professionnaliser",
+      "focus": ["Processus", "Compétences", "Outils"],
+      "timeframe": "12-18 mois",
+      "keyActions": [
+        "Structurer les processus innovation",
+        "Développer les compétences",
+        "Mettre en place les outils",
+        "Créer les premiers partenariats"
+      ]
+    },
+    "structured": {
+      "priority": "Optimiser et accélérer",
+      "focus": ["Performance", "Écosystème", "Agilité"],
+      "timeframe": "18-24 mois",
+      "keyActions": [
+        "Optimiser les processus",
+        "Développer l'écosystème",
+        "Renforcer l'agilité",
+        "Mesurer et améliorer"
+      ]
+    },
+    "optimized": {
+      "priority": "Excellence et leadership",
+      "focus": ["Innovation", "Influence", "Anticipation"],
+      "timeframe": "24+ mois",
+      "keyActions": [
+        "Innover dans vos propres pratiques",
+        "Développer votre influence",
+        "Anticiper les ruptures",
+        "Créer l'écosystème"
+      ]
+    },
+    "excellence": {
+      "priority": "Transformation de l'écosystème",
+      "focus": ["Standards", "Disruption", "Global"],
+      "timeframe": "En continu",
+      "keyActions": [
+        "Créer de nouveaux standards",
+        "Développer l'innovation de rupture",
+        "Influencer globalement",
+        "Transformer l'écosystème"
+      ]
+    }
+  }
+}

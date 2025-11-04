@@ -1,0 +1,842 @@
+{
+  "archetypes": [
+    {
+      "id": "executante-traditionnelle",
+      "name": "L'Exécutante Traditionnelle",
+      "code": "A1-B1-C1-D1-E1-F1-GP",
+      "description": "Organisation stable et performante sur son cœur de métier, focalisée sur la rentabilité et la qualité opérationnelle. L'innovation est perçue comme un risque ou un coût, non comme un levier stratégique.",
+      "characteristics": [
+        "Culture faible / Exploitation dominante / Innovation fermée",
+        "Incrémentale / Continue / Market pull / Produit / Faible"
+      ],
+      "strengths": [
+        "Excellence opérationnelle",
+        "Maîtrise métier",
+        "Satisfaction client"
+      ],
+      "challenges": [
+        "Manque d'ouverture",
+        "Faible culture d'innovation",
+        "Inertie structurelle"
+      ],
+      "recommendations": [
+        "Initier un programme d'innovation progressive (petits projets internes)",
+        "Encourager la prise d'initiative locale"
+      ],
+      "scoreProfile": {
+        "culture": "faible",
+        "strategie": "exploitation",
+        "ouverture": "fermee",
+        "type": "incrementale",
+        "rythme": "continue",
+        "source": "market-pull",
+        "focus": "produit",
+        "niveau": "faible"
+      }
+    },
+    {
+      "id": "artisane-reactive",
+      "name": "L'Artisane Réactive",
+      "code": "A2-B1-C1-D1-E1-F1-GPR",
+      "description": "Organisation pragmatique, pilotée par le court terme et les besoins du client. L'innovation est issue de la pratique, sans formalisation.",
+      "characteristics": [
+        "Culture moyenne / Exploitation forte / Innovation fermée",
+        "Incrémentale / Continue / Market pull / Process / Faible"
+      ],
+      "strengths": [
+        "Réactivité",
+        "Proximité client",
+        "Adaptabilité"
+      ],
+      "challenges": [
+        "Absence de stratégie d'innovation",
+        "Dépendance au quotidien"
+      ],
+      "recommendations": [
+        "Créer un espace de partage des idées",
+        "Former à la méthode Design Thinking"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "exploitation",
+        "ouverture": "fermee",
+        "type": "incrementale",
+        "rythme": "continue",
+        "source": "market-pull",
+        "focus": "process",
+        "niveau": "faible"
+      }
+    },
+    {
+      "id": "conservatrice-reactive",
+      "name": "La Conservatrice Réactive",
+      "code": "A1-B1-C1-D1-E1-F1-GP",
+      "description": "Entreprise orientée sur la défense du marché existant. Peu d'innovation, souvent contrainte par le contexte.",
+      "characteristics": [
+        "Culture faible / Exploitation / Fermée / Incrémentale",
+        "Continue / Market pull / Produit / Faible"
+      ],
+      "strengths": [
+        "Stabilité",
+        "Efficacité",
+        "Réputation historique"
+      ],
+      "challenges": [
+        "Difficulté à attirer les talents",
+        "Désalignement avec les tendances"
+      ],
+      "recommendations": [
+        "Introduire une démarche d'innovation participative"
+      ],
+      "scoreProfile": {
+        "culture": "faible",
+        "strategie": "exploitation",
+        "ouverture": "fermee",
+        "type": "incrementale",
+        "rythme": "continue",
+        "source": "market-pull",
+        "focus": "produit",
+        "niveau": "faible"
+      }
+    },
+    {
+      "id": "apprenante-transition",
+      "name": "L'Apprenante en Transition",
+      "code": "A2-B2-C2-D2-E2-F2-GMIX",
+      "description": "Organisation consciente du besoin d'évoluer. Des initiatives émergent mais restent isolées. L'apprentissage collectif est en cours.",
+      "characteristics": [
+        "Culture moyenne / Ambidextrie en construction",
+        "Innovation mixte / Type mix / Usage/Process / Intermédiaire"
+      ],
+      "strengths": [
+        "Engagement des collaborateurs",
+        "Curiosité",
+        "Volontarisme"
+      ],
+      "challenges": [
+        "Manque d'alignement stratégique",
+        "Faible structuration"
+      ],
+      "recommendations": [
+        "Définir une roadmap d'innovation avec rôles et jalons clairs"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "ambidextre",
+        "ouverture": "mixte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "usage",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "pragmatiquement-ambidextre",
+      "name": "La Pragmatiquement Ambidextre",
+      "code": "A2-B3-C2-D2-E2-F2-GMIX",
+      "description": "Organisation équilibrée entre performance et exploration. La gouvernance est en place mais les synergies restent fragiles.",
+      "characteristics": [
+        "Culture moyenne / Ambidextrie équilibrée",
+        "Innovation mixte / Mix type / Mix push-pull / Moyenne"
+      ],
+      "strengths": [
+        "Agilité",
+        "Pilotage clair",
+        "Culture d'équilibre"
+      ],
+      "challenges": [
+        "Difficulté à arbitrer entre court et long terme"
+      ],
+      "recommendations": [
+        "Instituer un \"innovation board\" avec critères de priorisation"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "ambidextre",
+        "ouverture": "mixte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "mixte",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "visionnaire-structuree",
+      "name": "La Visionnaire Structurée",
+      "code": "A3-B3-C3-D2-E2-F2-GBM",
+      "description": "Organisation mature et inspirante, combinant vision stratégique, leadership et innovation pilotée.",
+      "characteristics": [
+        "Culture forte / Ambidextrie équilibrée",
+        "Innovation ouverte / Mix radical/incrémental / Mix push-pull / Usage & Business model / Élevée"
+      ],
+      "strengths": [
+        "Leadership transformationnel",
+        "Intelligence collective",
+        "Culture d'impact"
+      ],
+      "challenges": [
+        "Complexité organisationnelle",
+        "Risque de dilution stratégique"
+      ],
+      "recommendations": [
+        "Capitaliser les apprentissages et renforcer les boucles de feedback (learning loops)"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "ambidextre",
+        "ouverture": "ouverte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "business-model",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "startup-emergente",
+      "name": "La Start-up Émergente",
+      "code": "A3-B1-C3-D3-E3-F3-GBM",
+      "description": "Organisation jeune, audacieuse, portée par une vision de rupture et un esprit entrepreneurial.",
+      "characteristics": [
+        "Culture très forte / Exploration dominante",
+        "Innovation ouverte / Radical / Disruptive / Techno-push / Business model / Élevée"
+      ],
+      "strengths": [
+        "Créativité",
+        "Rapidité",
+        "Passion",
+        "Culture du risque"
+      ],
+      "challenges": [
+        "Manque de processus",
+        "Absence de pilotage financier"
+      ],
+      "recommendations": [
+        "Structurer la croissance (OKR, roadmap, gouvernance)"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "exploration",
+        "ouverture": "ouverte",
+        "type": "radical",
+        "rythme": "disruptif",
+        "source": "techno-push",
+        "focus": "business-model",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "exploratrice-audacieuse",
+      "name": "L'Exploratrice Audacieuse",
+      "code": "A3-B1-C3-D3-E3-F2-GU",
+      "description": "Organisation visionnaire qui expérimente sans cesse. Le risque est perçu comme moteur.",
+      "characteristics": [
+        "Culture forte / Exploration / Ouverte / Radical",
+        "Disruptive / Mix push-pull / Usage / Élevée"
+      ],
+      "strengths": [
+        "Curiosité",
+        "Innovation ouverte",
+        "Anticipation"
+      ],
+      "challenges": [
+        "Risque de dispersion",
+        "Priorisation floue"
+      ],
+      "recommendations": [
+        "Intégrer des cycles d'expérimentation courts (design sprint)"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "exploration",
+        "ouverture": "ouverte",
+        "type": "radical",
+        "rythme": "disruptif",
+        "source": "mixte",
+        "focus": "usage",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "technocentree",
+      "name": "La Technocentrée",
+      "code": "A3-B1-C3-D3-E3-F3-GP",
+      "description": "Organisation technologique centrée sur l'innovation produit. R&D forte mais déconnexion marché.",
+      "characteristics": [
+        "Culture forte / Exploration / Ouverte / Radical",
+        "Disruptive / Techno-push / Produit / Intermédiaire"
+      ],
+      "strengths": [
+        "Excellence technique",
+        "Créativité scientifique"
+      ],
+      "challenges": [
+        "Faible orientation client",
+        "Retour sur marché lent"
+      ],
+      "recommendations": [
+        "Intégrer le marketing et le design d'usage dès la conception"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "exploration",
+        "ouverture": "ouverte",
+        "type": "radical",
+        "rythme": "disruptif",
+        "source": "techno-push",
+        "focus": "produit",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "clientocentree",
+      "name": "La Clientocentrée",
+      "code": "A2-B1-C1-D1-E1-F1-GU",
+      "description": "Entreprise très proche de ses clients mais peu tournée vers la disruption.",
+      "characteristics": [
+        "Culture moyenne / Exploitation / Fermée / Incrémentale",
+        "Continue / Market pull / Usage / Moyenne"
+      ],
+      "strengths": [
+        "Connaissance marché",
+        "Fidélité client"
+      ],
+      "challenges": [
+        "Manque d'audace",
+        "Dépendance client"
+      ],
+      "recommendations": [
+        "Développer la prospective et des partenariats d'innovation"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "exploitation",
+        "ouverture": "fermee",
+        "type": "incrementale",
+        "rythme": "continue",
+        "source": "market-pull",
+        "focus": "usage",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "innovatrice-durable",
+      "name": "L'Innovatrice Durable",
+      "code": "A3-B3-C3-D2-E2-F2-GBM",
+      "description": "Entreprise mature intégrant l'éthique, la durabilité et l'impact dans sa stratégie d'innovation.",
+      "characteristics": [
+        "Culture forte / Ambidextrie équilibrée / Ouverte / Mix type",
+        "Mix dynamique / Push-pull / Business model / Élevée"
+      ],
+      "strengths": [
+        "Vision long terme",
+        "Alignement stratégique",
+        "Leadership d'impact"
+      ],
+      "challenges": [
+        "Mesure d'impact difficile",
+        "Complexité du reporting"
+      ],
+      "recommendations": [
+        "Déployer un Scorecard Eco-Impact et renforcer la gouvernance responsable"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "ambidextre",
+        "ouverture": "ouverte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "business-model",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "introspective-prudente",
+      "name": "L'Introspective Prudente",
+      "code": "A2-B1-C1-D1-E1-F1-GP",
+      "description": "Organisation centrée sur la conformité et la stabilité, innovant peu et rarement à l'extérieur.",
+      "characteristics": [
+        "Culture moyenne / Fermée / Incrémentale / Continue",
+        "Market pull / Produit / Faible"
+      ],
+      "strengths": [
+        "Fiabilité",
+        "Rigueur",
+        "Continuité"
+      ],
+      "challenges": [
+        "Fermeture culturelle",
+        "Faible agilité"
+      ],
+      "recommendations": [
+        "Créer des passerelles d'ouverture : incubateurs, laboratoires, collaborations académiques"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "exploitation",
+        "ouverture": "fermee",
+        "type": "incrementale",
+        "rythme": "continue",
+        "source": "market-pull",
+        "focus": "produit",
+        "niveau": "faible"
+      }
+    },
+    {
+      "id": "routinee-performante",
+      "name": "La Routinée Performante",
+      "code": "A2-B1-C2-D1-E1-F1-GPR",
+      "description": "Entreprise performante dans ses routines et processus, cherchant avant tout la productivité et la maîtrise.",
+      "characteristics": [
+        "Culture moyenne / Exploitation / Mix ouverte/fermée",
+        "Incrémentale / Continue / Process / Moyenne"
+      ],
+      "strengths": [
+        "Productivité",
+        "Qualité",
+        "Maîtrise opérationnelle"
+      ],
+      "challenges": [
+        "Innovation limitée à la marge"
+      ],
+      "recommendations": [
+        "Expérimenter des micro-projets Kaizen et instaurer une dynamique Lean Innovation"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "exploitation",
+        "ouverture": "mixte",
+        "type": "incrementale",
+        "rythme": "continue",
+        "source": "market-pull",
+        "focus": "process",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "innovatrice-processuelle",
+      "name": "L'Innovatrice Processuelle",
+      "code": "A3-B3-C2-D2-E2-F2-GPR",
+      "description": "Organisation structurée ayant institutionnalisé l'innovation via des processus formalisés.",
+      "characteristics": [
+        "Culture forte / Ambidextrie / Mix ouverte / Mix type",
+        "Process / Élevée"
+      ],
+      "strengths": [
+        "Clarté",
+        "Pilotage efficace"
+      ],
+      "challenges": [
+        "Rigidité",
+        "Perte de spontanéité"
+      ],
+      "recommendations": [
+        "Réintroduire des approches agiles et des espaces de créativité libre"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "ambidextre",
+        "ouverture": "mixte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "process",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "marche-dependante",
+      "name": "La Marché-Dépendante",
+      "code": "A1-B1-C1-D1-E1-F1-GP",
+      "description": "Entreprise performante mais dépendante du marché, peu proactive.",
+      "characteristics": [
+        "Culture faible / Exploitation / Fermée / Incrémentale",
+        "Continue / Market pull / Produit / Faible"
+      ],
+      "strengths": [
+        "Réactivité",
+        "Proximité client"
+      ],
+      "challenges": [
+        "Vulnérabilité face aux disruptions"
+      ],
+      "recommendations": [
+        "Mettre en place une veille stratégique et des exercices de prospective"
+      ],
+      "scoreProfile": {
+        "culture": "faible",
+        "strategie": "exploitation",
+        "ouverture": "fermee",
+        "type": "incrementale",
+        "rythme": "continue",
+        "source": "market-pull",
+        "focus": "produit",
+        "niveau": "faible"
+      }
+    },
+    {
+      "id": "regenerative-frugale",
+      "name": "La Régénérative Frugale",
+      "code": "A3-B3-C3-D2-E2-F2-GPR",
+      "description": "Organisation orientée vers la frugalité et la sobriété.",
+      "characteristics": [
+        "Culture forte / Ambidextrie / Ouverte / Mix type",
+        "Process & usage / Élevée"
+      ],
+      "strengths": [
+        "Efficience",
+        "Créativité responsable"
+      ],
+      "challenges": [
+        "Manque de reconnaissance externe",
+        "Lenteur"
+      ],
+      "recommendations": [
+        "Valoriser les réussites frugales et créer des partenariats d'impact"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "ambidextre",
+        "ouverture": "ouverte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "process",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "performante-hybridee",
+      "name": "La Performante Hybridée",
+      "code": "A2-B3-C2-D2-E2-F2-GMIX",
+      "description": "Organisation intermédiaire, mélangeant plusieurs approches sans toujours les aligner.",
+      "characteristics": [
+        "Culture moyenne / Ambidextrie / Mix innovation / Mix type",
+        "Mix dynamique / Moyenne"
+      ],
+      "strengths": [
+        "Flexibilité",
+        "Pragmatisme"
+      ],
+      "challenges": [
+        "Manque de clarté stratégique"
+      ],
+      "recommendations": [
+        "Structurer le portefeuille de projets et renforcer la coordination transversale"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "ambidextre",
+        "ouverture": "mixte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "mixte",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "stratege-convergence",
+      "name": "La Stratège de la Convergence",
+      "code": "A3-B3-C3-D2-E2-F2-GMIX",
+      "description": "Entreprise intégrant stratégie, culture et innovation dans une vision cohérente.",
+      "characteristics": [
+        "Culture forte / Ambidextrie / Ouverte / Mix type",
+        "Mix push-pull / Élevée"
+      ],
+      "strengths": [
+        "Vision systémique",
+        "Intelligence collective"
+      ],
+      "challenges": [
+        "Complexité de coordination"
+      ],
+      "recommendations": [
+        "Digitaliser le pilotage de l'innovation et simplifier la gouvernance"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "ambidextre",
+        "ouverture": "ouverte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "mixte",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "techno-prospective",
+      "name": "La Techno-Prospective",
+      "code": "A3-B1-C3-D3-E3-F3-GPR",
+      "description": "Organisation anticipant les mutations technologiques.",
+      "characteristics": [
+        "Culture forte / Exploration / Ouverte / Radical",
+        "Disruptive / Techno-push / Process / Élevée"
+      ],
+      "strengths": [
+        "Excellence R&D",
+        "Vision long terme"
+      ],
+      "challenges": [
+        "ROI incertain"
+      ],
+      "recommendations": [
+        "Mettre en place un portefeuille d'innovation par horizon (H1-H2-H3)"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "exploration",
+        "ouverture": "ouverte",
+        "type": "radical",
+        "rythme": "disruptif",
+        "source": "techno-push",
+        "focus": "process",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "intrapreneuse-structuree",
+      "name": "L'Intrapreneuse Structurée",
+      "code": "A3-B3-C3-D2-E2-F2-GU",
+      "description": "Organisation promouvant l'intrapreneuriat et l'innovation ascendante.",
+      "characteristics": [
+        "Culture forte / Ambidextrie / Ouverte / Mix type",
+        "Usage / Push-pull / Élevée"
+      ],
+      "strengths": [
+        "Engagement",
+        "Créativité collective"
+      ],
+      "challenges": [
+        "Ralentissement décisionnel"
+      ],
+      "recommendations": [
+        "Créer un budget d'innovation bottom-up et un incubateur interne"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "ambidextre",
+        "ouverture": "ouverte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "usage",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "rd-centree-marche",
+      "name": "La R&D Centrée Marché",
+      "code": "A3-B1-C1-D2-E2-F1-GP",
+      "description": "Organisation technique forte, cherchant à s'ajuster à la demande.",
+      "characteristics": [
+        "Culture forte / Exploration / Fermée / Mix type",
+        "Techno-pull / Produit / Intermédiaire"
+      ],
+      "strengths": [
+        "Expertise",
+        "Rigueur"
+      ],
+      "challenges": [
+        "Lenteur à pivoter"
+      ],
+      "recommendations": [
+        "Établir des collaborations externes (start-ups, labs)"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "exploration",
+        "ouverture": "fermee",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "techno-push",
+        "focus": "produit",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "transitionnelle-alignee",
+      "name": "La Transitionnelle Alignée",
+      "code": "A2-B3-C2-D2-E2-F2-GMIX",
+      "description": "Organisation consciente de ses progrès, en quête d'équilibre.",
+      "characteristics": [
+        "Culture moyenne / Ambidextrie / Mix ouverte / Mix type",
+        "Mix push/pull / Intermédiaire"
+      ],
+      "strengths": [
+        "Cohérence naissante"
+      ],
+      "challenges": [
+        "Lenteur à changer d'échelle"
+      ],
+      "recommendations": [
+        "Créer un cadre de gouvernance claire et diffuser les succès internes"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "ambidextre",
+        "ouverture": "mixte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "mixte",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "disruptive-responsable",
+      "name": "La Disruptive Responsable",
+      "code": "A3-B1-C3-D3-E3-F2-GBM",
+      "description": "Entreprise pionnière alliant rupture et responsabilité sociétale.",
+      "characteristics": [
+        "Culture forte / Exploration / Ouverte / Radical",
+        "Disruptive / Push-pull / Business model / Élevée"
+      ],
+      "strengths": [
+        "Leadership inspirant",
+        "Attractivité"
+      ],
+      "challenges": [
+        "Risque financier"
+      ],
+      "recommendations": [
+        "Renforcer la viabilité économique et les indicateurs ESG"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "exploration",
+        "ouverture": "ouverte",
+        "type": "radical",
+        "rythme": "disruptif",
+        "source": "mixte",
+        "focus": "business-model",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "cooperative-intelligente",
+      "name": "La Coopérative Intelligente",
+      "code": "A3-B3-C3-D2-E2-F2-GPR",
+      "description": "Organisation collaborative et apprenante.",
+      "characteristics": [
+        "Culture forte / Ambidextrie / Ouverte / Mix type",
+        "Process & usage / Élevée"
+      ],
+      "strengths": [
+        "Intelligence collective",
+        "Agilité"
+      ],
+      "challenges": [
+        "Coordination lente"
+      ],
+      "recommendations": [
+        "Piloter via des OKR collaboratifs et encourager la subsidiarité"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "ambidextre",
+        "ouverture": "ouverte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "process",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "precurseuse-ecosystemique",
+      "name": "La Précurseuse Écosystémique",
+      "code": "A3-B1-C3-D3-E2-F2-GBM",
+      "description": "Entreprise en réseau, hub d'innovation et de co-développement.",
+      "characteristics": [
+        "Culture forte / Exploration / Ouverte / Radical",
+        "Mix push/pull / Business model / Élevée"
+      ],
+      "strengths": [
+        "Co-création",
+        "Attractivité"
+      ],
+      "challenges": [
+        "Dépendance partenaires"
+      ],
+      "recommendations": [
+        "Sécuriser les alliances et définir des cadres de partage équitables"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "exploration",
+        "ouverture": "ouverte",
+        "type": "radical",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "business-model",
+        "niveau": "eleve"
+      }
+    },
+    {
+      "id": "regulee-institutionnelle",
+      "name": "La Régulée Institutionnelle",
+      "code": "A2-B1-C1-D1-E1-F1-GPR",
+      "description": "Organisation publique ou régulée innovant sous contrainte.",
+      "characteristics": [
+        "Culture moyenne / Fermée / Incrémentale / Continue",
+        "Process / Moyenne"
+      ],
+      "strengths": [
+        "Fiabilité",
+        "Conformité"
+      ],
+      "challenges": [
+        "Faible culture de risque"
+      ],
+      "recommendations": [
+        "Créer un Lab d'innovation publique et renforcer la participation interne"
+      ],
+      "scoreProfile": {
+        "culture": "moyenne",
+        "strategie": "exploitation",
+        "ouverture": "fermee",
+        "type": "incrementale",
+        "rythme": "continue",
+        "source": "market-pull",
+        "focus": "process",
+        "niveau": "moyen"
+      }
+    },
+    {
+      "id": "integratrice-360",
+      "name": "L'Intégratrice 360°",
+      "code": "A3-B3-C3-D2-E2-F2-GMIX",
+      "description": "Organisation exemplaire ayant intégré l'innovation à tous les niveaux : culture, stratégie, processus, modèles d'affaires.",
+      "characteristics": [
+        "Culture forte / Ambidextrie / Ouverte / Mix type",
+        "Mix dynamique / Produit-usage-process-business model / Très élevée"
+      ],
+      "strengths": [
+        "Cohérence stratégique",
+        "Excellence collective",
+        "Durabilité"
+      ],
+      "challenges": [
+        "Risque d'essoufflement"
+      ],
+      "recommendations": [
+        "Mesurer et réactualiser la maturité annuellement pour entretenir la dynamique"
+      ],
+      "scoreProfile": {
+        "culture": "forte",
+        "strategie": "ambidextre",
+        "ouverture": "ouverte",
+        "type": "mixte",
+        "rythme": "mixte",
+        "source": "mixte",
+        "focus": "mixte",
+        "niveau": "tres-eleve"
+      }
+    }
+  ]
+}

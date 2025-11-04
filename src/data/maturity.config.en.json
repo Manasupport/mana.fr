@@ -1,0 +1,550 @@
+{
+  "sections": [
+    {
+      "id": "strategic-vision",
+      "title": "Strategic Innovation Vision",
+      "description": "Evaluate the clarity and integration of innovation in your organization's strategy",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "To what extent is innovation integrated into your organization's strategic vision?",
+          "options": [
+            {"value": 1, "text": "Innovation is not explicitly mentioned in our strategic vision"},
+            {"value": 2, "text": "Innovation is mentioned generally but without specific objectives"},
+            {"value": 3, "text": "Innovation is part of our vision with some defined objectives"},
+            {"value": 4, "text": "Innovation is fully integrated with clear and measurable objectives"},
+            {"value": 5, "text": "Innovation is at the heart of our strategy with a detailed roadmap"}
+          ]
+        },
+        {
+          "id": "q2",
+          "text": "How does your executive management communicate about the importance of innovation?",
+          "options": [
+            {"value": 1, "text": "Rarely or never any communication about innovation"},
+            {"value": 2, "text": "Occasional communication during special events"},
+            {"value": 3, "text": "Regular but superficial communication"},
+            {"value": 4, "text": "Frequent communication with concrete examples"},
+            {"value": 5, "text": "Constant and exemplary communication, management leads by example"}
+          ]
+        },
+        {
+          "id": "q3",
+          "text": "To what extent does innovation influence major strategic decisions?",
+          "options": [
+            {"value": 1, "text": "Innovation is not considered in strategic decisions"},
+            {"value": 2, "text": "Innovation is rarely considered"},
+            {"value": 3, "text": "Innovation is sometimes a decision factor"},
+            {"value": 4, "text": "Innovation is often an important criterion"},
+            {"value": 5, "text": "Innovation is systematically integrated into all strategic decisions"}
+          ]
+        },
+        {
+          "id": "q4",
+          "text": "How do you measure the return on investment (ROI) of innovation?",
+          "options": [
+            {"value": 1, "text": "We don't measure innovation ROI"},
+            {"value": 2, "text": "Occasional and informal measurement"},
+            {"value": 3, "text": "Some basic indicators in place"},
+            {"value": 4, "text": "Structured measurement system with defined indicators"},
+            {"value": 5, "text": "Complete dashboard with real-time monitoring"}
+          ]
+        },
+        {
+          "id": "q5",
+          "text": "What is the budget allocation dedicated to innovation in your organization?",
+          "options": [
+            {"value": 1, "text": "No specific budget allocated to innovation"},
+            {"value": 2, "text": "Very limited budget (< 2% of revenue)"},
+            {"value": 3, "text": "Moderate budget (2-5% of revenue)"},
+            {"value": 4, "text": "Substantial budget (5-10% of revenue)"},
+            {"value": 5, "text": "Significant and growing budget (> 10% of revenue)"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "governance-organization",
+      "title": "Governance and Organization",
+      "description": "Analyze the organizational structure and decision-making processes related to innovation",
+      "questions": [
+        {
+          "id": "q6",
+          "text": "How is innovation organized within your structure?",
+          "options": [
+            {"value": 1, "text": "No dedicated structure for innovation"},
+            {"value": 2, "text": "Individual initiatives without coordination"},
+            {"value": 3, "text": "Innovation team or manager identified"},
+            {"value": 4, "text": "Innovation department with dedicated resources"},
+            {"value": 5, "text": "Innovation integrated across all departments with central coordination"}
+          ]
+        },
+        {
+          "id": "q7",
+          "text": "What is the level of management involvement in innovation projects?",
+          "options": [
+            {"value": 1, "text": "No management involvement"},
+            {"value": 2, "text": "Very limited involvement, total delegation"},
+            {"value": 3, "text": "Periodic monitoring of major projects"},
+            {"value": 4, "text": "Active participation in innovation committees"},
+            {"value": 5, "text": "Direct leadership and sponsoring of initiatives"}
+          ]
+        },
+        {
+          "id": "q8",
+          "text": "How are innovation decisions made in your organization?",
+          "options": [
+            {"value": 1, "text": "No defined process for innovation decisions"},
+            {"value": 2, "text": "Ad-hoc decisions based on opportunities"},
+            {"value": 3, "text": "Informal process with some criteria"},
+            {"value": 4, "text": "Structured process with steering committee"},
+            {"value": 5, "text": "Optimized process with clear criteria and agile governance"}
+          ]
+        },
+        {
+          "id": "q9",
+          "text": "To what extent is innovation integrated into individual objectives?",
+          "options": [
+            {"value": 1, "text": "Innovation doesn't appear in any individual objectives"},
+            {"value": 2, "text": "Some positions have innovation objectives"},
+            {"value": 3, "text": "Innovation is in the objectives of certain departments"},
+            {"value": 4, "text": "Most employees have innovation objectives"},
+            {"value": 5, "text": "All employees have innovation objectives adapted to their role"}
+          ]
+        },
+        {
+          "id": "q10",
+          "text": "How do you manage risks related to innovation projects?",
+          "options": [
+            {"value": 1, "text": "No specific innovation risk management"},
+            {"value": 2, "text": "Very conservative approach, risk avoidance"},
+            {"value": 3, "text": "Basic risk assessment project by project"},
+            {"value": 4, "text": "Structured management with risk/opportunity matrix"},
+            {"value": 5, "text": "Portfolio approach with calculated risk acceptance"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "human-resources",
+      "title": "Human Resources and Skills",
+      "description": "Evaluate skills, training, and team engagement in innovation",
+      "questions": [
+        {
+          "id": "q11",
+          "text": "How do you develop your employees' innovation skills?",
+          "options": [
+            {"value": 1, "text": "No specific innovation training"},
+            {"value": 2, "text": "Occasional training on request"},
+            {"value": 3, "text": "Innovation training program for certain profiles"},
+            {"value": 4, "text": "Generalized innovation training plan"},
+            {"value": 5, "text": "Internal academy with personalized paths and certification"}
+          ]
+        },
+        {
+          "id": "q12",
+          "text": "To what extent do you encourage initiative-taking and experimentation?",
+          "options": [
+            {"value": 1, "text": "Rather conservative culture, little encouragement"},
+            {"value": 2, "text": "Limited tolerance for initiatives"},
+            {"value": 3, "text": "Occasional encouragement depending on managers"},
+            {"value": 4, "text": "Clear policy of encouraging innovation"},
+            {"value": 5, "text": "Experimentation culture with assumed right to fail"}
+          ]
+        },
+        {
+          "id": "q13",
+          "text": "How do you recognize and reward innovation efforts?",
+          "options": [
+            {"value": 1, "text": "No recognition system for innovation"},
+            {"value": 2, "text": "Informal and occasional recognition"},
+            {"value": 3, "text": "Some rewards during special events"},
+            {"value": 4, "text": "Structured innovation recognition program"},
+            {"value": 5, "text": "Complete system: rewards, career advancement, profit sharing"}
+          ]
+        },
+        {
+          "id": "q14",
+          "text": "What is the level of employee engagement in innovation initiatives?",
+          "options": [
+            {"value": 1, "text": "Very low engagement, resistance to change"},
+            {"value": 2, "text": "Engagement limited to a few volunteers"},
+            {"value": 3, "text": "Decent engagement but not widespread"},
+            {"value": 4, "text": "Good level of engagement in most teams"},
+            {"value": 5, "text": "Strong and widespread engagement, innovation driven by all"}
+          ]
+        },
+        {
+          "id": "q15",
+          "text": "How do you integrate creative and innovative profiles into your teams?",
+          "options": [
+            {"value": 1, "text": "No specific strategy to attract innovative profiles"},
+            {"value": 2, "text": "Occasional recruitment of creative profiles"},
+            {"value": 3, "text": "Some positions dedicated to innovation"},
+            {"value": 4, "text": "Innovation-oriented recruitment strategy"},
+            {"value": 5, "text": "Strong employer brand on innovation, natural attraction of talent"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "culture-innovation",
+      "title": "Innovation Culture",
+      "description": "Measure your organization's mindset and values towards innovation",
+      "questions": [
+        {
+          "id": "q16",
+          "text": "How would you describe the general attitude towards change in your organization?",
+          "options": [
+            {"value": 1, "text": "Strong resistance to change"},
+            {"value": 2, "text": "Change accepted under constraint"},
+            {"value": 3, "text": "Neutral attitude, change according to needs"},
+            {"value": 4, "text": "Positive openness to change"},
+            {"value": 5, "text": "Strong appetite for change and continuous improvement"}
+          ]
+        },
+        {
+          "id": "q17",
+          "text": "To what extent is failure tolerated and used as learning?",
+          "options": [
+            {"value": 1, "text": "Failure is sanctioned, culture of perfection"},
+            {"value": 2, "text": "Very limited tolerance for failure"},
+            {"value": 3, "text": "Failure is accepted if justified"},
+            {"value": 4, "text": "Failure is seen as a learning opportunity"},
+            {"value": 5, "text": "Fast fail culture, celebration of constructive failures"}
+          ]
+        },
+        {
+          "id": "q18",
+          "text": "How do you foster cross-functional collaboration and idea exchange?",
+          "options": [
+            {"value": 1, "text": "Siloed organization, few cross-functional exchanges"},
+            {"value": 2, "text": "Collaboration limited to formal projects"},
+            {"value": 3, "text": "Some initiatives to encourage exchanges"},
+            {"value": 4, "text": "Dedicated spaces and time for cross-functional exchanges"},
+            {"value": 5, "text": "Strong collaborative culture with dedicated tools and rituals"}
+          ]
+        },
+        {
+          "id": "q19",
+          "text": "What level of autonomy is granted to teams to innovate?",
+          "options": [
+            {"value": 1, "text": "Very low autonomy, systematic validation"},
+            {"value": 2, "text": "Autonomy limited to minor projects"},
+            {"value": 3, "text": "Moderate autonomy with defined framework"},
+            {"value": 4, "text": "Wide autonomy within objective compliance"},
+            {"value": 5, "text": "Maximum autonomy with team empowerment"}
+          ]
+        },
+        {
+          "id": "q20",
+          "text": "How do you integrate diversity of thought into your innovation processes?",
+          "options": [
+            {"value": 1, "text": "No particular consideration for diversity"},
+            {"value": 2, "text": "Basic awareness of diversity"},
+            {"value": 3, "text": "Some actions to promote diversity"},
+            {"value": 4, "text": "Active strategy to integrate different profiles"},
+            {"value": 5, "text": "Diversity as a pillar of innovation strategy"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "processes-methods",
+      "title": "Processes and Methods",
+      "description": "Analyze the structure and efficiency of your innovation processes",
+      "questions": [
+        {
+          "id": "q21",
+          "text": "How do you structure your innovation process, from idea to market launch?",
+          "options": [
+            {"value": 1, "text": "No defined process, ad-hoc approach"},
+            {"value": 2, "text": "Informal process according to projects"},
+            {"value": 3, "text": "Basic process with some defined stages"},
+            {"value": 4, "text": "Structured process with gates and clear criteria"},
+            {"value": 5, "text": "Optimized, agile and adaptive process according to contexts"}
+          ]
+        },
+        {
+          "id": "q22",
+          "text": "What innovation methods do you use regularly?",
+          "options": [
+            {"value": 1, "text": "No particular method"},
+            {"value": 2, "text": "Occasional brainstorming"},
+            {"value": 3, "text": "Some creative methods (design thinking, lean startup...)"},
+            {"value": 4, "text": "Palette of methods adapted to contexts"},
+            {"value": 5, "text": "Advanced mastery of multiple methodologies with continuous training"}
+          ]
+        },
+        {
+          "id": "q23",
+          "text": "How do you manage your innovation project portfolio?",
+          "options": [
+            {"value": 1, "text": "No portfolio vision, project-by-project management"},
+            {"value": 2, "text": "Informal list of ongoing projects"},
+            {"value": 3, "text": "Basic portfolio monitoring"},
+            {"value": 4, "text": "Portfolio management with resource allocation and arbitration"},
+            {"value": 5, "text": "Continuous portfolio optimization with advanced metrics"}
+          ]
+        },
+        {
+          "id": "q24",
+          "text": "To what extent do you integrate prototyping and testing into your projects?",
+          "options": [
+            {"value": 1, "text": "No prototyping culture"},
+            {"value": 2, "text": "Occasional prototyping at end of project"},
+            {"value": 3, "text": "Prototyping integrated for certain projects"},
+            {"value": 4, "text": "Systematic approach to prototyping and testing"},
+            {"value": 5, "text": "Generalized rapid and iterative prototyping culture"}
+          ]
+        },
+        {
+          "id": "q25",
+          "text": "How do you measure and manage the performance of your innovations?",
+          "options": [
+            {"value": 1, "text": "No specific measurement"},
+            {"value": 2, "text": "Some basic financial indicators"},
+            {"value": 3, "text": "Multiple indicators but irregular monitoring"},
+            {"value": 4, "text": "Innovation dashboard with regular monitoring"},
+            {"value": 5, "text": "Advanced analytics with real-time management"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technology-digital",
+      "title": "Technology and Tools",
+      "description": "Evaluate the use of technology to support innovation",
+      "questions": [
+        {
+          "id": "q26",
+          "text": "How do you use digital tools to support innovation?",
+          "options": [
+            {"value": 1, "text": "Classic office tools only"},
+            {"value": 2, "text": "Some specialized tools for certain projects"},
+            {"value": 3, "text": "Collaboration platform with innovation features"},
+            {"value": 4, "text": "Integrated suite of innovation tools"},
+            {"value": 5, "text": "Advanced technological ecosystem with AI and analytics"}
+          ]
+        },
+        {
+          "id": "q27",
+          "text": "To what extent do you leverage data to guide your innovations?",
+          "options": [
+            {"value": 1, "text": "No use of data for innovation"},
+            {"value": 2, "text": "Basic use of internal data"},
+            {"value": 3, "text": "Customer and market data analysis"},
+            {"value": 4, "text": "Data analytics integrated into innovation process"},
+            {"value": 5, "text": "Artificial intelligence and big data serving innovation"}
+          ]
+        },
+        {
+          "id": "q28",
+          "text": "How does your organization position itself regarding emerging technologies?",
+          "options": [
+            {"value": 1, "text": "Wait-and-see attitude, late adoption"},
+            {"value": 2, "text": "Trend monitoring without immediate action"},
+            {"value": 3, "text": "Occasional exploration of new technologies"},
+            {"value": 4, "text": "Active monitoring and regular experimentation"},
+            {"value": 5, "text": "Pioneer in adoption and technological experimentation"}
+          ]
+        },
+        {
+          "id": "q29",
+          "text": "What is your maturity level in terms of digital transformation?",
+          "options": [
+            {"value": 1, "text": "Beginning of digital transformation"},
+            {"value": 2, "text": "Digitization of some key processes"},
+            {"value": 3, "text": "Transformation ongoing in several areas"},
+            {"value": 4, "text": "Advanced transformation with new organization"},
+            {"value": 5, "text": "Fully digital native organization"}
+          ]
+        },
+        {
+          "id": "q30",
+          "text": "How do you protect and valorize your intellectual property?",
+          "options": [
+            {"value": 1, "text": "No IP protection strategy"},
+            {"value": 2, "text": "Basic protection of major innovations"},
+            {"value": 3, "text": "IP protection process for key projects"},
+            {"value": 4, "text": "IP strategy integrated into innovation process"},
+            {"value": 5, "text": "Advanced IP management as strategic asset"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "partnerships-ecosystem",
+      "title": "Partnerships and Ecosystem",
+      "description": "Measure your ability to create and manage an open innovation ecosystem",
+      "questions": [
+        {
+          "id": "q31",
+          "text": "To what extent do you collaborate with external partners to innovate?",
+          "options": [
+            {"value": 1, "text": "Innovation entirely internal"},
+            {"value": 2, "text": "Occasional collaborations with suppliers"},
+            {"value": 3, "text": "Occasional partnerships with some actors"},
+            {"value": 4, "text": "Active innovation partner network"},
+            {"value": 5, "text": "Open and dynamic innovation ecosystem"}
+          ]
+        },
+        {
+          "id": "q32",
+          "text": "How do you integrate your customers into your innovation process?",
+          "options": [
+            {"value": 1, "text": "No customer involvement in innovation"},
+            {"value": 2, "text": "Customer feedback collected at end of project"},
+            {"value": 3, "text": "Customer consultation on certain projects"},
+            {"value": 4, "text": "Co-creation with pilot customers"},
+            {"value": 5, "text": "Customer partners integrated into innovation process"}
+          ]
+        },
+        {
+          "id": "q33",
+          "text": "What is your level of collaboration with startups and entrepreneurs?",
+          "options": [
+            {"value": 1, "text": "No collaboration with startup ecosystem"},
+            {"value": 2, "text": "Some occasional contacts"},
+            {"value": 3, "text": "Occasional partnerships with startups"},
+            {"value": 4, "text": "Structured startup collaboration program"},
+            {"value": 5, "text": "Integrated startup ecosystem (incubator, CVC, partnerships)"}
+          ]
+        },
+        {
+          "id": "q34",
+          "text": "How do you collaborate with academia and research?",
+          "options": [
+            {"value": 1, "text": "No academic collaboration"},
+            {"value": 2, "text": "Some informal contacts"},
+            {"value": 3, "text": "Occasional partnerships on specific projects"},
+            {"value": 4, "text": "Regular collaborations with laboratories"},
+            {"value": 5, "text": "Strategic partnerships and research chairs"}
+          ]
+        },
+        {
+          "id": "q35",
+          "text": "To what extent do you participate in innovation communities and events?",
+          "options": [
+            {"value": 1, "text": "No participation in innovation events"},
+            {"value": 2, "text": "Occasional participation as visitor"},
+            {"value": 3, "text": "Regular presence at sector events"},
+            {"value": 4, "text": "Active participation and speaking"},
+            {"value": 5, "text": "Leadership in innovation communities"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "market-customer",
+      "title": "Market and Customer Orientation",
+      "description": "Analyze your customer-centric approach and market knowledge",
+      "questions": [
+        {
+          "id": "q36",
+          "text": "How do you analyze customer needs to guide your innovations?",
+          "options": [
+            {"value": 1, "text": "No specific analysis of customer needs"},
+            {"value": 2, "text": "Occasional customer surveys"},
+            {"value": 3, "text": "Regular market studies"},
+            {"value": 4, "text": "Continuous needs analysis with dedicated tools"},
+            {"value": 5, "text": "Real-time customer intelligence integrated into innovation"}
+          ]
+        },
+        {
+          "id": "q37",
+          "text": "To what extent do you test your innovations with end users?",
+          "options": [
+            {"value": 1, "text": "No user testing"},
+            {"value": 2, "text": "Internal testing only"},
+            {"value": 3, "text": "Occasional user testing"},
+            {"value": 4, "text": "Systematic user testing"},
+            {"value": 5, "text": "Continuous co-creation with users"}
+          ]
+        },
+        {
+          "id": "q38",
+          "text": "How do you anticipate market evolution and emerging trends?",
+          "options": [
+            {"value": 1, "text": "Reaction to market evolution"},
+            {"value": 2, "text": "Basic monitoring of sector trends"},
+            {"value": 3, "text": "Structured market monitoring"},
+            {"value": 4, "text": "Proactive anticipation with weak signals"},
+            {"value": 5, "text": "Ability to create market trends"}
+          ]
+        },
+        {
+          "id": "q39",
+          "text": "What is your approach to adapt your innovations to different market segments?",
+          "options": [
+            {"value": 1, "text": "Unique approach for all segments"},
+            {"value": 2, "text": "Minor adaptations according to segments"},
+            {"value": 3, "text": "Basic segmentation with some variants"},
+            {"value": 4, "text": "Differentiated approach by segment"},
+            {"value": 5, "text": "Advanced personalization and micro-segmentation"}
+          ]
+        },
+        {
+          "id": "q40",
+          "text": "How do you measure the impact of your innovations on customer satisfaction?",
+          "options": [
+            {"value": 1, "text": "No specific measurement"},
+            {"value": 2, "text": "Occasional post-launch measurement"},
+            {"value": 3, "text": "Regular monitoring of some indicators"},
+            {"value": 4, "text": "Integrated customer dashboard"},
+            {"value": 5, "text": "Continuous measurement of customer experience and innovation NPS"}
+          ]
+        }
+      ]
+    }
+  ],
+  "scoringConfig": {
+    "maxScore": 200,
+    "dimensionWeights": {
+      "strategic-vision": 0.15,
+      "governance-organization": 0.15,
+      "human-resources": 0.15,
+      "culture-innovation": 0.15,
+      "processes-methods": 0.15,
+      "technology-digital": 0.10,
+      "partnerships-ecosystem": 0.10,
+      "market-customer": 0.05
+    },
+    "maturityLevels": [
+      {
+        "level": 1,
+        "name": "Emerging",
+        "minScore": 40,
+        "maxScore": 79,
+        "description": "Sporadic and unstructured innovation"
+      },
+      {
+        "level": 2,
+        "name": "Developing",
+        "minScore": 80,
+        "maxScore": 119,
+        "description": "First organized innovation initiatives"
+      },
+      {
+        "level": 3,
+        "name": "Structured",
+        "minScore": 120,
+        "maxScore": 159,
+        "description": "Innovation integrated with defined processes"
+      },
+      {
+        "level": 4,
+        "name": "Optimized",
+        "minScore": 160,
+        "maxScore": 189,
+        "description": "Systematic and measured innovation"
+      },
+      {
+        "level": 5,
+        "name": "Excellence",
+        "minScore": 190,
+        "maxScore": 200,
+        "description": "Leading and continuous innovation"
+      }
+    ]
+  }
+}

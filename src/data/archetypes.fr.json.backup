@@ -1,0 +1,885 @@
+{
+  "archetypes": [
+    {
+      "id": "visionnaire-pionnier",
+      "name": "Le Visionnaire Pionnier",
+      "description": "Organisation à la pointe de l'innovation avec une vision claire et des ressources importantes",
+      "characteristics": [
+        "Leadership fort en innovation",
+        "Budget conséquent alloué à l'innovation",
+        "Culture d'expérimentation développée",
+        "Écosystème de partenaires étoffé"
+      ],
+      "strengths": [
+        "Capacité d'anticipation exceptionnelle",
+        "Agilité dans l'exécution",
+        "Attraction des meilleurs talents",
+        "Influence sur le marché"
+      ],
+      "challenges": [
+        "Risque de sur-innovation",
+        "Complexité de la gestion de l'innovation",
+        "Attentes élevées des parties prenantes"
+      ],
+      "recommendations": [
+        "Maintenir l'équilibre entre innovation radicale et incrémentale",
+        "Développer des métriques d'impact long terme",
+        "Structurer le transfert de connaissances"
+      ],
+      "scoreRange": {
+        "min": 175,
+        "max": 200
+      },
+      "dominantDimensions": ["strategic-vision", "culture-innovation", "partnerships-ecosystem"]
+    },
+    {
+      "id": "explorateur-agile",
+      "name": "L'Explorateur Agile",
+      "description": "Organisation très réactive aux opportunités avec des processus flexibles",
+      "characteristics": [
+        "Processus d'innovation agiles",
+        "Équipes autonomes et responsabilisées",
+        "Adoption rapide des nouvelles technologies",
+        "Culture du prototypage rapide"
+      ],
+      "strengths": [
+        "Rapidité d'exécution",
+        "Capacité d'adaptation",
+        "Innovation continue",
+        "Engagement des équipes"
+      ],
+      "challenges": [
+        "Manque de vision long terme",
+        "Dispersion des efforts",
+        "Difficultés de capitalisation"
+      ],
+      "recommendations": [
+        "Développer une roadmap innovation à long terme",
+        "Mettre en place des mécanismes de capitalisation",
+        "Renforcer la mesure d'impact"
+      ],
+      "scoreRange": {
+        "min": 160,
+        "max": 185
+      },
+      "dominantDimensions": ["processes-methods", "culture-innovation", "human-resources"]
+    },
+    {
+      "id": "collaborateur-connecte",
+      "name": "Le Collaborateur Connecté",
+      "description": "Organisation qui excelle dans la collaboration et les partenariats",
+      "characteristics": [
+        "Réseau de partenaires développé",
+        "Co-création avec les clients",
+        "Participation active aux écosystèmes",
+        "Partage de connaissances"
+      ],
+      "strengths": [
+        "Accès à l'expertise externe",
+        "Réduction des risques par la collaboration",
+        "Innovation ouverte",
+        "Veille collective"
+      ],
+      "challenges": [
+        "Dépendance aux partenaires",
+        "Complexité de coordination",
+        "Risques de fuite d'information"
+      ],
+      "recommendations": [
+        "Développer les capacités internes",
+        "Structurer la gestion des partenariats",
+        "Protéger la propriété intellectuelle"
+      ],
+      "scoreRange": {
+        "min": 145,
+        "max": 175
+      },
+      "dominantDimensions": ["partnerships-ecosystem", "market-customer", "culture-innovation"]
+    },
+    {
+      "id": "organisateur-methodique",
+      "name": "L'Organisateur Méthodique",
+      "description": "Organisation avec des processus d'innovation très structurés et une gouvernance claire",
+      "characteristics": [
+        "Processus innovation formalisés",
+        "Gouvernance claire et structurée",
+        "Mesure systématique des résultats",
+        "Gestion rigoureuse des portefeuilles"
+      ],
+      "strengths": [
+        "Prévisibilité des résultats",
+        "Optimisation des ressources",
+        "Traçabilité complète",
+        "Réduction des risques"
+      ],
+      "challenges": [
+        "Rigidité face aux opportunités",
+        "Lourdeur administrative",
+        "Innovation moins disruptive"
+      ],
+      "recommendations": [
+        "Introduire plus d'agilité dans les processus",
+        "Créer des espaces d'expérimentation",
+        "Encourager l'innovation bottom-up"
+      ],
+      "scoreRange": {
+        "min": 140,
+        "max": 170
+      },
+      "dominantDimensions": ["governance-organization", "processes-methods", "strategic-vision"]
+    },
+    {
+      "id": "technologiste-avance",
+      "name": "Le Technologiste Avancé",
+      "description": "Organisation qui mise sur la technologie comme levier principal d'innovation",
+      "characteristics": [
+        "Maîtrise des technologies émergentes",
+        "Digitalisation avancée",
+        "Analytics et IA intégrées",
+        "Écosystème technologique riche"
+      ],
+      "strengths": [
+        "Avantage concurrentiel technologique",
+        "Efficacité opérationnelle",
+        "Capacité de disruption",
+        "Attraction des talents tech"
+      ],
+      "challenges": [
+        "Focus sur la technologie vs usage",
+        "Obsolescence rapide",
+        "Fracture numérique interne"
+      ],
+      "recommendations": [
+        "Équilibrer technologie et besoins utilisateurs",
+        "Développer la culture digitale",
+        "Créer des ponts entre tech et business"
+      ],
+      "scoreRange": {
+        "min": 135,
+        "max": 165
+      },
+      "dominantDimensions": ["technology-digital", "processes-methods", "strategic-vision"]
+    },
+    {
+      "id": "cultivateur-humain",
+      "name": "Le Cultivateur Humain",
+      "description": "Organisation centrée sur le développement des talents et de la culture innovation",
+      "characteristics": [
+        "Forte culture d'innovation",
+        "Développement continu des compétences",
+        "Engagement élevé des collaborateurs",
+        "Diversité et inclusion"
+      ],
+      "strengths": [
+        "Capital humain exceptionnel",
+        "Créativité et innovation bottom-up",
+        "Rétention des talents",
+        "Agilité culturelle"
+      ],
+      "challenges": [
+        "Manque de structure",
+        "Difficultés de passage à l'échelle",
+        "Mesure d'impact complexe"
+      ],
+      "recommendations": [
+        "Structurer les processus innovation",
+        "Mettre en place des métriques de performance",
+        "Développer les outils et technologies"
+      ],
+      "scoreRange": {
+        "min": 130,
+        "max": 160
+      },
+      "dominantDimensions": ["human-resources", "culture-innovation", "governance-organization"]
+    },
+    {
+      "id": "strategiste-oriente",
+      "name": "Le Stratégiste Orienté",
+      "description": "Organisation avec une vision stratégique claire mais une exécution encore en développement",
+      "characteristics": [
+        "Vision innovation intégrée à la stratégie",
+        "Leadership engagé",
+        "Allocation budgétaire significative",
+        "Objectifs innovation définis"
+      ],
+      "strengths": [
+        "Direction claire",
+        "Soutien de la direction",
+        "Ressources disponibles",
+        "Alignement stratégique"
+      ],
+      "challenges": [
+        "Gap entre vision et exécution",
+        "Manque de compétences opérationnelles",
+        "Processus à développer"
+      ],
+      "recommendations": [
+        "Développer les capacités d'exécution",
+        "Former les équipes aux méthodes innovation",
+        "Structurer les processus opérationnels"
+      ],
+      "scoreRange": {
+        "min": 125,
+        "max": 155
+      },
+      "dominantDimensions": ["strategic-vision", "governance-organization", "human-resources"]
+    },
+    {
+      "id": "experimentateur-creatif",
+      "name": "L'Expérimentateur Créatif",
+      "description": "Organisation qui privilégie l'expérimentation et la créativité",
+      "characteristics": [
+        "Culture d'expérimentation forte",
+        "Prototypage rapide généralisé",
+        "Tolérance à l'échec",
+        "Créativité valorisée"
+      ],
+      "strengths": [
+        "Innovation continue",
+        "Apprentissage rapide",
+        "Agilité créative",
+        "Motivation des équipes"
+      ],
+      "challenges": [
+        "Manque de structuration",
+        "Difficultés de mesure ROI",
+        "Dispersion des efforts"
+      ],
+      "recommendations": [
+        "Structurer le processus d'expérimentation",
+        "Mettre en place des métriques d'apprentissage",
+        "Développer la capacité de scale-up"
+      ],
+      "scoreRange": {
+        "min": 120,
+        "max": 150
+      },
+      "dominantDimensions": ["culture-innovation", "processes-methods", "human-resources"]
+    },
+    {
+      "id": "client-centrique",
+      "name": "Le Client-Centrique",
+      "description": "Organisation focalisée sur l'innovation orientée client et marché",
+      "characteristics": [
+        "Co-création avec les clients",
+        "Analyse continue des besoins",
+        "Tests utilisateurs systématiques",
+        "Orientation marché forte"
+      ],
+      "strengths": [
+        "Innovations adaptées au marché",
+        "Satisfaction client élevée",
+        "Réduction des risques produit",
+        "Fidélisation client"
+      ],
+      "challenges": [
+        "Innovation incrémentale dominante",
+        "Manque de vision disruptive",
+        "Dépendance aux retours clients"
+      ],
+      "recommendations": [
+        "Équilibrer écoute client et vision prospective",
+        "Développer l'innovation de rupture",
+        "Anticiper les besoins futurs"
+      ],
+      "scoreRange": {
+        "min": 115,
+        "max": 145
+      },
+      "dominantDimensions": ["market-customer", "processes-methods", "culture-innovation"]
+    },
+    {
+      "id": "partenaire-ouvert",
+      "name": "Le Partenaire Ouvert",
+      "description": "Organisation qui développe l'innovation à travers un écosystème ouvert",
+      "characteristics": [
+        "Partenariats multiples",
+        "Innovation ouverte",
+        "Collaboration externe active",
+        "Partage de ressources"
+      ],
+      "strengths": [
+        "Accès à l'expertise externe",
+        "Mutualisation des coûts",
+        "Accélération des projets",
+        "Réseau d'influence"
+      ],
+      "challenges": [
+        "Complexité de coordination",
+        "Risques de propriété intellectuelle",
+        "Dépendance externe"
+      ],
+      "recommendations": [
+        "Développer les compétences internes",
+        "Structurer la gouvernance partenariale",
+        "Sécuriser la propriété intellectuelle"
+      ],
+      "scoreRange": {
+        "min": 110,
+        "max": 140
+      },
+      "dominantDimensions": ["partnerships-ecosystem", "governance-organization", "strategic-vision"]
+    },
+    {
+      "id": "processeur-efficace",
+      "name": "Le Processeur Efficace",
+      "description": "Organisation qui excelle dans l'optimisation des processus d'innovation",
+      "characteristics": [
+        "Processus optimisés",
+        "Méthodes innovation maîtrisées",
+        "Gestion portfolio structurée",
+        "Mesure de performance"
+      ],
+      "strengths": [
+        "Efficacité opérationnelle",
+        "Prévisibilité des résultats",
+        "Qualité des livrables",
+        "Optimisation des ressources"
+      ],
+      "challenges": [
+        "Rigidité face au changement",
+        "Innovation moins disruptive",
+        "Bureaucratie potentielle"
+      ],
+      "recommendations": [
+        "Introduire plus d'agilité",
+        "Créer des espaces d'expérimentation",
+        "Développer l'innovation radicale"
+      ],
+      "scoreRange": {
+        "min": 125,
+        "max": 155
+      },
+      "dominantDimensions": ["processes-methods", "governance-organization", "technology-digital"]
+    },
+    {
+      "id": "tech-adopteur",
+      "name": "Le Tech-Adopteur",
+      "description": "Organisation qui privilégie l'adoption et l'intégration technologique",
+      "characteristics": [
+        "Adoption rapide des technologies",
+        "Transformation digitale avancée",
+        "Outils numériques intégrés",
+        "Veille technologique active"
+      ],
+      "strengths": [
+        "Modernité technologique",
+        "Efficacité digitale",
+        "Avantage concurrentiel tech",
+        "Attraction des talents digitaux"
+      ],
+      "challenges": [
+        "Focus tech vs besoins business",
+        "Complexité d'intégration",
+        "Formation des équipes"
+      ],
+      "recommendations": [
+        "Aligner technologie et stratégie business",
+        "Développer la culture digitale",
+        "Simplifier l'architecture technologique"
+      ],
+      "scoreRange": {
+        "min": 120,
+        "max": 150
+      },
+      "dominantDimensions": ["technology-digital", "processes-methods", "human-resources"]
+    },
+    {
+      "id": "gouverneur-structure",
+      "name": "Le Gouverneur Structuré",
+      "description": "Organisation avec une gouvernance innovation forte mais une culture encore en développement",
+      "characteristics": [
+        "Gouvernance claire",
+        "Structure innovation définie",
+        "Processus formalisés",
+        "Reporting structuré"
+      ],
+      "strengths": [
+        "Clarté organisationnelle",
+        "Responsabilités définies",
+        "Suivi rigoureux",
+        "Gestion des risques"
+      ],
+      "challenges": [
+        "Rigidité organisationnelle",
+        "Manque de créativité",
+        "Innovation top-down"
+      ],
+      "recommendations": [
+        "Développer la culture d'innovation",
+        "Encourager l'innovation bottom-up",
+        "Assouplir les processus"
+      ],
+      "scoreRange": {
+        "min": 115,
+        "max": 145
+      },
+      "dominantDimensions": ["governance-organization", "strategic-vision", "processes-methods"]
+    },
+    {
+      "id": "talent-developer",
+      "name": "Le Talent Developer",
+      "description": "Organisation focalisée sur le développement des compétences et talents",
+      "characteristics": [
+        "Formation innovation généralisée",
+        "Développement des compétences",
+        "Reconnaissance des efforts",
+        "Diversité des profils"
+      ],
+      "strengths": [
+        "Capital humain de qualité",
+        "Engagement des équipes",
+        "Innovation bottom-up",
+        "Créativité collective"
+      ],
+      "challenges": [
+        "Manque de structure",
+        "Difficultés de coordination",
+        "Mesure d'impact complexe"
+      ],
+      "recommendations": [
+        "Structurer les processus innovation",
+        "Mettre en place des outils de coordination",
+        "Développer les métriques de performance"
+      ],
+      "scoreRange": {
+        "min": 110,
+        "max": 140
+      },
+      "dominantDimensions": ["human-resources", "culture-innovation", "governance-organization"]
+    },
+    {
+      "id": "culture-builder",
+      "name": "Le Culture Builder",
+      "description": "Organisation qui excelle dans la construction d'une culture d'innovation",
+      "characteristics": [
+        "Culture d'innovation forte",
+        "Valeurs innovation partagées",
+        "Autonomie des équipes",
+        "Tolérance à l'échec"
+      ],
+      "strengths": [
+        "Engagement exceptionnel",
+        "Créativité naturelle",
+        "Innovation spontanée",
+        "Résilience"
+      ],
+      "challenges": [
+        "Manque de direction",
+        "Difficultés de mesure",
+        "Passage à l'échelle"
+      ],
+      "recommendations": [
+        "Définir une vision claire",
+        "Structurer les processus",
+        "Mettre en place des métriques"
+      ],
+      "scoreRange": {
+        "min": 105,
+        "max": 135
+      },
+      "dominantDimensions": ["culture-innovation", "human-resources", "strategic-vision"]
+    },
+    {
+      "id": "market-explorer",
+      "name": "Le Market Explorer",
+      "description": "Organisation excellente dans l'exploration et l'analyse de marché",
+      "characteristics": [
+        "Veille marché développée",
+        "Analyse des tendances",
+        "Tests marché systématiques",
+        "Adaptation aux segments"
+      ],
+      "strengths": [
+        "Connaissance marché approfondie",
+        "Anticipation des tendances",
+        "Innovations adaptées",
+        "Réduction des risques marché"
+      ],
+      "challenges": [
+        "Innovation reactive vs proactive",
+        "Manque d'innovation disruptive",
+        "Dépendance aux études"
+      ],
+      "recommendations": [
+        "Développer l'innovation proactive",
+        "Créer des ruptures de marché",
+        "Équilibrer analyse et intuition"
+      ],
+      "scoreRange": {
+        "min": 100,
+        "max": 130
+      },
+      "dominantDimensions": ["market-customer", "strategic-vision", "partnerships-ecosystem"]
+    },
+    {
+      "id": "equilibriste-emergent",
+      "name": "L'Équilibriste Émergent",
+      "description": "Organisation en développement avec des forces équilibrées mais modérées",
+      "characteristics": [
+        "Développement équilibré",
+        "Bases solides",
+        "Progression constante",
+        "Potentiel d'amélioration"
+      ],
+      "strengths": [
+        "Approche équilibrée",
+        "Stabilité",
+        "Capacité d'apprentissage",
+        "Flexibilité"
+      ],
+      "challenges": [
+        "Manque d'excellence",
+        "Vitesse limitée",
+        "Différenciation difficile"
+      ],
+      "recommendations": [
+        "Identifier les domaines prioritaires",
+        "Développer des points forts",
+        "Accélérer la transformation"
+      ],
+      "scoreRange": {
+        "min": 95,
+        "max": 125
+      },
+      "dominantDimensions": ["strategic-vision", "governance-organization", "human-resources"]
+    },
+    {
+      "id": "specialiste-tech",
+      "name": "Le Spécialiste Tech",
+      "description": "Organisation avec une forte expertise technologique mais des lacunes ailleurs",
+      "characteristics": [
+        "Excellence technologique",
+        "Innovations techniques avancées",
+        "Équipes tech performantes",
+        "Outils sophistiqués"
+      ],
+      "strengths": [
+        "Avantage technologique",
+        "Capacité d'innovation technique",
+        "Efficacité opérationnelle",
+        "Crédibilité technique"
+      ],
+      "challenges": [
+        "Disconnect marché/technologie",
+        "Manque de vision business",
+        "Culture peu développée"
+      ],
+      "recommendations": [
+        "Développer l'approche marché",
+        "Renforcer la gouvernance business",
+        "Cultiver l'innovation culturelle"
+      ],
+      "scoreRange": {
+        "min": 90,
+        "max": 120
+      },
+      "dominantDimensions": ["technology-digital", "processes-methods", "strategic-vision"]
+    },
+    {
+      "id": "collaborateur-debutant",
+      "name": "Le Collaborateur Débutant",
+      "description": "Organisation qui mise sur la collaboration mais manque de maturité interne",
+      "characteristics": [
+        "Ouverture aux partenariats",
+        "Volonté de collaboration",
+        "Réseautage actif",
+        "Apprentissage externe"
+      ],
+      "strengths": [
+        "Ouverture d'esprit",
+        "Capacité d'apprentissage",
+        "Réseau en développement",
+        "Humilité"
+      ],
+      "challenges": [
+        "Dépendance externe excessive",
+        "Manque d'expertise interne",
+        "Difficultés de coordination"
+      ],
+      "recommendations": [
+        "Développer les capacités internes",
+        "Équilibrer interne/externe",
+        "Structurer la gestion partenariale"
+      ],
+      "scoreRange": {
+        "min": 85,
+        "max": 115
+      },
+      "dominantDimensions": ["partnerships-ecosystem", "governance-organization", "human-resources"]
+    },
+    {
+      "id": "processeur-junior",
+      "name": "Le Processeur Junior",
+      "description": "Organisation qui commence à structurer ses processus d'innovation",
+      "characteristics": [
+        "Premiers processus définis",
+        "Méthodes innovation basiques",
+        "Tentatives de structuration",
+        "Volonté d'organisation"
+      ],
+      "strengths": [
+        "Volonté de structuration",
+        "Premiers résultats organisés",
+        "Base pour l'amélioration",
+        "Discipline émergente"
+      ],
+      "challenges": [
+        "Processus encore rigides",
+        "Manque d'agilité",
+        "Bureaucratie naissante"
+      ],
+      "recommendations": [
+        "Assouplir les processus",
+        "Intégrer plus d'agilité",
+        "Développer la culture innovation"
+      ],
+      "scoreRange": {
+        "min": 80,
+        "max": 110
+      },
+      "dominantDimensions": ["processes-methods", "governance-organization", "strategic-vision"]
+    },
+    {
+      "id": "chercheur-isole",
+      "name": "Le Chercheur Isolé",
+      "description": "Organisation avec des compétences techniques mais peu d'ouverture externe",
+      "characteristics": [
+        "Recherche interne développée",
+        "Expertise technique pointue",
+        "Innovation en silos",
+        "Faible ouverture externe"
+      ],
+      "strengths": [
+        "Expertise approfondie",
+        "Innovation technique",
+        "Indépendance",
+        "Focus recherche"
+      ],
+      "challenges": [
+        "Manque d'ouverture marché",
+        "Innovation en silos",
+        "Difficultés de commercialisation"
+      ],
+      "recommendations": [
+        "Développer l'ouverture externe",
+        "Renforcer l'approche marché",
+        "Créer des ponts entre R&D et business"
+      ],
+      "scoreRange": {
+        "min": 75,
+        "max": 105
+      },
+      "dominantDimensions": ["technology-digital", "human-resources", "strategic-vision"]
+    },
+    {
+      "id": "organisateur-naissant",
+      "name": "L'Organisateur Naissant",
+      "description": "Organisation qui commence à structurer son approche innovation",
+      "characteristics": [
+        "Premières structures innovation",
+        "Volonté d'organisation",
+        "Leadership émergent",
+        "Processus basiques"
+      ],
+      "strengths": [
+        "Volonté de changement",
+        "Leadership identifié",
+        "Premières structures",
+        "Potentiel de développement"
+      ],
+      "challenges": [
+        "Manque d'expérience",
+        "Ressources limitées",
+        "Culture traditionnelle"
+      ],
+      "recommendations": [
+        "Renforcer la formation",
+        "Développer la culture innovation",
+        "Structurer progressivement"
+      ],
+      "scoreRange": {
+        "min": 70,
+        "max": 100
+      },
+      "dominantDimensions": ["governance-organization", "strategic-vision", "human-resources"]
+    },
+    {
+      "id": "traditionaliste-evolutif",
+      "name": "Le Traditionaliste Évolutif",
+      "description": "Organisation traditionnelle qui commence à s'ouvrir à l'innovation",
+      "characteristics": [
+        "Culture traditionnelle dominante",
+        "Premières ouvertures innovation",
+        "Résistance au changement",
+        "Évolution progressive"
+      ],
+      "strengths": [
+        "Stabilité",
+        "Expérience métier",
+        "Ressources potentielles",
+        "Clients fidèles"
+      ],
+      "challenges": [
+        "Résistance culturelle",
+        "Manque d'agilité",
+        "Innovation limitée"
+      ],
+      "recommendations": [
+        "Développer la culture d'innovation",
+        "Former aux nouvelles méthodes",
+        "Créer des success stories internes"
+      ],
+      "scoreRange": {
+        "min": 65,
+        "max": 95
+      },
+      "dominantDimensions": ["strategic-vision", "governance-organization", "culture-innovation"]
+    },
+    {
+      "id": "dormeur-potentiel",
+      "name": "Le Dormeur à Potentiel",
+      "description": "Organisation avec des ressources mais peu d'activation de l'innovation",
+      "characteristics": [
+        "Ressources disponibles",
+        "Potentiel non exploité",
+        "Innovation sporadique",
+        "Manque de vision"
+      ],
+      "strengths": [
+        "Ressources importantes",
+        "Stabilité financière",
+        "Expertise métier",
+        "Position de marché"
+      ],
+      "challenges": [
+        "Manque de vision innovation",
+        "Inertie organisationnelle",
+        "Culture conservatrice"
+      ],
+      "recommendations": [
+        "Définir une vision innovation",
+        "Sensibiliser le leadership",
+        "Initier des projets pilotes"
+      ],
+      "scoreRange": {
+        "min": 60,
+        "max": 90
+      },
+      "dominantDimensions": ["strategic-vision", "human-resources", "governance-organization"]
+    },
+    {
+      "id": "resistant-structure",
+      "name": "Le Résistant Structuré",
+      "description": "Organisation structurée mais résistante au changement et à l'innovation",
+      "characteristics": [
+        "Structure organisationnelle forte",
+        "Processus établis",
+        "Résistance au changement",
+        "Innovation très limitée"
+      ],
+      "strengths": [
+        "Organisation efficace",
+        "Processus maîtrisés",
+        "Stabilité opérationnelle",
+        "Discipline"
+      ],
+      "challenges": [
+        "Rigidité extrême",
+        "Résistance au changement",
+        "Innovation bloquée"
+      ],
+      "recommendations": [
+        "Sensibiliser aux enjeux innovation",
+        "Introduire des changements progressifs",
+        "Créer des espaces d'expérimentation"
+      ],
+      "scoreRange": {
+        "min": 55,
+        "max": 85
+      },
+      "dominantDimensions": ["governance-organization", "processes-methods", "strategic-vision"]
+    },
+    {
+      "id": "conservateur-prudent",
+      "name": "Le Conservateur Prudent",
+      "description": "Organisation très prudente avec une approche conservative de l'innovation",
+      "characteristics": [
+        "Approche très conservative",
+        "Évitement des risques",
+        "Innovation très limitée",
+        "Préférence pour la stabilité"
+      ],
+      "strengths": [
+        "Gestion des risques",
+        "Stabilité",
+        "Expérience métier",
+        "Clients fidèles"
+      ],
+      "challenges": [
+        "Manque d'innovation",
+        "Risque d'obsolescence",
+        "Concurrence innovante"
+      ],
+      "recommendations": [
+        "Sensibiliser aux risques de l'inaction",
+        "Commencer par des innovations incrémentales",
+        "Développer progressivement la tolérance au risque"
+      ],
+      "scoreRange": {
+        "min": 40,
+        "max": 80
+      },
+      "dominantDimensions": ["governance-organization", "strategic-vision", "culture-innovation"]
+    },
+    {
+      "id": "debutant-complet",
+      "name": "Le Débutant Complet",
+      "description": "Organisation au tout début de sa démarche innovation",
+      "characteristics": [
+        "Aucune structure innovation",
+        "Pas de processus défini",
+        "Innovation très sporadique",
+        "Début de sensibilisation"
+      ],
+      "strengths": [
+        "Potentiel important",
+        "Flexibilité totale",
+        "Possibilité de bien commencer",
+        "Motivation naissante"
+      ],
+      "challenges": [
+        "Manque total d'expérience",
+        "Aucune structure",
+        "Besoin de tout construire"
+      ],
+      "recommendations": [
+        "Commencer par la sensibilisation",
+        "Définir une vision innovation",
+        "Créer les premières structures",
+        "Former les équipes"
+      ],
+      "scoreRange": {
+        "min": 40,
+        "max": 70
+      },
+      "dominantDimensions": ["strategic-vision", "human-resources", "culture-innovation"]
+    }
+  ],
+  "detectionRules": {
+    "primaryArchetype": {
+      "method": "highest_score_match",
+      "description": "L'archétype principal est déterminé par la correspondance avec la plage de score et les dimensions dominantes"
+    },
+    "secondaryArchetype": {
+      "method": "dimensional_analysis",
+      "description": "L'archétype secondaire est identifié par l'analyse des dimensions les plus fortes après l'archétype principal"
+    },
+    "confidence": {
+      "high": 0.8,
+      "medium": 0.6,
+      "low": 0.4,
+      "description": "Niveau de confiance basé sur l'écart entre les scores et la cohérence dimensionnelle"
+    }
+  }
+}

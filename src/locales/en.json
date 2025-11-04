@@ -764,5 +764,126 @@
     },
     "success": "Message sent successfully!",
     "error": "Error sending message"
+  },
+  "indiceMaturite": {
+    "title": "Innovation Maturity Index",
+    "subtitle": "Assess your innovation maturity level with 40 questions",
+    "hero": {
+      "titlePart1": "Maturity Index",
+      "titlePart2": "Innovation",
+      "description": "Free • Confidential • Instant Results"
+    },
+    "introduction": {
+      "title": "Assess your innovation maturity",
+      "subtitle": "A comprehensive diagnostic in 40 questions to reveal your organizational profile",
+      "description": "This innovation maturity index provides you with a precise evaluation of your organization across 8 key dimensions. Discover your archetype and receive personalized recommendations.",
+      "features": {
+        "evaluation": "Complete evaluation across 8 dimensions",
+        "archetype": "Identification of your organizational archetype",
+        "recommendations": "Personalized recommendations by level",
+        "report": "Detailed report exportable to PDF"
+      },
+      "duration": "15-20 minutes",
+      "questions": "40 questions",
+      "start": "Start Assessment",
+      "stats": {
+        "questions": "Questions",
+        "dimensions": "Dimensions",
+        "archetypes": "Archetypes",
+        "minutes": "Min"
+      },
+      "mainFeatures": {
+        "completeEvaluation": {
+          "title": "Complete Evaluation",
+          "description": "Scientific questionnaire covering all dimensions of organizational innovation"
+        },
+        "personalizedProfile": {
+          "title": "Personalized Profile",
+          "description": "Discover your unique innovation archetype among 27 organizational profiles"
+        },
+        "actionPlan": {
+          "title": "Action Plan",
+          "description": "Concrete recommendations and personalized roadmap to accelerate your transformation"
+        }
+      },
+      "howItWorks": {
+        "title": "How it works",
+        "steps": {
+          "respond": {
+            "title": "Respond",
+            "description": "40 strategic questions on 8 key dimensions of innovation"
+          },
+          "analyze": {
+            "title": "Analyze",
+            "description": "Advanced algorithm determines your profile and maturity level"
+          },
+          "progress": {
+            "title": "Progress",
+            "description": "Personalized action plan with KPIs and recommendations"
+          }
+        }
+      },
+      "dimensionsTitle": "The 8 Dimensions of Innovation",
+      "pageTitle": "Professional Innovation Assessment",
+      "heroTitle": "Discover your innovation profile, identify your strengths and get a personalized action plan to transform your organization",
+      "completeScientificEvaluation": "A complete and scientific evaluation of your innovation maturity",
+      "forYourOrganization": "For your organization",
+      "benchmarkMaturity": "Benchmark your innovation maturity",
+      "identifyStrengths": "Identify your strengths and areas for improvement",
+      "getRoadmap": "Get a personalized roadmap",
+      "expectedResults": "Expected results",
+      "accelerateTransformation": "Accelerate your innovation transformation",
+      "optimizeInvestments": "Optimize your R&D investments",
+      "developAdvantage": "Develop your competitive advantage",
+      "estimatedTimeAndPrivacy": "Estimated time: 15-20 minutes for a complete evaluation. Your answers remain confidential and you will receive a detailed report immediately."
+    },
+    "questionnaire": {
+      "progress": "Section {{current}} of {{total}}",
+      "questionsCompleted": "{{answered}}/{{total}} questions completed",
+      "percentCompleted": "{{percent}}% completed",
+      "previousSection": "Previous Section",
+      "nextSection": "Next Section", 
+      "seeResults": "See Results",
+      "restart": "Restart"
+    },
+    "results": {
+      "title": "Your results",
+      "maturityLevel": "Maturity level",
+      "yourArchetype": "Your archetype",
+      "radarChart": "Radar chart",
+      "recommendations": "Recommendations",
+      "detailedAnalysis": "Detailed analysis",
+      "exportPdf": "Export to PDF",
+      "shareResults": "Share results",
+      "retakeAssessment": "Retake assessment",
+      "generating": "Generating...",
+      "downloadPdf": "Download PDF",
+      "newEvaluation": "New Evaluation",
+      "globalScore": "Global Score",
+      "level": "Level",
+      "maturity": "Maturity",
+      "archetype": "Archetype",
+      "overview": "Overview",
+      "details": "Details",
+      "actionPlan": "Action Plan",
+      "yourInnovationProfile": "Your Innovation Profile",
+      "evaluationResults": "Results of your innovation maturity assessment",
+      "maturityProfile": "Innovation Maturity Profile", 
+      "dimensionVisualization": "Visualization of your scores by dimension",
+      "yourScore": "Your score",
+      "averageScore": "Average score: {{percent}}%",
+      "maturityScore": "Maturity score",
+      "dimensionRecommendations": "Recommendations by Dimension",
+      "validationError": "Please answer all questions before continuing.",
+      "pdfGenerationError": "Error generating the report",
+      "detailedScores": "Detailed Scores by Dimension",
+      "points": "points",
+      "yourProfile": "Your detailed profile",
+      "confidence": "Confidence level",
+      "characteristics": "Characteristics",
+      "strengths": "Strengths",
+      "challengesToImprove": "Challenges to overcome",
+      "strategicRecommendations": "Strategic recommendations"
+    }
   }
 }
